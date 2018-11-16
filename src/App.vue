@@ -81,7 +81,7 @@
 </style>
 <template>
   <div class="container-water-fall">
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
+    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a></div>
     <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish"   >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
