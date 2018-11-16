@@ -7,6 +7,10 @@
 
 ## Demo
 http://47.105.188.15:3000/
+```
+npm i 
+npm run dev
+```
 
 ## Installation
 ```
