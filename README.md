@@ -5,6 +5,8 @@
 * 4.提供resize(强制刷新布局)/mix(扰乱布局) API，一般情况下不需要用到
 * 5.后期将持续更新，提供animation（过渡动画）
 
+## Demo
+http://47.105.188.15:3000/
 
 ## Installation
 ```
