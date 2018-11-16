@@ -12,6 +12,9 @@ npm install --save vue-waterfall2
 ```
 
 ## Usage
+注意:
+  1.itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)
+  2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 ##### main.js
 ```
 import waterfall from 'vue-waterfall2'
@@ -88,7 +91,7 @@ import Vue from 'vue'
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
 col | '2'  | String |  the number of column
-width | null | String | the value of Wwdth 
+width | null | String | the value of width 
 gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
