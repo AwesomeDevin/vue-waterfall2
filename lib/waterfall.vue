@@ -26,9 +26,15 @@ import bus from './bus'
 
 	export default{
 		props:{
-			col:String,
+			col:{
+				type:String,
+				default:'2'
+			},
 			width:String,
-			data:Array,
+			data:{
+				type:Array,
+				default:[]
+			},
 			gutterWidth:{
 				type:String,
 				default:'10'
@@ -41,15 +47,21 @@ import bus from './bus'
 			}
 		},
 		watch:{
+			col(val){
+				setTimeout(()=>{
+					this.init()
+				},100)
+			},
 			data(){
 				setTimeout(()=>{
 					this.resize()
-				},500)
+				},100)
 			}
 		},
 		methods:{
 			init(){
 				this.root = this.$refs.vueWaterfall
+				this.clearColumn()
 				const col = parseInt(this.col)
 				for(var i =0;i<col;i++){
 					let odiv = document.createElement('div')
@@ -67,6 +79,7 @@ import bus from './bus'
 					}
 					this.root.appendChild(odiv)
 					this.columns.push(odiv)
+					this.resize()
 				}
 			},
 			append(dom){
@@ -81,14 +94,22 @@ import bus from './bus'
 					min.appendChild(dom)
 				}
 			},
-			resize(){
-				console.log(this.$slots.default)
+			resize(elements){
 				this.clear()
-				const elements = this.$slots.default
+				if(!elements)
+				{
+					elements = this.$slots.default
+				}
 				for(var i=0;i<elements.length;i++){
 					this.append(elements[i].elm)
 				}
 				this.$emit('finish')
+			},
+			clearColumn(){
+				this.columns.forEach((item)=>{
+					item.remove()
+				})
+				this.columns=[]
 			},
 			clear(){
 				this.columns.forEach((item)=>{
@@ -96,20 +117,20 @@ import bus from './bus'
 				})
 			},
 			mix(){
-				
 				const elements = this.$slots.default
-				elements.sort(()=>{return Math.random()-0.5>0.5})
-				this.resize()
+				elements.sort(()=>{return Math.random()-0.5})
+				this.resize(elements)
 			}
 		},
 		mounted(){
-			this.init()
-			// setTimeout(()=>{
-			// 	this.resize()
-			// },500)
+			setTimeout(()=>{
+				this.init()
+			},100)
 		},
 		created(){
 			bus.$on('resize',()=>{this.resize()})
+			bus.$on('mix',()=>{this.mix()})
+
 		}
 	}
 
