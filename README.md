@@ -1,12 +1,16 @@
 ## vue-waterfall2   
-* 1.宽度自适应,数据绑定
+* 1.宽度自适应,数据绑定特效(适用于上拉加载更多)
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/移动端
-* 4.提供resize(强制刷新布局)/mix(扰乱布局) API，一般情况下不需要用到
+* 4.提供resize(强制刷新布局-适用于下拉刷新)/mix(扰乱布局) API，一般情况下不需要用到
 * 5.后期将持续更新，提供animation（过渡动画）
 
 ## Demo
-http://47.105.188.15:3000/
+[Demo](http://47.105.188.15:3000/)
+```
+npm i 
+npm run dev
+```
 
 ## Installation
 ```
@@ -97,7 +101,11 @@ width | null | String | the value of width
 gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
-
+## <waterfall> Events
+Name |   Desc
+-------- | -------- 
+loadmore |  Slide to the bottom to load more
+  
 ## $waterfall API
 ```
 this.$waterfall.resize()   
