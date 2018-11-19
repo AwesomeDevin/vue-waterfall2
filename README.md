@@ -101,7 +101,11 @@ width | null | String | the value of width
 gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
-
+## <waterfall> Events
+Name |   Desc
+-------- | -------- 
+loadmore |  Slide to the bottom to load more
+  
 ## $waterfall API
 ```
 this.$waterfall.resize()   
