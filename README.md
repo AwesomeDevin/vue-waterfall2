@@ -106,7 +106,7 @@ data | [] | Array | data
 Name |   Desc
 -------- | -------- 
 loadmore |  Sliding to the bottom to load more
-finish | Finishing load
+
   
 ## $waterfall API
 ```
