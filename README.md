@@ -23,17 +23,17 @@ npm install --save vue-waterfall2
   1.itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 ##### main.js
-```
+```javascript
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
 ##### app.vue
-```
+```javascript
 <template>
   <div class="container-water-fall">
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
 
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish"   >
+    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"   >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
           <img :src="item.img"  />
