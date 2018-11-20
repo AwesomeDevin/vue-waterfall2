@@ -104,7 +104,8 @@ data | [] | Array | data
 ## <waterfall> Events
 Name |   Desc
 -------- | -------- 
-loadmore |  Slide to the bottom to load more
+loadmore |  Sliding to the bottom to load more
+finish | Finishing load
   
 ## $waterfall API
 ```
