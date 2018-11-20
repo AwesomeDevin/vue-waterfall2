@@ -8,6 +8,7 @@
 
 ## Demo
 [Demo](http://47.105.188.15:3000/)
+[GITHUB](https://github.com/libin1991/vue-waterfall2)
 ```
 npm i 
 npm run dev
