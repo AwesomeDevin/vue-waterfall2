@@ -88,11 +88,9 @@ import Vue from 'vue'
 	      },
 	      loadmore(index){
 	        this.data = this.data.concat(this.data)
-	      },
-	      finish(){
-	        console.log('finish')
+	      }
 	    }
-	},
+	}
 ```
 ## <waterfall> Props
 Name | Default | Type | Desc
