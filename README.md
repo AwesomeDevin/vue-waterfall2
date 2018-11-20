@@ -1,12 +1,14 @@
 
 
-## vue-waterfall2@1.0.8      有问题欢迎提issues
+## vue-waterfall2@1.0.8      
 * 1.宽度自适应,数据绑定特效
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/移动端
 * 4.提供Event:loadmore 适用于上拉加载更多
 * 5.提供resize(强制刷新布局-适用于下拉刷新)/mix(扰乱布局) API，一般情况下不需要用到
 * 6.后期将持续更新，提供animation（过渡动画）
+
+有问题欢迎提issues
 
 ## Demo
 [Demo](http://47.105.188.15:3000/)
