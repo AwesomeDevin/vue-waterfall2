@@ -1,4 +1,5 @@
 
+
 ## vue-waterfall2   
 * 1.宽度自适应,数据绑定特效
 * 2.自定义程度高
@@ -9,6 +10,7 @@
 
 ## Demo
 [Demo](http://47.105.188.15:3000/)
+
 [GITHUB](https://github.com/libin1991/vue-waterfall2)
 ```
 npm i 
@@ -22,14 +24,14 @@ npm install --save vue-waterfall2
 
 ## Usage
 注意:
-  1.<font color=blue> itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)</font>
-  2. 使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
+  *  1.<font color=blue> itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)</font>
+  *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue
+##### app.vue(此组件 style不使用 scoped)
 ```javascript
 <template>
   <div class="container-water-fall">
