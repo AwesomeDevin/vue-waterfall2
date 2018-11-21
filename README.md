@@ -109,7 +109,7 @@ data | [] | Array | data
 Name | params |   Desc
 -------- | --- | -------- 
 loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Touchmove to trigger and get the params of scroll
+scroll | obj | Touchmove to trigger and get the info of scroll
   
 ## $waterfall API
 ```
