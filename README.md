@@ -4,9 +4,8 @@
 * 1.宽度自适应,数据绑定特性
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/移动端
-* 4.提供Event:loadmore (pc端滑动到底部触发，移动端需要上拉触发)
-* 5.提供resize(强制刷新布局-适用于下拉刷新)/mix(扰乱布局) API，一般情况下不需要用到
-* 6.后期将持续更新，提供animation（过渡动画,横向瀑布流）
+* 4.提供Event:loadmore (pc端滑动到底部触发，移动端需要上拉触发) 
+* 5.后期将持续更新，提供animation（过渡动画,横向瀑布流）
 
 有问题欢迎提issues
 
@@ -107,10 +106,10 @@ gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
 ## <waterfall> Events
-Name |   Desc
--------- | -------- 
-loadmore |  Sliding to the bottom to trigger on PC /  pull up to trigger on Mobile
-
+Name | params |   Desc
+-------- | --- | -------- 
+loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Touchmove to trigger and get the params of scroll
   
 ## $waterfall API
 ```
