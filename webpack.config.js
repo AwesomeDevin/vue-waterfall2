@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -46,9 +48,11 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    // contentBase:'./dist',
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    inline:true
   },
   performance: {
     hints: false
@@ -64,6 +68,10 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
+    }),
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+            template: __dirname + "/src/index.tmpl.html",//new 一个这个插件的实例，并传入相关的参数,
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,

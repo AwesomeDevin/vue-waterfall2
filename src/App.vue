@@ -1,6 +1,11 @@
 <style  lang="scss">
+*{
+  margin: 0;
+}
   .container-water-fall{
-    padding: 0 28px;
+    // padding: 0 28px;
+    width: 100vw;
+    box-sizing:border-box;
     h4{
         padding-top: 56px;
         padding-bottom:28px;
@@ -81,10 +86,11 @@
 </style>
 <template>
   <div class="container-water-fall">
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b></div>
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"   >
+    <h1 style="position: fixed;left: 0;top: 20px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1>
+    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
+    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
       <template >
-        <div class="cell-item" v-for="(item,index) in data">
+        <div class="cell-item" v-for="(item,index) in data" >
           <img :src="item.img"  />
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
@@ -100,6 +106,7 @@
         </div>
       </template>
     </waterfall>
+   
   </div>
 </template>
 
@@ -119,6 +126,7 @@ import Vue from 'vue'
       return{
         data:[],
         col:'5',
+        loadstatus:null,
         originData:[{
           img:'https://ci.xiaohongshu.com/3bf640b3-6f2e-5f71-a05e-61a6e6402faf?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
@@ -207,12 +215,17 @@ import Vue from 'vue'
         this.col = col
         console.log(this.col)
       },
-      loadmore(){
+      scroll(data){
+        this.loadstatus = data
+      },
+      loadmore(num){
         // Vue.set(this.data[index],'liked',true)
+        console.log('loadmore')
         this.data = this.data.concat(this.originData)
         // this.$waterfall.resize()
       },
       loadMore(){
+
         this.$waterfall.loadmore(this.originData)
       },
       finish(){
@@ -220,6 +233,9 @@ import Vue from 'vue'
       }
     },
     mounted(){
+      var self = this;
+
+
       this.data=[
         
         {
