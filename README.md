@@ -109,7 +109,7 @@ data | [] | Array | data
 ## <waterfall> Events
 Name |   Desc
 -------- | -------- 
-loadmore |  Sliding to the bottom to load more
+loadmore |  Sliding to the bottom to trigger on PC /  pull up to trigger on Mobile
 
   
 ## $waterfall API
