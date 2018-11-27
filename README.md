@@ -1,6 +1,6 @@
 
 
-## vue-waterfall2@1.2.4
+## vue-waterfall2
 * 1.宽度自适应,数据绑定特性
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/ios/android
