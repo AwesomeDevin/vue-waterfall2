@@ -16,7 +16,7 @@
     "sass": "^1.15.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.11",
-    "vue-waterfall2": "^1.2.6"
+    "vue-waterfall2": "^1.2.7"
   },
   "browserslist": [
     "> 1%",
