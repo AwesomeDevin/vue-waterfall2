@@ -7,8 +7,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    // publicPath: '/dist/',
+    filename: '[name]-[chunkhash:5].build.js'
   },
   module: {
     rules: [
@@ -50,14 +50,23 @@ module.exports = {
   devServer: {
     // contentBase:'./dist',
     historyApiFallback: true,
-    noInfo: true,
+    // noInfo: true,
     overlay: true,
     inline:true
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins:[
+    new HtmlWebpackPlugin({
+            filename:'../index.html',
+            template: __dirname + "/src/index.tmpl.html",//new 一个这个插件的实例，并传入相关的参数,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name : ['manifest']
+    }),
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -70,9 +79,6 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-            template: __dirname + "/src/index.tmpl.html",//new 一个这个插件的实例，并传入相关的参数,
-    }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
