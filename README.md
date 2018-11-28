@@ -106,7 +106,7 @@ gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
 ## <waterfall> Events
-Name | params |   Desc
+Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
 scroll | obj | Touchmove to trigger and get the info of scroll
