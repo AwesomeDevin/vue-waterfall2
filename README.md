@@ -4,7 +4,7 @@
 * 1.宽度自适应,数据绑定特性
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/ios/android
-* 4.提供Event:loadmore (pc端滑动到底部触发，移动端需要上拉触发) 
+* 4.提供Event:loadmore (pc端滑动到底部触发，ios端需要上拉触发) 
 * 5.后期将持续更新，提供animation（过渡动画,横向瀑布流）
 
 有问题欢迎提issues
@@ -106,7 +106,7 @@ gutterWidth | 10 | String | the value of margin
 data | [] | Array | data
 
 ## <waterfall> Events
-Name | params |   Desc
+Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
 scroll | obj | Touchmove to trigger and get the info of scroll
