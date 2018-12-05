@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    // publicPath: '/dist/',
+    publicPath: '/',
     filename: '[name]-[chunkhash:5].build.js'
   },
   module: {
@@ -48,10 +48,10 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
-    // contentBase:'./dist',
+    contentBase:'./dist',
     historyApiFallback: true,
     // noInfo: true,
-    overlay: true,
+    // hot: true,
     inline:true
   },
   performance: {
@@ -60,7 +60,7 @@ module.exports = {
   devtool: '#eval-source-map',
   plugins:[
     new HtmlWebpackPlugin({
-            filename:'../index.html',
+            filename:'index.html',
             template: __dirname + "/src/index.tmpl.html",//new 一个这个插件的实例，并传入相关的参数,
     }),
     new webpack.optimize.CommonsChunkPlugin({
@@ -70,7 +70,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  // module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
