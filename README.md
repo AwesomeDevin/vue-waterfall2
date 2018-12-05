@@ -5,7 +5,7 @@
 * 2.自定义程度高
 * 3.使用极为简便,适用于PC/ios/android
 * 4.提供Event:loadmore (pc端滑动到底部触发，ios端需要上拉触发) 
-* 5.后期将持续更新，提供animation（过渡动画,横向瀑布流）
+* 5.兼容性好,兼容ES5
 
 有问题欢迎提issues
 
