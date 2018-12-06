@@ -1,58 +1,62 @@
 <style  lang="scss">
 *{
   margin: 0;
+  font-size: 0.12rem;
 }
   .container-water-fall{
-    // padding: 0 28px;
-    width: 100vw;
+    // padding: 0 28rem;
+    max-width: 500px;
+    padding-top: 0.66rem;
+    width: 100%;
+    margin: 0 auto;
     box-sizing:border-box;
     h4{
-        padding-top: 56px;
-        padding-bottom:28px;
+        padding-top: 0.56rem;
+        padding-bottom:0.28rem;
         font-family: PingFangSC-Medium;
-      font-size: 36px;
+      font-size: 0.36rem;
       color: #000000;
-      letter-spacing: 1px;
+      letter-spacing: 0.01rem;
       text-align: justify;
     }
     .cell-item{
             width: 100%;
-            // margin-bottom: 18px;
+            // margin-bottom: 18rem;
             background: #ffffff;
-            border: 2px solid #F0F0F0;
-            border-radius: 12px 12px 12px 12px;
+            border: .02rem solid #F0F0F0;
+            border-radius: .12rem .12rem .12rem .12rem;
             overflow: hidden;
             img{
-                // border-radius: 12px 12px 0 0;
+                // border-radius: 12rem 12rem 0 0;
                 width: 100%;
                 height: auto;
                 display: block;
             }
             .item-body{
-              // border: 1px solid #F0F0F0;
-                padding: 12px;
+              // border: 1rem solid #F0F0F0;
+                padding: .12rem;
                 .item-desc{
-                    font-size: 15px;
+                    font-size: .12rem;
                     color: #333333;
-                    line-height: 15px;
-                    font-weight: bold;
+                    line-height: .15rem;
+                    // font-weight: bold;
                 }
                 .item-footer{
-                    margin-top: 22px;
+                    margin-top: .22rem;
                     position: relative;
                     display: flex;
                     align-items: center;
                     .avatar{
-                        width: 44px;
-                        height: 44px;
+                        width: .44rem;
+                        height: .44rem;
                         border-radius: 50%;
                         background-repeat: no-repeat;
                         background-size: contain;
                     }
                     .name{
-                        max-width: 150px;
-                        margin-left: 10px;
-                        font-size: 14px;
+                        max-width: 0.8rem;
+                        margin-left: .05rem;
+                        font-size: .12rem;
                         color: #999999;
                     }
                     .like{
@@ -68,13 +72,13 @@
                           }
                         } 
                         i{
-                            width: 28px;
+                            width: .28rem;
                             display: block;
                             
                         }
                         .like-total{
-                            margin-left: 10px;
-                            font-size: 24px;
+                            margin-left: .10rem;
+                            font-size: .24rem;
                             color: #999999;
                         }
                     }
@@ -82,13 +86,31 @@
                 }
             }
         }
+        .fixed-bar{
+          text-align: center;
+          width: 100%;
+          padding:0.1rem;
+          background: white;
+          position: fixed;
+          top: 0%;
+          left: 50%;
+          transform:translateX(-50%);
+          z-index: 1;
+          button{
+            border:0;
+            background: #1ABC9C;
+            padding: 0rem 0.12rem;
+            color:white;
+            line-height: 0.3rem;
+          }
+        }
   }
 </style>
 <template>
-  <div class="container-water-fall">
-    <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1>
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
+  <div class="container-water-fall" id="container-water-fall">
+    <!-- <h1 style="position: fixed;left: 0;top: 100rem;font-style: 15rem;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
+    <div class="fixed-bar"><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(2)">2列</button> <button @click="switchCol(3)">3列</button> <button><a style="color:black;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a></button> <span style="color:blue">滚动至底部可触发loadmore</span> </div>
+    <waterfall :col='col'   :gutterWidth="gutterWidth" :threshold-value="thresholdValue"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
       <template >
         <div class="cell-item" v-for="(item,index) in data" >
           <img :src="item.img"  />
@@ -125,8 +147,9 @@ import Vue from 'vue'
     data(){
       return{
         data:[],
-        col:'5',
+        col:2,
         loadstatus:null,
+        mounted:false,
         originData:[
         
         {
@@ -246,10 +269,25 @@ import Vue from 'vue'
     },
     computed:{
       itemWidth(){ 
-        return (138*0.5*(document.documentElement.clientWidth/375)).toString()
+        if(!this.mounted)
+        {
+          return
+        }
+        return (1.38*100*(document.getElementById('container-water-fall').offsetWidth/320))
       },
       gutterWidth(){
-        return (9*0.5*(document.documentElement.clientWidth/375)).toString()
+        if(!this.mounted)
+        {
+          return
+        }
+        return (0.18*100*(document.getElementById('container-water-fall').offsetWidth/320))
+      },
+      thresholdValue(){
+        if(!this.mounted)
+        {
+          return
+        }
+        return (1 * 100 * (document.getElementById('container-water-fall').offsetWidth /320))
       }
     },
     methods:{
@@ -269,6 +307,7 @@ import Vue from 'vue'
         this.data = this.data.concat(this.originData)
         // this.$waterfall.resize()
       },
+      
       loadMore(){
 
         this.$waterfall.loadmore(this.originData)
@@ -277,9 +316,13 @@ import Vue from 'vue'
         console.log('finish')
       }
     },
+    created(){
+     
+    },
     mounted(){
       var self = this;
 
+      this.mounted = true
 
       this.data=[
         

@@ -56,7 +56,7 @@ import bus from './bus'
 				this.$nextTick(()=>{
 					setTimeout(()=>{
 						this.init()
-					},300)
+					},0)
 				})
 			},
 			data(){
@@ -64,12 +64,13 @@ import bus from './bus'
 					// console.log('+++')
 					setTimeout(()=>{
 						this.resize()
-					},300)
+					},0)
 				})
 			}
 		},
 		methods:{
 			init(){
+				console.log('---',this.$children)
 				this.root = this.$refs.vueWaterfall
 				this.clearColumn()
 				var col = parseInt(this.col)
@@ -146,10 +147,8 @@ import bus from './bus'
 			this.$nextTick(()=>{
 				setTimeout(()=>{
 					this.init()
-				},300)
+				},0)
 				var self = this;
-				
-
 				window.onscroll=function(e){
 					const scrollTop =  document.documentElement.scrollTop  || document.body.scrollTop
 					const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
@@ -183,10 +182,6 @@ import bus from './bus'
 						self.loadmore = true
 					}
 				})
-
-				window.onresize = function(){
-					// self.init()
-				}
 			})
 		},
 		created(){
