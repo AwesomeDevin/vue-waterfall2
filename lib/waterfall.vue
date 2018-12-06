@@ -183,6 +183,10 @@ import bus from './bus'
 						self.loadmore = true
 					}
 				})
+
+				window.onresize = function(){
+					// self.init()
+				}
 			})
 		},
 		created(){
