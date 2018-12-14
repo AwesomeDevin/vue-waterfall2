@@ -124,7 +124,7 @@ import Vue from 'vue'
     data(){
       return{
         data:[],
-        col:'5',
+        col:5,
         loadstatus:null,
         originData:[{
           img:'https://ci.xiaohongshu.com/3bf640b3-6f2e-5f71-a05e-61a6e6402faf?imageView2/2/w/400/q/50/format/jpg',
@@ -200,10 +200,10 @@ import Vue from 'vue'
     },
     computed:{
       itemWidth(){ 
-        return (138*0.5*(document.documentElement.clientWidth/375)).toString()
+        return (138*0.5*(document.documentElement.clientWidth/375))
       },
       gutterWidth(){
-        return (9*0.5*(document.documentElement.clientWidth/375)).toString()
+        return (9*0.5*(document.documentElement.clientWidth/375))
       }
     },
     methods:{
