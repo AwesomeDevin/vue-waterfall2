@@ -72,15 +72,15 @@ import Vue from 'vue'
 	    data(){
 	      return{
 	        data:[],
-	        col:'5',
+	        col:5,
 	      }
 	    },
 	    computed:{
 	      itemWidth(){  
-	        return (138*0.5*(document.documentElement.clientWidth/375)).toString()   #rem布局 计算宽度
+	        return (138*0.5*(document.documentElement.clientWidth/375))  #rem布局 计算宽度
 	      },
 	      gutterWidth(){
-	        return (9*0.5*(document.documentElement.clientWidth/375)).toString()	#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
+	        return (9*0.5*(document.documentElement.clientWidth/375))	#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
 	      }
 	    },
 	    methods:{
@@ -100,9 +100,9 @@ import Vue from 'vue'
 ## <waterfall> Props
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
-col | '2'  | String |  the number of column
-width | null | String | the value of width 
-gutterWidth | 10 | String | the value of margin
+col | 2  | Number |  the number of column
+width | null | Number | the value of width 
+gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
 
 ## <waterfall> Events
