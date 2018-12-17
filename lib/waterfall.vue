@@ -22,22 +22,23 @@
 </template>
 
 <script>
+global.regeneratorRuntime = require("babel-runtime/regenerator");
 import bus from './bus'
 
 	export default{
 		props:{
 			col:{
-				type:String,
-				default:'2'
+				type:Number,
+				default:2
 			},
-			width:String,
+			width:Number,
 			data:{
 				type:Array,
 				default:[]
 			},
 			gutterWidth:{
-				type:String,
-				default:'10'
+				type:Number,
+				default:10
 			}
 
 		},
@@ -48,7 +49,8 @@ import bus from './bus'
 				loadmore:true,
 				timeout:null,
 				lastScrollTop:0,
-				max: 200 * 0.5 * ( document.documentElement.offsetWidth/375)
+				max: 200 * 0.5 * ( document.documentElement.offsetWidth/375),
+				timer:null
 			}
 		},
 		watch:{
@@ -56,7 +58,7 @@ import bus from './bus'
 				this.$nextTick(()=>{
 					setTimeout(()=>{
 						this.init()
-					},0)
+					},300)
 				})
 			},
 			data(){
@@ -64,13 +66,12 @@ import bus from './bus'
 					// console.log('+++')
 					setTimeout(()=>{
 						this.resize()
-					},0)
+					},300)
 				})
 			}
 		},
 		methods:{
 			init(){
-				console.log('---',this.$children)
 				this.root = this.$refs.vueWaterfall
 				this.clearColumn()
 				var col = parseInt(this.col)
@@ -106,9 +107,20 @@ import bus from './bus'
 					min.appendChild(dom)
 				}
 			},
+			checkImg(dom){
+				if(dom.getElementsByTagName("img").length)
+				{
+					return true
+				}
+				else{
+					return false
+				}
+			},
 			resize(elements){
 				// console.log('---',this.loadmore)
+				var self = this
 				this.clear()
+				// console.log('end')
 				if(!this.$slots.default){
 					return
 				}
@@ -116,15 +128,49 @@ import bus from './bus'
 				{
 					elements = this.$slots.default
 				}
+				var loaded = 0
 				for(var i=0;i<elements.length;i++){
-					this.append(elements[i].elm)
+					(async function(j){
+						if(self.checkImg(elements[j].elm))
+						{
+							var imgs = elements[j].elm.getElementsByTagName('img')
+							var newImg = new Image()
+							newImg.src = imgs[0].src
+							if(newImg.complete)
+							{
+								loaded++
+					         	self.append(elements[j].elm)
+					         	if(!self.loadmore&&loaded==elements.length){
+									document.documentElement.scrollTop = self.lastScrollTop+self.max
+									window.pageYOffset = self.lastScrollTop+self.max
+									document.body.scrollTop = self.lastScrollTop+self.max
+								}
+							}
+							else{
+								await new Promise((resolve)=>{
+									newImg.onload = function(){
+										resolve()
+									}
+								})
+								self.append(elements[j].elm)
+					         	if(!self.loadmore&&loaded==elements.length){
+									document.documentElement.scrollTop = self.lastScrollTop+self.max
+									window.pageYOffset = self.lastScrollTop+self.max
+									document.body.scrollTop = self.lastScrollTop+self.max
+								}
+							}
+						}
+						else{
+							self.append(elements[j].elm)
+							if(!self.loadmore&&loaded==elements.length){
+								document.documentElement.scrollTop = self.lastScrollTop+self.max
+								window.pageYOffset = self.lastScrollTop+self.max
+								document.body.scrollTop = self.lastScrollTop+self.max
+							}
+						}
+					})(i)
 				}
-				if(!this.loadmore){
-					// console.log(this.lastScrollTop)
-					document.documentElement.scrollTop = this.lastScrollTop+this.max
-					window.pageYOffset = this.lastScrollTop+this.max
-					document.body.scrollTop = this.lastScrollTop+this.max
-				}
+				
 			},
 			clearColumn(){
 				this.columns.forEach((item)=>{
@@ -136,6 +182,7 @@ import bus from './bus'
 				this.columns.forEach((item)=>{
 					item.innerHTML = ''
 				})
+				// console.log('clear')
 			},
 			mix(){
 				var elements = this.$slots.default
@@ -147,8 +194,10 @@ import bus from './bus'
 			this.$nextTick(()=>{
 				setTimeout(()=>{
 					this.init()
-				},0)
+				},300)
 				var self = this;
+				
+
 				window.onscroll=function(e){
 					const scrollTop =  document.documentElement.scrollTop  || document.body.scrollTop
 					const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
@@ -188,10 +237,35 @@ import bus from './bus'
 			bus.$on('resize',()=>{this.resize()})
 			bus.$on('mix',()=>{this.mix()})
 
-		}
+		},
+		// directives : {
+		//    loadimg (el,binding,vnode){
+		//       //el就是img
+		//       let src = el.src
+		//       let newImg = new Image()
+		//       newImg.src = src
+		//       newImg.onload = function(){
+		//          //doSomething
+		         
+		//       }
+		//    }
+		// }
 	}
 
 	function getHeight(dom){
 		return dom.offsetHeight
 	}
+
+	function co(fn){  //执行器
+		var execute = fn()
+		var r = execute.next()
+		r.value.then((data)=>{
+		    // console.log(data)    //123
+		    execute.next(data)
+		})
+	}
+
+
+
+
 </script>
