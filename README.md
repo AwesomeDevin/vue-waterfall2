@@ -20,7 +20,7 @@ npm run dev
 
 ## Installation
 ```
-npm install --save vue-waterfall2
+ npm i vue-waterfall2@latest --save
 ```
 
 ## Usage
