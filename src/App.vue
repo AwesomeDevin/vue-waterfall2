@@ -87,7 +87,7 @@
 <template>
   <div class="container-water-fall">
     <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
+    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
     <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
       <template >
         <div class="cell-item" v-for="(item,index) in data" >
@@ -106,7 +106,7 @@
         </div>
       </template>
     </waterfall>
-   
+    <loading :show="loading" />
   </div>
 </template>
 
@@ -117,15 +117,20 @@
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 */
 import Vue from 'vue'
+import loading from './components/loading'
   export default{
     props:{
       title:String
+    },
+    components:{
+      loading
     },
     data(){
       return{
         data:[],
         col:5,
         loadstatus:null,
+        loading:false,
         originData:[{
           img:'https://ci.xiaohongshu.com/3bf640b3-6f2e-5f71-a05e-61a6e6402faf?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
@@ -192,8 +197,8 @@ import Vue from 'vue'
         {
           img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
-          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
-          user:'迷人的小妖精迷人的小妖精',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
           like:'953'
         },]
       }
@@ -220,7 +225,11 @@ import Vue from 'vue'
       loadmore(num){
         // Vue.set(this.data[index],'liked',true)
         console.log('loadmore')
-        this.data = this.data.concat(this.originData)
+        this.loading = true
+        setTimeout(()=>{
+          this.data = this.data.concat(this.originData)
+          this.loading = false
+        },1000)
         // this.$waterfall.resize()
       },
       loadMore(){
@@ -301,11 +310,25 @@ import Vue from 'vue'
           img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/eb971d00-05ab-5b2a-ba03-52d8f544c42b?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
           like:'953'
         },
         {
-          img:'https://ci.xiaohongshu.com/f2a37ec1-3228-3c8c-92b6-bef12cea92f7?imageView2/2/w/400/q/50/format/jpg',
+          img:'https://ci.xiaohongshu.com/9d5d58d0-7f91-5792-b8e3-25b13b5c1807?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/97247d43-f7ab-5755-a6a6-c5e6c293442f?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
@@ -319,7 +342,14 @@ import Vue from 'vue'
           like:'953'
         },
         {
-          img:'https://ci.xiaohongshu.com/9d5d58d0-7f91-5792-b8e3-25b13b5c1807?imageView2/2/w/400/q/50/format/jpg',
+          img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/eb971d00-05ab-5b2a-ba03-52d8f544c42b?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
@@ -333,17 +363,38 @@ import Vue from 'vue'
           like:'953'
         },
         {
-          img:'https://ci.xiaohongshu.com/9438582e-7ba9-53e9-8cdc-9df9e7c1eac7?imageView2/2/w/400/q/50/format/jpg',
+          img:'https://ci.xiaohongshu.com/97247d43-f7ab-5755-a6a6-c5e6c293442f?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
           like:'953'
         },
         {
-          img:'https://ci.xiaohongshu.com/ec2e961a-31e4-573f-953d-5f199858dc76?imageView2/2/w/400/q/50/format/jpg',
+          img:'https://ci.xiaohongshu.com/7e4df2f1-a364-59e7-b7a8-b165abbecd69?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/7e4df2f1-a364-59e7-b7a8-b165abbecd69?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精123',
           like:'953'
         },
       ]
