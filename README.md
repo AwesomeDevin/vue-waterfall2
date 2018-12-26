@@ -116,5 +116,3 @@ scroll | obj | Touchmove to trigger and get the info of scroll
 this.$waterfall.resize()   
 this.$waterfall.mix()   
 ```
-## License
-Released under the MIT License.
