@@ -108,8 +108,8 @@ data | [] | Array | data
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Touchmove to trigger and get the info of scroll
+loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Scroll to trigger and get the info of scroll
   
 ## $waterfall API
 ```
