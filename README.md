@@ -7,7 +7,7 @@
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.兼容性好,兼容ES5
 
-有问题欢迎提issues、suggestion、看到必回哦
+有问题欢迎提issues、suggestion
 
 ## Demo
 [Demo](http://47.105.188.15:3000/)
