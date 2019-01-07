@@ -16,5 +16,17 @@
 		//resize();
 		//window.addEventListener('resize',resize);
     </script>
+    <script>
+  ;(function(docEl, t, padBaseSize){
+      var w,r=function(){
+          var nw=Math.min(docEl.getBoundingClientRect().width, padBaseSize)
+          if(nw!==w) w=nw,docEl.setAttribute('style','font-size:'+w/10+'px')
+      }
+      if(t.setAttribute('style','width:1vw'), !t.style.width) r(),window.addEventListener('resize', r)
+  })(document.documentElement, document.createElement('div'), 750);
+  </script>
+  <script>
+  try{window.serverVar=JSON.parse('{{SERVER_VAR}}')}catch(e){}
+  </script>
   </body>
 </html>
