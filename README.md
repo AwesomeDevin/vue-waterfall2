@@ -4,10 +4,10 @@
 * 1.不需知道元素宽高，可宽高自适应
 * 2.自定义程度高,布局未采用绝对定位
 * 3.使用极为简便,适用于PC/ios/android
-* 4.提供Event:loadmore (pc端滑动到底部触发，ios端需要上拉触发) 
+* 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.兼容性好,兼容ES5
 
-有问题欢迎提issues
+有问题欢迎提issues、suggestions
 
 ## Demo
 [Demo](http://47.105.188.15:3000/)
@@ -108,13 +108,11 @@ data | [] | Array | data
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | Slide to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Touchmove to trigger and get the info of scroll
+loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Scroll to trigger and get the info of scroll
   
 ## $waterfall API
 ```
 this.$waterfall.resize()   
 this.$waterfall.mix()   
 ```
-## License
-Released under the MIT License.
