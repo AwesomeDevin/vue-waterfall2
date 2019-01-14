@@ -10,7 +10,7 @@
 有问题欢迎提issues、suggestions
 
 ## Demo
-[Demo](http://47.105.188.15:3000/index.html)
+[Demo](http://47.105.188.15:3001/index.html)
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
 ```
