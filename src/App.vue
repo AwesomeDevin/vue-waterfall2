@@ -116,7 +116,7 @@
   1.itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 */
-import Vue from 'vue'
+// import Vue from 'vue'
 import loading from './components/loading'
   export default{
     props:{

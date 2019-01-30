@@ -4,7 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/main.js',
+  entry:{ 
+    app:'./src/main.js',
+    vendor:['vue','vue-waterfall2']
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
@@ -63,9 +66,31 @@ module.exports = {
             filename:'index.html',
             template: __dirname + "/src/index.tmpl.html",//new 一个这个插件的实例，并传入相关的参数,
     }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common',
+    //   minChunks: Infinity,
+    // }),
     new webpack.optimize.CommonsChunkPlugin({
-      name : ['manifest']
+      name : 'manifest',
+      minChunks: function(module) {
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, './node_modules')
+          ) === 0
+        )
+      },
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      chunks: ['vendor']
+    })
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name : ['vendor'],
+    //   filename: '[name]-[hash].min.js',
+    //   chunks: ['vendor'],
+    // }),
   ]
 }
 
