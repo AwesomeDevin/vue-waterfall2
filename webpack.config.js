@@ -3,10 +3,31 @@ var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+
+
+function getModuleName(module) {
+  var sign = 'node_modules';
+  var signIndex = module.resource.indexOf(sign);
+  var pathSeparator = module.resource.slice(signIndex - 1, signIndex);
+  var modulePath = module.resource.substring(signIndex + sign.length + 1);
+  var moduleName = modulePath.substring(0, modulePath.indexOf(pathSeparator) );
+  moduleName = moduleName.toLowerCase();
+
+  return moduleName
+}
+
+
+let chunksPackage = {
+  'vue': ['vue'],
+  // 'vue-waterfall2':['vue-waterfall2']
+
+}
+
+
 module.exports = {
   entry:{ 
     app:'./src/main.js',
-    vendor:['vue','vue-waterfall2']
+    // vendor:['vue','vue-waterfall2'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -71,7 +92,7 @@ module.exports = {
     //   minChunks: Infinity,
     // }),
     new webpack.optimize.CommonsChunkPlugin({
-      name : 'manifest',
+      name : 'libs',
       minChunks: function(module) {
         return (
           module.resource &&
@@ -82,15 +103,21 @@ module.exports = {
         )
       },
     }),
+    ...Object.keys(chunksPackage).map(packageName=>{
+      // console.log(packageName)
+      return new webpack.optimize.CommonsChunkPlugin({
+        name:packageName,
+        chunks:['libs'],
+        minChunks:function(module,count){
+          return module.resource && chunksPackage[packageName].filter(item => new RegExp(item).test(getModuleName(module)))[0] && count >= 1
+        }
+      })
+    }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['vendor']
-    })
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name : ['vendor'],
-    //   filename: '[name]-[hash].min.js',
-    //   chunks: ['vendor'],
-    // }),
+      name : 'manifest',
+      // chunks: ['vendor'],
+      minChunks:Infinity
+    }),
   ]
 }
 

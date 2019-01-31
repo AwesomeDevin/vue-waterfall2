@@ -26,6 +26,7 @@
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
 }
+
 .spinner {
   width: 120px;
   height: 120px;
