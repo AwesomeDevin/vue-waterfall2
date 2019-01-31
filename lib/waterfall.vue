@@ -238,18 +238,6 @@ import bus from './bus'
 			bus.$on('mix',()=>{this.mix()})
 
 		},
-		// directives : {
-		//    loadimg (el,binding,vnode){
-		//       //el就是img
-		//       let src = el.src
-		//       let newImg = new Image()
-		//       newImg.src = src
-		//       newImg.onload = function(){
-		//          //doSomething
-		         
-		//       }
-		//    }
-		// }
 	}
 
 	function getHeight(dom){
