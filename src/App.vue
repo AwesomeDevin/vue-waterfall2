@@ -87,7 +87,7 @@
 <template>
   <div class="container-water-fall">
     <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
+    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <button @click="reset">重置</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
     <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
       <template >
         <div class="cell-item" v-for="(item,index) in data" >
@@ -266,6 +266,9 @@ import loading from './components/loading'
       }
     },
     methods:{
+      reset(){
+        this.data = []
+      },
       mix(){
         this.$waterfall.mix()
       },
@@ -278,7 +281,9 @@ import loading from './components/loading'
       },
       loadmore(num){
         // Vue.set(this.data[index],'liked',true)
-        console.log('loadmore')
+        // const obj = {c:123,d:456}
+        // const {c:a,d:b} = obj
+        // console.log('loadmore',a,b)
         this.loading = true
         setTimeout(()=>{
           this.data = this.data.concat(this.originData)
