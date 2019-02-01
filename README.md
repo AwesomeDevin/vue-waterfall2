@@ -84,9 +84,9 @@ import Vue from 'vue'
 	      }
 	    },
 	    methods:{
-        scroll(scrollData){
-          console.log(scrollData)
-        },
+              scroll(scrollData){
+                console.log(scrollData)
+              },
 	      mix(){
 	        this.$waterfall.mix()
 	      },
