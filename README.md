@@ -112,7 +112,7 @@ data | [] | Array | data
 Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Scroll to trigger and get the info of scroll
+scroll | obj | Scroll to trigger and get the infomation of scroll
   
 ## $waterfall API
 ```
