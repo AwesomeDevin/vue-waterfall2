@@ -63,7 +63,7 @@ Vue.use(waterfall)
 
 /*
   注意:
-  1.未传入width,会进行自适应宽度(使用rem布局时，需先计算出高度再传值)
+  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 */
 
