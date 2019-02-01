@@ -88,7 +88,7 @@
   <div class="container-water-fall">
     <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <button @click="reset">重置</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
+    <waterfall :col='col'  :gutterWidth="gutterWidth" :width="itemWidth"  :data="data" @finish="finish" @loadmore="loadmore"  @scroll="scroll" >
       <template >
         <div class="cell-item" v-for="(item,index) in data" >
           <img :src="item.img"  />
@@ -277,6 +277,7 @@ import loading from './components/loading'
         console.log(this.col)
       },
       scroll(data){
+        // console.log('scroll',data)
         this.loadstatus = data
       },
       loadmore(num){

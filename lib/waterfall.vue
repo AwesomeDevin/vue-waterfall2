@@ -49,8 +49,9 @@ import bus from './bus'
 				loadmore:true,
 				timeout:null,
 				lastScrollTop:0,
-				max: 200 * 0.5 * ( document.documentElement.offsetWidth/375),
-				timer:null
+				max: 200,
+				timer:null,
+				oldIndex:0
 			}
 		},
 		watch:{
@@ -61,11 +62,20 @@ import bus from './bus'
 					},300)
 				})
 			},
-			data(){
+			data(newVal,oldVal){
+				// console.log(newVal.length,this.oldIndex)
 				this.$nextTick(()=>{
-					// console.log('+++')
 					setTimeout(()=>{
-						this.resize()
+						if(newVal.length>this.oldIndex)
+						{
+							this.resize(this.oldIndex>0?this.oldIndex:null)
+							this.oldIndex = newVal.length
+						}
+						else{
+							// this.oldIndex = 0
+							this.resize(null)
+							this.oldIndex = newVal.length
+						}
 					},300)
 				})
 			}
@@ -78,7 +88,6 @@ import bus from './bus'
 				for(var i =0;i<col;i++){
 					let odiv = document.createElement('div')
 					odiv.className = 'vue-waterfall-column'
-					// console.log(this.width,this.gutterWidth)
 					if(this.width)
 					{
 						odiv.style.width = this.width + 'px'
@@ -92,8 +101,8 @@ import bus from './bus'
 					}
 					this.root.appendChild(odiv)
 					this.columns.push(odiv)
-					this.resize()
 				}
+				this.resize()
 			},
 			append(dom){
 				if(this.columns.length>0)
@@ -116,19 +125,20 @@ import bus from './bus'
 					return false
 				}
 			},
-			resize(elements){
-				// console.log('---',this.loadmore)
+			resize(index,elements){
+				// console.log('>>>',index,this.$slots.default.length)
 				var self = this
-				this.clear()
-				// console.log('end')
 				if(!this.$slots.default){
 					return
 				}
-				if(!elements)
+				if(!index&&index!=0&&!elements)
 				{
 					elements = this.$slots.default
+					this.clear()
 				}
-				var loaded = 0
+				else if(!elements){
+					elements = this.$slots.default.splice(index)
+				}
 				for(var i=0;i<elements.length;i++){
 					(async function(j){
 						if(self.checkImg(elements[j].elm))
@@ -138,13 +148,7 @@ import bus from './bus'
 							newImg.src = imgs[0].src
 							if(newImg.complete)
 							{
-								loaded++
 					         	self.append(elements[j].elm)
-					         	if(!self.loadmore&&loaded==elements.length){
-									document.documentElement.scrollTop = self.lastScrollTop+self.max
-									window.pageYOffset = self.lastScrollTop+self.max
-									document.body.scrollTop = self.lastScrollTop+self.max
-								}
 							}
 							else{
 								await new Promise((resolve)=>{
@@ -153,20 +157,10 @@ import bus from './bus'
 									}
 								})
 								self.append(elements[j].elm)
-					         	if(!self.loadmore&&loaded==elements.length){
-									document.documentElement.scrollTop = self.lastScrollTop+self.max
-									window.pageYOffset = self.lastScrollTop+self.max
-									document.body.scrollTop = self.lastScrollTop+self.max
-								}
 							}
 						}
 						else{
 							self.append(elements[j].elm)
-							if(!self.loadmore&&loaded==elements.length){
-								document.documentElement.scrollTop = self.lastScrollTop+self.max
-								window.pageYOffset = self.lastScrollTop+self.max
-								document.body.scrollTop = self.lastScrollTop+self.max
-							}
 						}
 					})(i)
 				}
@@ -182,30 +176,30 @@ import bus from './bus'
 				this.columns.forEach((item)=>{
 					item.innerHTML = ''
 				})
-				// console.log('clear')
 			},
 			mix(){
 				var elements = this.$slots.default
 				elements.sort(()=>{return Math.random()-0.5})
-				this.resize(elements)
+				this.resize(0,elements)
 			}
 		},
 		mounted(){
+			// this.$watch('data',(newVal,oldVal)=>{
+			// 	console.log('$watch',newVal.length,oldVal.length)
+			// })
 			this.$nextTick(()=>{
 				setTimeout(()=>{
 					this.init()
 				},300)
 				var self = this;
-				
-
 				window.onscroll=function(e){
 					const scrollTop =  document.documentElement.scrollTop  || document.body.scrollTop
 					const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
-					const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+					// const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+					const scrollHeight = document.documentElement.offsetHeight
 					var diff = scrollHeight - scrollTop - clientHeight
-					// console.log(scrollTop,clientHeight,scrollHeight,diff)
 					self.$emit('scroll',{scrollHeight:scrollHeight,scrollTop:scrollTop,clientHeight:clientHeight,diff:diff,time:Date.now()})
-					if(diff <self.max&&self.loadmore){
+					if(diff <self.max&&self.loadmore&&scrollHeight>clientHeight){
 						self.lastScrollTop =  scrollTop
 						self.loadmore = false
 						self.$emit('loadmore')
@@ -217,12 +211,11 @@ import bus from './bus'
 				document.addEventListener('touchmove',function(){
 					const scrollTop =  document.documentElement.scrollTop  || document.body.scrollTop
 					const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
-					const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
-					
+					// const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+					const scrollHeight = document.documentElement.offsetHeight
 					var diff = scrollHeight - scrollTop - clientHeight
-					// console.log(scrollTop,clientHeight,scrollHeight,diff)
 					self.$emit('scroll',{scrollHeight:scrollHeight,scrollTop:scrollTop,clientHeight:clientHeight,diff:diff,time:Date.now()})
-					if(diff <self.max&&self.loadmore){
+					if(diff <self.max&&self.loadmore&&scrollHeight>clientHeight){
 						self.lastScrollTop =  scrollTop
 						self.loadmore = false
 						self.$emit('loadmore')
@@ -236,7 +229,6 @@ import bus from './bus'
 		created(){
 			bus.$on('resize',()=>{this.resize()})
 			bus.$on('mix',()=>{this.mix()})
-
 		},
 	}
 
@@ -248,7 +240,6 @@ import bus from './bus'
 		var execute = fn()
 		var r = execute.next()
 		r.value.then((data)=>{
-		    // console.log(data)    //123
 		    execute.next(data)
 		})
 	}
