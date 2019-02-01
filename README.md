@@ -25,7 +25,7 @@ npm run dev
 
 ## Usage
 注意:
-  *  1.<font color=blue> itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)</font>
+  *  1.<font color=blue> gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
   *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
 ##### main.js
 ```javascript
@@ -38,7 +38,7 @@ Vue.use(waterfall)
   <div class="container-water-fall">
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
 
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"   >
+    <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
           <img :src="item.img"  />
@@ -63,7 +63,7 @@ Vue.use(waterfall)
 
 /*
   注意:
-  1.itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出高度再传值)
+  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 */
 
@@ -84,6 +84,9 @@ import Vue from 'vue'
 	      }
 	    },
 	    methods:{
+              scroll(scrollData){
+                console.log(scrollData)
+              },
 	      mix(){
 	        this.$waterfall.mix()
 	      },
