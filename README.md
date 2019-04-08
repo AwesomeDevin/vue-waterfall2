@@ -70,29 +70,29 @@ Vue.use(waterfall)
 import Vue from 'vue'
 	export default{
 	    data(){
-	      return{
-	        data:[],
-	        col:5,
-	      }
+	        return{
+	            data:[],
+	            col:5,
+	        }
 	    },
 	    computed:{
 	      itemWidth(){  
-	        return (138*0.5*(document.documentElement.clientWidth/375))  #rem布局 计算宽度
+	            return (138*0.5*(document.documentElement.clientWidth/375))  #rem布局 计算宽度
 	      },
 	      gutterWidth(){
-	        return (9*0.5*(document.documentElement.clientWidth/375))	#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
+	            return (9*0.5*(document.documentElement.clientWidth/375))	#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
 	      }
 	    },
 	    methods:{
-        scroll(scrollData){
-          console.log(scrollData)
-        },
-	      switchCol(col){
-	        this.col = col
-	        console.log(this.col)
+            scroll(scrollData){
+                console.log(scrollData)
+            },
+	        switchCol(col){
+	            this.col = col
+	            console.log(this.col)
 	      },
 	      loadmore(index){
-	        this.data = this.data.concat(this.data)
+	            this.data = this.data.concat(this.data)
 	      }
 	    }
 	}
