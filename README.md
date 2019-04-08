@@ -84,12 +84,9 @@ import Vue from 'vue'
 	      }
 	    },
 	    methods:{
-              scroll(scrollData){
-                console.log(scrollData)
-              },
-	      mix(){
-	        this.$waterfall.mix()
-	      },
+        scroll(scrollData){
+          console.log(scrollData)
+        },
 	      switchCol(col){
 	        this.col = col
 	        console.log(this.col)
