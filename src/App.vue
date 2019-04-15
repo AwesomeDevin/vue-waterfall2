@@ -15,6 +15,19 @@
       letter-spacing: 1px;
       text-align: justify;
     }
+    button{
+      background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+      background-color: #eff3f6;
+      color:#24292e;
+      border:1px solid rgba(27,31,35,.2);
+      border-radius: .25em;
+      width: 100px;
+      line-height: 26px;
+      font-size: 13px;
+      
+      margin: 4px 0;
+      margin-right: 4px;
+    }
     .cell-item{
             width: 100%;
             // margin-bottom: 18px;
@@ -22,6 +35,7 @@
             border: 2px solid #F0F0F0;
             border-radius: 12px 12px 12px 12px;
             overflow: hidden;
+            box-sizing:border-box;
             img{
                 // border-radius: 12px 12px 0 0;
                 width: 100%;
@@ -74,7 +88,7 @@
                         }
                         .like-total{
                             margin-left: 10px;
-                            font-size: 24px;
+                            font-size: 12px;
                             color: #999999;
                         }
                     }
@@ -83,23 +97,31 @@
             }
         }
   }
+  .githubdata{
+    float: right;
+    margin-right: 90px;
+    img{
+      width: 14px;
+      // height: 16px;
+    }
+  }
 </style>
 <template>
   <div class="container-water-fall">
     <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
-    <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <button @click="reset">重置</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> </div>
-    <waterfall :col='col'  :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"   >
+    <div><button  @click="loadmore">loadmore</button> <button @click="switchCol(5)">5列</button> <button @click="switchCol(8)">8列</button> <button @click="switchCol(10)">10列</button> <button @click="reset">重置</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md">GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b> <div class="githubdata"><button><img src="./assets/star.png"  /> Star <span>{{gitHubData.watchers_count}}</span></button><button><img src="./assets/fork.png"  /> Fork <span>{{gitHubData.forks_count}}</span></button></div>  </div>
+    <waterfall :col='col'    :data="data"  @loadmore="loadmore"   >
       <template >
         <div class="cell-item" v-for="(item,index) in data" >
-          <img :src="item.img"  />
+          <img v-if="item.img" :src="item.img"  />
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
               <div class="item-footer">
-                  <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
+                  <div v-if="item.avatar" class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
                   <div class="name">{{item.user}}</div>
                   <div class="like" :class="item.liked?'active':''" >
                       <i ></i>
-                      <div class="like-total">{{item.liked}}</div>  
+                      <div class="like-total">{{item.like}}</div>  
                   </div>
               </div>
           </div>
@@ -128,8 +150,9 @@ import loading from './components/loading'
     data(){
       return{
         data:[],
-        col:5,
+        col:8,
         loading:false,
+        gitHubData:{},
         originData:[{
           img:'https://ci.xiaohongshu.com/3bf640b3-6f2e-5f71-a05e-61a6e6402faf?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
@@ -159,7 +182,7 @@ import loading from './components/loading'
           like:'953'
         },
         {
-          img:'https://ci.xiaohongshu.com/68f6a729-ecd4-5419-bd97-98c157c0f30f?imageView2/2/w/400/q/50/format/jpg',
+          // img:'https://ci.xiaohongshu.com/68f6a729-ecd4-5419-bd97-98c157c0f30f?imageView2/2/w/400/q/50/format/jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
@@ -258,22 +281,41 @@ import loading from './components/loading'
     },
     computed:{
       itemWidth(){ 
-        return (138*0.5*(document.documentElement.clientWidth/375))
+        return (133*0.5*(document.documentElement.clientWidth/375))
       },
       gutterWidth(){
-        return (9*0.5*(document.documentElement.clientWidth/375))
+        return (10*0.5*(document.documentElement.clientWidth/375))
       }
     },
     methods:{
       reset(){
-        this.data = []
+        this.data = [{
+              // img:'https://ci.xiaohongshu.com/eb971d00-05ab-5b2a-ba03-52d8f544c42b?imageView2/2/w/400/q/50/format/jpg',
+              avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+              title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+              user:new Date().getTime(),
+              like:'2'
+            
+          },{
+              // img:'https://ci.xiaohongshu.com/19216d62-09cd-5d00-8116-0d60c9fb9102?imageView2/2/w/400/q/50/format/jpg',
+              avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+              title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+              user:new Date().getTime(),
+              like:'3'
+        }]
       },
-      mix(){
-        this.$waterfall.mix()
-      },
+
       switchCol(col){
         this.col = col
-        console.log(this.col)
+        // console.log(this.col)
+      },
+      getGitHub(){
+        fetch('https://api.github.com/repos/AwesomeDevin/vue-waterfall2').then((data)=>{
+          data.json().then((res)=>{
+            console.log(res)
+            this.gitHubData = res
+          })
+        })
       },
 
       loadmore(num){
@@ -284,15 +326,6 @@ import loading from './components/loading'
         this.loading = true
         setTimeout(()=>{
           this.data = this.data.concat(this.originData)
-          // this.data.push({
-            
-          //     img:'https://ci.xiaohongshu.com/3bf640b3-6f2e-5f71-a05e-61a6e6402faf?imageView2/2/w/400/q/50/format/jpg',
-          //     avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
-          //     title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
-          //     user:new Date().getTime(),
-          //     like:'953'
-            
-          // })
           this.loading = false
           // console.log(this.data.length)
         },1000)
@@ -513,6 +546,8 @@ import loading from './components/loading'
           like:'953'
         },
       ]
+      this.getGitHub()
+      // this.data = []
     }
   }
 </script>

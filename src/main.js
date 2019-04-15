@@ -6,6 +6,8 @@ import waterfall from 'vue-waterfall2'
 
 Vue.use(waterfall)
 
+console.log(Vue.prototype)
+
 new Vue({
   el: '#app',
   render: h => h(App)
