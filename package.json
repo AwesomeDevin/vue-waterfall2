@@ -15,9 +15,9 @@
     "node-sass": "^4.10.0",
     "sass": "^1.15.0",
     "sass-loader": "^7.1.0",
-    "vue": "^2.5.21",
+    "vue": "^2.5.2",
     "vue-waterfall-easy": "^2.4.3",
-    "vue-waterfall2": "^1.6.2"
+    "vue-waterfall2": "^1.6.5"
   },
   "browserslist": [
     "> 1%",
@@ -33,7 +33,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.5.21",
+    "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }
