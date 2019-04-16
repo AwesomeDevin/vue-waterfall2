@@ -9,8 +9,11 @@
 
 有问题欢迎提issues、suggestions
 
+![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
+
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
+
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
 ```
