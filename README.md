@@ -1,13 +1,13 @@
 
 
-## vue-waterfall2
+## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
 * 2.自定义程度高,布局未采用绝对定位
 * 3.使用极为简便,适用于PC/ios/android
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.兼容性好,兼容ES5
 
-有问题欢迎提issues、suggestions
+有问题欢迎提issues、suggestions;Thank you for your Star !
 
 ![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
 
