@@ -116,5 +116,5 @@ scroll | obj | Scroll to trigger and get the infomation of scroll
   
 ## $waterfall API
 ```
-this.$waterfall.resize()   //强制更新
+this.$waterfall.resize()   //forceUpdate
 ```
