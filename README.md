@@ -7,7 +7,8 @@
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.兼容性好,兼容ES5
 
-有问题欢迎提issues、suggestions;Thank you for your Star ! [welcome to my blog,跟我一起深挖javascript吧](https://github.com/AwesomeDevin/blog)
+有问题欢迎提issues、suggestions;Thank you for your Star ! 
+[welcome to my blog,AwesomeDevin's blog,trying to be a fullstack developer and sticking it ！！！](https://github.com/AwesomeDevin/blog)
 
 ![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
 
