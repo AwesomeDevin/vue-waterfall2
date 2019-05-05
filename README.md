@@ -1,16 +1,20 @@
 
 
-## vue-waterfall2
+## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
-* 2.自定义程度高,布局未采用绝对定位
+* 2.自定义程度高
 * 3.使用极为简便,适用于PC/ios/android
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
-* 5.兼容性好,兼容ES5
 
-有问题欢迎提issues、suggestions
+
+有问题欢迎提issues、suggestions;Thank you for your Star !   
+[welcome to my blog,AwesomeDevin's blog,I'm trying to be a fullstack developer and sticking it ！！！](https://github.com/AwesomeDevin/blog)
+
+![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
+
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
 ```
@@ -113,5 +117,5 @@ scroll | obj | Scroll to trigger and get the infomation of scroll
   
 ## $waterfall API
 ```
-this.$waterfall.resize()   //强制更新
+this.$waterfall.resize()   //forceUpdate
 ```
