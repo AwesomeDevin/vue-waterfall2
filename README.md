@@ -8,7 +8,7 @@
 
 
 有问题欢迎提issues、suggestions;Thank you for your Star !   
-[welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
+[welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
 
 ![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
 
