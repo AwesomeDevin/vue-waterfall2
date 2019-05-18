@@ -3,8 +3,9 @@
 ## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
 * 2.自定义程度高
-* 3.使用极为简便,适用于PC/ios/android
+* 3.提供懒加载功能(lazy-src)
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
+* 5.使用极为简便,适用于PC/ios/android
 
 
 有问题欢迎提issues、suggestions;Thank you for your Star !   
@@ -31,6 +32,7 @@ npm run dev
 注意:
   *  1.<font color=blue> gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
   *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
+  *  3.懒加载需要用`lazy-src`替换<img>的src属性
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
@@ -45,7 +47,7 @@ Vue.use(waterfall)
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
-          <img :src="item.img"  />
+          <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />   //lazy-src 懒加载
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
               <div class="item-footer">
@@ -67,8 +69,8 @@ Vue.use(waterfall)
 
 /*
   注意:
-  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
-  2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
+  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
+  2.使用了waterfall的组件`不允许`使用`scoped`,否则样式会有问题
 */
 
 import Vue from 'vue'
@@ -108,6 +110,18 @@ col | 2  | Number |  the number of column
 width | null | Number | the value of width 
 gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
+isTransition | true | Boolean | load image with transition
+  
+  
+## 懒加载
+对于需要使用懒加载的图片，需要使用`lazy-src`属性
+```javascript
+<waterfall :col='col'   :data="data"     >
+  <template>
+     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+  </template>
+</waterfall>
+```
 
 ## <waterfall> Events
 Name | Data |   Desc
