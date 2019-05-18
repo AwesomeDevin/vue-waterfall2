@@ -104,14 +104,14 @@ import Vue from 'vue'
 	    }
 	}
 ```
-## <waterfall> Props
+## <waterfall> 属性
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
-col | 2  | Number |  the number of column
-width | null | Number | the value of width 
-gutterWidth | 10 | Number | the value of margin
-data | [] | Array | data
-isTransition | true | Boolean | load image with transition
+col | 2  | Number |  列数
+width | null | Number | 宽度
+gutterWidth | 10 | Number | 间隔的宽度
+data | [] | Array | 数据
+isTransition | true | Boolean | 加载图片是否使用过度动画
   
   
 ## 懒加载
@@ -127,8 +127,8 @@ isTransition | true | Boolean | load image with transition
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Scroll to trigger and get the infomation of scroll
+loadmore | null | 滚动到底部触发
+scroll | obj | 获取滚动时的event对象
   
 ## $waterfall API
 ```
