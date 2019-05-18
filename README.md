@@ -30,8 +30,8 @@ npm run dev
 
 ## Usage
 注意:
-  *  1.<font color=blue> gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
-  *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
+  *  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
+  *  2.使用了`waterfall`的父组件 style 不允许使用scoped,否则样式会有问题 
   *  3.懒加载需要用`lazy-src`替换<img>的src属性
 ##### main.js
 ```javascript
@@ -69,8 +69,9 @@ Vue.use(waterfall)
 
 /*
   注意:
-  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
-  2.使用了waterfall的组件`不允许`使用`scoped`,否则样式会有问题
+  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
+  2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
+  3.懒加载需要用lazy-src替换<img>的src属性
 */
 
 import Vue from 'vue'
