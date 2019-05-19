@@ -30,8 +30,8 @@ npm run dev
 
 ## Usage
 注意:
-  *  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
-  *  2.使用了`waterfall`的父组件 style 不允许使用scoped,否则样式会有问题 
+  *  1.<font color=blue> gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
+  *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
   *  3.懒加载需要用`lazy-src`替换<img>的src属性
 ##### main.js
 ```javascript
@@ -69,9 +69,8 @@ Vue.use(waterfall)
 
 /*
   注意:
-  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
-  2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
-  3.懒加载需要用lazy-src替换<img>的src属性
+  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
+  2.使用了waterfall的组件`不允许`使用`scoped`,否则样式会有问题
 */
 
 import Vue from 'vue'
@@ -104,14 +103,14 @@ import Vue from 'vue'
 	    }
 	}
 ```
-## <waterfall> 属性
+## <waterfall> Props
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
-col | 2  | Number |  列数
-width | null | Number | 宽度
-gutterWidth | 10 | Number | 间隔的宽度
-data | [] | Array | 数据
-isTransition | true | Boolean | 加载图片是否使用过度动画
+col | 2  | Number |  the number of column
+width | null | Number | the value of width 
+gutterWidth | 10 | Number | the value of margin
+data | [] | Array | data
+isTransition | true | Boolean | load image with transition
   
   
 ## 懒加载
@@ -127,8 +126,8 @@ isTransition | true | Boolean | 加载图片是否使用过度动画
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | 滚动到底部触发
-scroll | obj | 获取滚动时的event对象
+loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Scroll to trigger and get the infomation of scroll
   
 ## $waterfall API
 ```
