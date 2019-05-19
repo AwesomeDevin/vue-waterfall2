@@ -47,7 +47,8 @@ Vue.use(waterfall)
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
-          <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />   //lazy-src 懒加载
+          <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
+          //<img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />   //lazy-src 懒加载
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
               <div class="item-footer">
