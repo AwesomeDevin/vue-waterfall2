@@ -132,5 +132,5 @@ scroll | obj | 获取滚动时的event对象
   
 ## $waterfall API
 ```
-this.$waterfall.resize()   //forceUpdate
+this.$waterfall.forceUpdate()   //forceUpdate
 ```
