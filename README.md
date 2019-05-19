@@ -111,7 +111,7 @@ col | 2  | Number |  列数
 width | null | Number | 宽度
 gutterWidth | 10 | Number | 间隔的宽度
 data | [] | Array | 数据
-isTransition | true | Boolean | 加载图片是否使用过度动画
+isTransition | true | Boolean | 加载图片是否使用过渡动画
   
   
 ## 懒加载
