@@ -117,7 +117,7 @@ isTransition | true | Boolean | 加载图片是否使用过渡动画
   
 ## 懒加载
 对于需要使用懒加载的图片，需要使用`lazy-src`属性
-```javascript
+```html
 <waterfall :col='col'   :data="data"     >
   <template>
      <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
