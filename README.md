@@ -32,7 +32,7 @@ npm run dev
 注意:
   *  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
   *  2.使用了`waterfall`的父组件 style 不允许使用scoped,否则样式会有问题 
-  *  3.懒加载需要用`lazy-src`替换<img>的src属性
+  *  3.懒加载需要用`lazy-src`替换`<img>`的src属性
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
