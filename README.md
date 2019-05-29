@@ -1,17 +1,16 @@
 
 
-## vue-waterfall2 
-* 1.不需知道元素宽高，可宽高自适应
-* 2.自定义程度高
-* 3.支持懒加载(lazy-src)
-* 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
-* 5.使用极为简便,适用于PC/ios/android
+# vue-waterfall2 
+ 1. auto adaption for width and height
+ 2. High degree of customization
+ 3. support lazy load(attribute with `lazy-load`)
 
+## [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 
-有问题欢迎提issues、suggestions;Thank you for your Star !   
-[welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
+If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
+[Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
 
-![移动端效果](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif?raw=true)
+![The demo on mobile device](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif?raw=true)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
@@ -29,15 +28,15 @@ npm run dev
 ```
 
 ## Usage
-注意:
-  *  1.`gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
-  *  2.使用了`waterfall`的父组件, style标签 不允许使用`scoped`,否则样式会有问题 
+Notes:
+  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  2. Using the parent component of 'waterfall', the style tag does not allow the use of 'scoped', otherwise the style would have problems
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue(此组件 style不使用 scoped)
+##### app.vue(Scoped is not used for this component style)
 ```javascript
 <template>
   <div class="container-water-fall">
@@ -46,7 +45,6 @@ Vue.use(waterfall)
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
       <template >
         <div class="cell-item" v-for="(item,index) in data">
-          <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
               <div class="item-footer">
@@ -67,9 +65,9 @@ Vue.use(waterfall)
 
 
 /*
-  注意:
-  1.gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
-  2.使用了`waterfall`的父组件, style标签 不允许使用`scoped`,否则样式会有问题 
+  notes:
+  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  2. Using the parent component of 'waterfall', the style tag does not allow the use of 'scoped', otherwise the style would have problems
 */
 
 import Vue from 'vue'
@@ -82,10 +80,10 @@ import Vue from 'vue'
 	    },
 	    computed:{
 	      itemWidth(){  
-	            return (138*0.5*(document.documentElement.clientWidth/375))  #rem布局 计算宽度
+	            return (138*0.5*(document.documentElement.clientWidth/375))  #rem to layout, Calculate the value of width 
 	      },
 	      gutterWidth(){
-	            return (9*0.5*(document.documentElement.clientWidth/375))	#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
+	            return (9*0.5*(document.documentElement.clientWidth/375)) #rem to layout, Calculate the value of margin 
 	      }
 	    },
 	    methods:{
@@ -102,19 +100,19 @@ import Vue from 'vue'
 	    }
 	}
 ```
-## <waterfall> 属性
+## <waterfall> Props
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
-col | 2  | Number |  列数
-width | null | Number | 宽度
-gutterWidth | 10 | Number | 间隔的宽度
-data | [] | Array | 数据
-isTransition | true | Boolean | 加载图片是否使用过渡动画
+col | 2  | Number |  the number of column
+width | null | Number | the value of width 
+gutterWidth | 10 | Number | the value of margin
+data | [] | Array | data
+isTransition | true | Boolean | load image with transition
   
   
-## 懒加载
-对于需要使用懒加载的图片，需要使用`lazy-src`属性
-```html
+## Lazy Load
+For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
+```javascript
 <waterfall :col='col'   :data="data"     >
   <template>
      <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
@@ -125,8 +123,8 @@ isTransition | true | Boolean | 加载图片是否使用过渡动画
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | 滚动到底部触发
-scroll | obj | 获取滚动时的event对象
+loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Scroll to trigger and get the infomation of scroll
   
 ## $waterfall API
 ```
