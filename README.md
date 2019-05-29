@@ -11,7 +11,7 @@
 有问题欢迎提issues、suggestions;Thank you for your Star !   
 [welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
 
-![移动端效果](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif)
+![移动端效果](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif?raw=true)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
