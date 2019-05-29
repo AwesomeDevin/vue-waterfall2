@@ -7,7 +7,7 @@
 
 
 
-Welcome to describe issues、suggestions;Thank you for your Star !   
+If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
 [Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
 
 ![The demo on mobile device](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif?raw=true)
