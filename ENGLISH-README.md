@@ -1,17 +1,16 @@
 
 
 ## vue-waterfall2 
-* 1.不需知道元素宽高，可宽高自适应
-* 2.自定义程度高
-* 3.提供懒加载功能(lazy-src)
-* 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
-* 5.使用极为简便,适用于PC/ios/android
+* 1.auto adaption for width and height
+* 2.High degree of customization
+* 3.support lazy load(attribute with `lazy-load`)
 
 
-有问题欢迎提issues、suggestions;Thank you for your Star !   
-[welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
 
-![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
+Welcomet to describe issues、suggestions;Thank you for your Star !   
+[Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
+
+![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/1555386299005.gif)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
@@ -29,7 +28,7 @@ npm run dev
 ```
 
 ## Usage
-注意:
+Notes:
   *  1.<font color=blue> gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
   *  2.使用了<font color=red>waterfall</font>的<font color=red>父组件 style 不允许使用scoped</font>,否则样式会有问题 
   *  3.懒加载需要用`lazy-src`替换<img>的src属性
