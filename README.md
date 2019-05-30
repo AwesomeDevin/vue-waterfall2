@@ -10,7 +10,7 @@
 If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
 [Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
 
-![The demo on mobile device](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/src/assets/gifhome.gif?raw=true)
+![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
