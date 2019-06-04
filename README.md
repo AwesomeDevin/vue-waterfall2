@@ -30,7 +30,7 @@ npm run dev
 ## Usage
 Notes:
   1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
-  2. Using the parent component of 'waterfall', the style tag does not allow the use of 'scoped', otherwise the style would have problems
+  2. Using the parent component of `waterfall`, the style tag does not allow the use of `scoped`, otherwise the style would have problems
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
