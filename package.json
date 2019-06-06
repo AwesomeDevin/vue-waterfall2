@@ -1,10 +1,9 @@
 {
-  "name": "demo",
-  "description": "A Vue.js project",
+  "name": "vue-waterfall2",
+  "description": "waterfall  adaptive plugin for vue  and support lazy load , very easy!  ",
   "version": "1.0.0",
-  "author": "Devin <daivonup@163.com>",
+  "author": "Devin <awesomedevin.deng@gail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --watch",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
