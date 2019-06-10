@@ -10,10 +10,10 @@
 If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
 [Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
 
-![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 ## Demo
 [Demo](http://47.105.188.15:3001/index.html)
+![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
