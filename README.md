@@ -5,6 +5,8 @@
  2. High degree of customization
  3. support lazy load(attribute with `lazy-load`)
 
+![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
+
 ## [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 
 If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
@@ -12,8 +14,8 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 
 ## Demo
-[Demo](http://47.105.188.15:3001/index.html)
-![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
+[Demo](http://47.105.188.15:3001/index.html)  
+
 
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
