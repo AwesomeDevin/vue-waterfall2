@@ -30,8 +30,8 @@ npm run dev
 
 ## Usage
 注意:
-  `gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
-
+ 1.  `gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
+ 2.  使用了`waterfall`的父组件,如果样式存在问题，可去掉css `scoped`尝试一下
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
@@ -68,7 +68,8 @@ Vue.use(waterfall)
 
 /*
   注意:
-  gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
+  1. gutterWidth需要与width一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)
+  2. 使用了`waterfall`的父组件,如果样式存在问题，可去掉css `scoped`尝试一下
 */
 
 import Vue from 'vue'
