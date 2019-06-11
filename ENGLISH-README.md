@@ -29,7 +29,8 @@ npm run dev
 
 ## Usage
 Notes:
-  attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  1.attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  2.Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
 
 ##### main.js
 ```javascript
@@ -65,8 +66,9 @@ Vue.use(waterfall)
 
 
 /*
-  notes:
-   attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  Notes:
+   1.attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+   2.Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
 
 */
 
