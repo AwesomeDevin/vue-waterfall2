@@ -3,7 +3,7 @@
 # vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
- 3. support lazy load(attribute with `lazy-load`)
+ 3. support lazy load(attribute with `lazy-src`)
 
 ![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
