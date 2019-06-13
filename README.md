@@ -110,6 +110,7 @@ width | null | Number | the value of width
 gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
 isTransition | true | Boolean | load image with transition
+lazyDistance | 500 | Number | the distance of image lazy loading
   
   
 ## Lazy Load
