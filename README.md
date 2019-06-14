@@ -3,7 +3,7 @@
 # vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
- 3. support lazy load(attribute with `lazy-load`)
+ 3. support lazy load(attribute with `lazy-src`)
 
 ![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
@@ -32,7 +32,7 @@ npm run dev
 ## Usage
 Notes:
   1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
-  2. Using the parent component of `waterfall`, the style tag does not allow the use of `scoped`, otherwise the style would have problems
+  2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS `scoped` and try it
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
@@ -69,7 +69,7 @@ Vue.use(waterfall)
 /*
   notes:
   1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
-  2. Using the parent component of 'waterfall', the style tag does not allow the use of 'scoped', otherwise the style would have problems
+  2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
 */
 
 import Vue from 'vue'
@@ -110,6 +110,7 @@ width | null | Number | the value of width
 gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
 isTransition | true | Boolean | load image with transition
+lazyDistance | 500 | Number | the distance of image lazy loading
   
   
 ## Lazy Load
