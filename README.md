@@ -15,7 +15,7 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 ## Demo
 [Common Demo](http://47.105.188.15:3001/)  
-[Lazyload Demo](http://47.105.188.15:3001/list)  
+[Lazyload Demo](http://47.105.188.15:3001/#/list)  
 
 
 
