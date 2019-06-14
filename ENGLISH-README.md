@@ -1,19 +1,21 @@
 
 
-## vue-waterfall2 
+# vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
- 3. support lazy load(attribute with `lazy-load`)
+ 3. support lazy load(attribute with `lazy-src`)
 
+![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
+## [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 
 If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
 [Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
 
-![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 ## Demo
-[Demo](http://47.105.188.15:3001/index.html)
+[Demo](http://47.105.188.15:3001/index.html)  
+
 
 
 [GITHUB](https://github.com/Rise-Devin/vue-waterfall2)
@@ -29,9 +31,8 @@ npm run dev
 
 ## Usage
 Notes:
-  1.attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
-  2.Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
-
+  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS `scoped` and try it
 ##### main.js
 ```javascript
 import waterfall from 'vue-waterfall2'
@@ -66,10 +67,9 @@ Vue.use(waterfall)
 
 
 /*
-  Notes:
-   1.attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
-   2.Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
-
+  notes:
+  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
 */
 
 import Vue from 'vue'
@@ -110,11 +110,12 @@ width | null | Number | the value of width
 gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
 isTransition | true | Boolean | load image with transition
-  
+lazyDistance | 300 | Number | the distance of image lazy loading
+loadDistance | 300 | Number | the distance of loadmore
   
 ## Lazy Load
 For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
-```javascript
+```html
 <waterfall :col='col'   :data="data"     >
   <template>
      <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
