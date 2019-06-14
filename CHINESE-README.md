@@ -110,7 +110,8 @@ width | null | Number | 宽度
 gutterWidth | 10 | Number | 间隔的宽度
 data | [] | Array | 数据
 isTransition | true | Boolean | 加载图片是否使用过渡动画
-lazyDistance | 500 | Number | 图片进行懒加载的距离 
+lazyDistance | 300 | Number | 图片进行懒加载的距离 
+loadDistance | 300 | Number | 上拉加载更多的距离
   
 ## 懒加载
 对于需要使用懒加载的图片，需要使用`lazy-src`属性
