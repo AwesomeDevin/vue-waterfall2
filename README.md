@@ -122,7 +122,7 @@ For images that need to be loaded lazily, the 'lazy-src' attribute needs to be u
 ```html
 <waterfall :col='col'   :data="data"     >
   <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+     <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
   </template>
 </waterfall>
 ```
