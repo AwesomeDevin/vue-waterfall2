@@ -1,5 +1,7 @@
 
 
+
+#### [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 # vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
@@ -7,7 +9,6 @@
 
 ![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
-## [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 
 If you have some questions,welcome to describe issues、suggestions;Thank you for your Star !   
 [Welcome to my blog  ！！！](https://github.com/AwesomeDevin/blog)
@@ -121,7 +122,7 @@ For images that need to be loaded lazily, the 'lazy-src' attribute needs to be u
 ```html
 <waterfall :col='col'   :data="data"     >
   <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+     <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
   </template>
 </waterfall>
 ```
