@@ -2,7 +2,7 @@
 
 ## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
-* 2.内容自定义程度高
+* 2.支持无图模式,内容自定义程度高
 * 3.支持懒加载(lazy-src)
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.使用极为简便,适用于PC/ios/android
