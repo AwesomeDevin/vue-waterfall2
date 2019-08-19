@@ -1,1001 +1,619 @@
-<style lang="less" scoped>
-    .merchant .merchant-body .merchant-body-rightsider{
-        width: 1180px;
+<style  lang="less" scoped>
+*{
+  margin: 0;
+}
+  .container-water-fall{
+    // padding: 0 28px;
+    width: 100vw;
+    box-sizing:border-box;
+    h4{
+        padding-top: 56px;
+        padding-bottom:28px;
+        font-family: PingFangSC-Medium;
+      font-size: 36px;
+      color: #000000;
+      letter-spacing: 1px;
+      text-align: justify;
     }
-    .actlist_wrap{
-        background-color: #fff;
-        margin-top: 24px;
-        min-height:1000px;
-        .actlist-nav{
-            padding-top: 20px;
-            .ivu-tabs-nav .ivu-tabs-tab:hover{
-                color: #883bdf;
-            }
-        }
-        .btn_color_883bdf{
-            color: #883bdf;
-            border: 1px solid #883bdf !important;
-        }
+    button{
+      background-color: #ff0;
+      color: #24292e;
+      border: 1px solid rgba(27,31,35,.2);
+      border-radius: .25em;
+      width: 100px;
+      line-height: 26px;
+      font-size: 13px;
+      margin: 4px 0;
+      margin-right: 4px;
+      cursor: pointer;
+      outline: none;
+      &.blue-light{
+        background: #27fbc2;
+      }
     }
-    .act_msg_wrap{
-        padding: 20px;
-        .search-wrap{
-            padding: 20px;
-            margin-bottom: 30px;
-            background-color: #fafafa;
-            .search-row{
-                .search-title{
-                    display: inline-block;
-                    height: 32px;
-                    width: 100%;
-                    padding-right: 5px;
-                    line-height: 32px;
-                    text-align: right;
-                    color: #101010;
-                    font-size: 14px;
-                }
+    button:hover{
+      background-image: linear-gradient(-180deg,#fafbfc,#ccc 90%);
+    }
+    
+    .cell-item{
+            width: 100%;
+            // margin-bottom: 18px;
+            background: #ffffff;
+            border: 2px solid #F0F0F0;
+            border-radius: 12px 12px 12px 12px;
+            overflow: hidden;
+            box-sizing:border-box;
+            img{
+                // border-radius: 12px 12px 0 0;
+                width: 100%;
+                height: auto;
+                display: block;
             }
-            .shop-list-wrap{
-                margin:20px 0;
-                .search-title{
-                    display: inline-block;
-                    height: 32px;
-                    line-height: 32px;
-                    color: #101010;
-                    font-size: 14px;
+            .item-body{
+              // border: 1px solid #F0F0F0;
+                padding: 12px;
+                .item-desc{
+                    font-size: 15px;
+                    color: #333333;
+                    line-height: 15px;
+                    font-weight: bold;
                 }
-                .shopname{
-                    color: #101010;
-                    background-color: #fff;
-                    margin-right:10px;
-                    vertical-align: top;
-                }
-            }
-        }
-        .search-res{
-            height: 100%;
-            .res-header{
-                padding: 10px 0;
-                background-color: #f8f8f8;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 10px;
-                .head{
-                    flex: 2;
-                    text-align: center;
-                    color: #333;
-                    font-size: 14px;
-                }
-                .head-small{
-                    flex: 1;
-                    text-align: center;
-                    font-size: 14px;
-                    color: #333;
-                }
-            }
-            .res-msg{
-                border-radius: 4px;
-                font-size: 14px;
-                border: 1px solid #ddd;
-                margin-bottom: 20px;
-                .msg-body{
-                    padding: 20px;
-                    display: flex;
-                    .detail-img{
-                        width: 130px;
-                        .img-wrap{
-                            width: 130px;
-                            height: 130px;
-                            overflow:hidden;
-                            margin-bottom: 10px;
-                            img{
-                                width: 100%;
-                            }
-                        }
-                        p{
-                            text-align: center;
-                            color: #101010;
-                            font-size: 14px;
-                        }
-                        .detail-shopname{
-                            color: #333;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                        }
-                        .detail-shoplink{
-                            color: #1E9FFF;
-                            font-size: 12px;
-                        }
-                    }
-                    .detail-item{
-                        flex: 1;
-                        display: flex;
-                        align-items: start;
-                        justify-content: space-around;
-                        .item{
-                            height: 180px;
-                            padding-bottom: 40px;
-                            display: flex;
-                            flex-flow: column;
-                            justify-content: center;
-                            align-items: center;
-                            border-right: 1px solid rgba(204,204,204,.2);
-                            .order-item-left{
-                                width:190px;
-                                padding-left:10px;
-                            }
-                            .item-left{
-                                width:220px;
-                            }
-                            .item-center{
-                                width:200px;
-                                padding-left:20px;
-                            }
-                            .item-right{
-                                width:200px;
-                                padding-left: 30px;
-                                .title{
-                                    width:30px;
-                                }
-                            }
-                            .type-promote{
-                                width:240px;
-                                padding-left:10px;
-                                span:first-child{
-                                    width:80px;
-                                }
-                                span:last-child{
-                                    width:150px;
-                                }
-                            }
-                            p{
-                                line-height: 1.8;
-                                span:first-child{
-                                    text-align: right;
-                                }
-                                span:last-child{
-                                    text-align: left;
-                                    padding-left: 4px;
-                                }
-                            }
-                            span{
-                                display: inline-block;
-                                width: 50%;
-                                color: #666;
-                                font-size: 14px;
-                            }
-                            .act-color-333{
-                                color: #333;
-                                vertical-align: top;
-                            }
-                            .act-color-883bdf{
-                                color: #883bdf;
-                            }
-                            .act-color-ff4456{
-                                color: #ff4456;
-                            }
-                            .w-group-l{
-                                width: 65%;
-                            }
-                            .w-group-r{
-                                width: 30%;
-                            }
-                            .first-title{
-                                width:40%;
-                            }
-                            .first-value{
-                                width:50%;
-                            }
-                        }
-                        .overview-item{
-                            height: 100%;
-                            padding-bottom: 20px;
-                            display: flex;
-                            flex:1;
-                            flex-flow: column;
-                            justify-content: center;
-                            align-items: center;
-                            color: #101010;
-                            .title{
-                                text-align: right;
-                                display: inline-block;
-                                color:#666;
-                                line-height: 1.8;
-                            }
-                            .item-gender{
-                                width:100%;
-                                line-height:1.8;
-                                .title{
-                                    width: 50px;
-                                }
-                            }
-                            .item-age{
-                                width: 130px;
-                                line-height:1.8;
-                                .title{
-                                    width: 80px;
-                                }
-                            }
-                        }
-                    }
-                    .detail-btn{
-                        padding-bottom: 20px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-flow: column;
-
-                        .bottom-btn{
-                            width: 95px;
-                            margin: 0px 0px 20px 20px;
-                            color: #883bdf;
-                            border: 1px solid #883bdf;
-                            background-color: #fff;
-                        }
-                    }
-                }
-                .msg-bottom{
-                    min-height: 40px;
-                    padding: 10px 0;
-                    margin: 0 20px;
-                    text-align: right;
-                    border-top: 1px solid #ddd;
+                .item-footer{
+                    margin-top: 22px;
+                    position: relative;
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    .bottom-left{
-                        display: inline-block;
-                        text-align: left;
+                    .avatar{
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
                     }
-                    .bottom-right{
-                        display: inline-block;
-                        text-align: right;
-                    }
-                    .bottom-time-tip{
-                        color: #101010;
-                        font-size: 12px;
+                    .name{
+                        max-width: 150px;
                         margin-left: 10px;
-                        .ivu-icon{
-                            margin-right: 2px;
-                            font-size:16px;
-                            vertical-align: sub;
+                        font-size: 14px;
+                        color: #999999;
+                    }
+                    .like{
+                        position: absolute;
+                        right: 0;
+                        display: flex;
+                        align-items: center;
+                        &.active{
+                          i{
+                          }
+                          .like-total{
+                            color:#FF4479;
+                          }
+                        } 
+                        i{
+                            width: 28px;
+                            display: block;
+                            
+                        }
+                        .like-total{
+                            margin-left: 10px;
+                            font-size: 12px;
+                            color: #999999;
                         }
                     }
-                    .orderid-wrap{
-                        .orderid-line{
-                            text-align: left;
-                            line-height: 2;
-                        }
-                        .orderid-title{
-                            display: inline-block;
-                            margin: 0 10px;
-                            color: #999;
-                        }
-                        .orderid-value{
-                            display: inline-block;
-                            width: 700px;
-                            vertical-align: top;
-                            word-break: break-all;
-                        }
-                        .question-img{
-                            width: 375px;
-                        }
-                    }
-                    .tkl-wrap{
-                        width: 100%;
-                        text-align: left;
-                        .tkl-title{
-                            display: inline-block;
-                            width: 126px;
-                            margin: 0 10px;
-                            color: #999;
-                            vertical-align: middle;
-                        }
-                        .tkl-value{
-                            display: inline-block;
-                            width: 71%;
-                            vertical-align: middle;
-                            color:#333;
-                        }
-                    }
+            
                 }
             }
-            .res-noresult{
-                height: 500px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                span{
-                    font-size:30px;
-                    color: #ccc;
-                }
-            }
-            .res-pagenation{
-                text-align: center;
-                padding: 60px 0 30px;
-            }
         }
+  }
+  .githubdata{
+    float: right;
+    margin-right: 90px;
+    img{
+      width: 14px;
+      // height: 16px;
     }
-    .card{
-        position:relative;
-        font-size: 14px;
-        text-align: center;
-        margin-bottom: 10px;
-        border-radius: 12px;
-        border:1px solid #BBB;
-        img{
-            cursor: pointer;
-            -moz-border-radius: 12px;
-            -webkit-border-radius: 12px;
-            border-radius:12px 12px 0 0;
-        }
-        .label{
-            width: 82px;
-            height: 28px;
-            position: absolute;
-            right: 0;
-            line-height: 28px;
-            color: #FFF;
-            background: #883BDF;
-            z-index: 1;
-        }
-        .content{
-            text-align: left;
-            font-size: 12px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp:2;
-        }
-        .clear{
-            clear:both;
-        }
-        .but{
-            line-height: 40px;
-            border-top: 1px solid #BBB;
-            clear:both;
-            height: 40px;
-        }
-        .but:hover{
-            color: #FFF;
-            background: #883BDF;
-            border-radius: 0 0 12px 12px;
-        }
-        .fix{
-            zoom:1;
-            .left{
-                width: 50%;
-                height: 40px;
-                line-height: 40px;
-                float: left;
-                text-align: center;
-                border-right: 1px solid #BBB;
-                border-top: 1px solid #BBB;
-            }
-            .left:hover{
-                color: #FFF;
-                background: #883BDF;
-                border-radius: 0 0 0 12px;
-            }
-            .right{
-                width: 50%;
-                height: 40px;
-                line-height: 40px;
-                float: right;
-                text-align: center;
-                border-top: 1px solid #BBB;
-                border-left: 1px solid #BBB;
-            }
-            .right:hover{
-                color: #FFF;
-                background: #883BDF;
-                border-radius: 0 0 12px 0 ;
-            }
-        }
-        .fix:after{
-            display:block;
-            content:'clear';
-            clear:both;
-            line-height:0;
-            visibility:hidden;
-        }
-    }
-
-    .vue-waterfall .vue-waterfall-column{
-        border: 1px solid #666;
-    }
-</style>
-<style lang="less">
-    .vue-waterfall.is-transition img {
-        width: 100%;
-    }
+  }
 </style>
 <template>
-    <div class="merchant">
-       
-            <div v-for="(eva,index) in evaList.evaTabs" >
-                <waterfall :col="col" :data="eva.imgsArr"  :width="itemWidth" :gutterWidth="gutterWidth" @loadmore="getData(eva,index)" >
-                    <template >
-                        <div class="cell-item card" v-for="(item,index) in eva.imgsArr" >
-                            <div class="label">测试测试</div>
-                            <a :href="'/evaluateDetails?id' + item.id" target="_blank">
-                                <img  v-if="item.img" :src="item.img" alt="加载错误" @click="goDetails(item)"/>
-                            </a>
-                            <span class="content" style="-webkit-box-orient: vertical;">{{item.test}}</span>
-                            <div>
-                                <div style="width: 50%; float: left; text-align: center">
-                                    测试测试
-                                </div>
-                                <div style="width: 50%;float: right;text-align: center">
-                                    测试测试
-                                </div>
-                                <div style="width: 50%; float: left; text-align: center">
-                                    {{item.name}}
-                                </div>
-                                <div style="width: 50%;float: right;text-align: center">
-                                    {{item.id}}
-                                </div>
-                            </div>
-                            <div class="but" v-if="item.state === 1 ">
-                                测试测试
-                            </div>
-                            <div class="fix" v-else>
-                                <div class="left">
-                                    测试测试
-                                </div>
-                                <div class="right">
-                                    测试测试
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                </waterfall>
-            </div>
-                                               
-    </div>
+  <div class="container-water-fall">
+    <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
+    <div class="btn-group"><button style="width:250px;"  class="blue-light"><router-link to="HelloWorld">Common Demo (普通Demo)</router-link></button> <button @click="switchCol(5)">5column(列)</button> <button @click="switchCol(8)">8column(列)</button> <button @click="switchCol(10)">10column(列)</button> <button @click="reset">reset(重置)</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md" target="_blank" >GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b>
+    
+    <div class="githubdata" @click="toGitHub"><button  class="blue-light"><img src="../assets/star.png"  /> Star <span>{{gitHubData.stargazers_count}}</span></button><button  class="blue-light"><img src="../assets/fork.png"  /> Fork <span>{{gitHubData.forks_count}}</span></button></div>  </div>
+    <waterfall :col='col'    :data="data"  @loadmore="loadmore"   >
+      <template >
+        <div class="cell-item" v-for="(item,index) in data" :key="index"  >
+          <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+          <div class="item-body">
+              <div class="item-desc">{{item.title}}</div>
+              <div class="item-footer">
+                  <div v-if="item.avatar" class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
+                  <div class="name">{{item.user}}</div>
+                  <div class="like" :class="item.liked?'active':''" >
+                      <i ></i>
+                      <div class="like-total">{{item.like}}</div>  
+                  </div>
+              </div>
+          </div>
+        </div>
+      </template>
+    </waterfall>
+    <loading :show="loading" />
+  </div>
 </template>
+
 <script>
-    // import myHeader from '../common/header.vue';
-    import test1 from '../assets/star.png';
-    import test2 from '../assets/fork.png';
-    // import vueWaterfallEasy from 'vue-waterfall-easy'
-    export default {
-        name:'evaluateList',
-        components: {
-            // myHeader,
-            // vueWaterfallEasy,
+/*
+  注意:
+  1.itemWidth需要与gutterWidth一起使用才会生效，否则会进行自适应宽度
+  2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
+*/
+// import Vue from 'vue'
+import loading from './loading'
+// import  routerLink  from 'vue-router'
+  export default{
+    props:{
+      title:String
+    },
+    components:{
+      loading
+    },
+    data(){
+      return{
+        data:[],
+        col:8,
+        loading:false,
+        gitHubData:{},
+        originData:[{
+          img:'https://image.watsons.com.cn//upload/8a316140.png?w=377&h=451&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'最近浴室新宠，日系神仙好物了解一下～',
+          user:'www',
+          like:'953'
         },
-        data () {
-            return{
-                col:4,
-                value:0,
-                evaList:{
-                    evaTabs:[
-                        {
-                            evaTab:'全部',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'全部',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称3',
-                                    id:'456133',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称4',
-                                    id:'商品id4',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    id:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    id:'商品id6',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    id:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    id:'商品id8',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    id:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    id:'商品id6',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    id:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    id:'商品id8',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    id:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    id:'商品id6',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    id:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    id:'商品id8',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    id:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    id:'商品id6',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    id:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    id:'商品id8',
-                                    state:1,
-                                }
-                            ], //  列表数组
-                        },
-                        {
-                            evaTab:'待邀请',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },
-                                {
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },
-                                {
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },
+        {
+          img:'https://image.watsons.com.cn//upload/083767f0.JPG?w=828&h=620&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'150元搞定全套护肤品，这些护肤好物必须交出来！',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'952'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/02a4f38d.jpg?w=1067&h=1067&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/589585c1.jpeg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/d862d932.jpg?w=1080&h=1440&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/eb4fb58f.jpg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/99253111.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/415f984f.jpeg?w=828&h=1104&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/5c3e51e4.jpg?w=720&h=960&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/92761043.JPG?w=1000&h=999&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'最近浴室新宠，日系神仙好物了解一下～',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/da61c0f5.jpg?w=959&h=958&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/fcd68df4.jpg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/bef41e67.JPG?w=712&h=534&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/25ab20fe.JPG?w=1000&h=1200&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://ci.xiaohongshu.com/eb971d00-05ab-5b2a-ba03-52d8f544c42b?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/4a3c1788.jpg?w=823&h=1000&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/0a89e6b7.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/99253111.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/13afe9a7.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/98c7c4c3.jpg?w=1210&h=1210&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/54c5d7b4.jpg?w=828&h=991&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/71d19462.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/642cb83c.jpeg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/31e42833.jpg?w=750&h=750&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/92761043.JPG?w=1000&h=999&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/60cc9b8e.jpg?w=991&h=744&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/b709ed72.jpg?w=552&h=414&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/137b50b0.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'952'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/31e42833.jpg?w=750&h=750&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },]
+      }
+    },
+    computed:{
+      itemWidth(){ 
+        return (133*0.5*(document.documentElement.clientWidth/375))
+      },
+      gutterWidth(){
+        return (10*0.5*(document.documentElement.clientWidth/375))
+      }
+    },
+    methods:{
+      toGitHub(){
+        window.open("https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md",'_blank')
+      },
+      reset(){
+        this.data = []
+      },
 
-                            ], //  列表数组
-                        },
-                        {
-                            evaTab:'待确认',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    id:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'待确认',
-                                    name:'店铺名称2',
-                                    id:'156762',
-                                    state:2,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称3',
-                                    id:'456133',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称4',
-                                    id:'商品id4',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    id:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    id:'商品id6',
-                                    state:1,
-                                },{
-                                    img:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    id:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    img:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    id:'商品id8',
-                                    state:1,
-                                }
-                            ], //  列表数组
-                        },
-                    ],
-                    evaTab:[
-                        {
-                            evaTab:'全部',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'全部',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称3',
-                                    href:'456133',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称4',
-                                    href:'商品id4',
-                                    state:1,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    href:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    href:'商品id6',
-                                    state:1,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    href:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    href:'商品id8',
-                                    state:1,
-                                }
-                            ], //  列表数组
-                        },
-                        {
-                            evaTab:'待邀请',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },
-                                {
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },
-                                {
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待邀请',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },
+      switchCol(col){
+        this.col = col
+        // console.log(this.col)
+      },
+      getGitHub(){
+        fetch('https://api.github.com/repos/AwesomeDevin/vue-waterfall2').then((data)=>{
+          data.json().then((res)=>{
+            // console.log(res)
+            this.gitHubData = res
+          })
+        })
+      },
 
-                            ], //  列表数组
-                        },
-                        {
-                            evaTab:'待确认',
-                            value:0,
-                            imgsArr:[
-                                {
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称1',
-                                    href:'1234561',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'待确认',
-                                    name:'店铺名称2',
-                                    href:'156762',
-                                    state:2,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称3',
-                                    href:'456133',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称4',
-                                    href:'商品id4',
-                                    state:1,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称5',
-                                    href:'商品id5',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称6',
-                                    href:'商品id6',
-                                    state:1,
-                                },{
-                                    src:test1,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称7',
-                                    href:'商品id7',
-                                    state:1,
-                                },
-                                {
-                                    src:test2,
-                                    test:'昂昂就开始你大概卡莎被更恐怖萨克',
-                                    name:'店铺名称8',
-                                    href:'商品id8',
-                                    state:1,
-                                }
-                            ], //  列表数组
-                        },
-                    ],
-                },
+      loadmore(num){
+        // Vue.set(this.data[index],'liked',true)
+        // const obj = {c:123,d:456}
+        // const {c:a,d:b} = obj
+        console.log('loadmore')
+        this.loading = true
+        setTimeout(()=>{
+          this.data = this.data.concat(this.originData,this.originData)
+          this.loading = false
+          // console.log(this.data.length)
+        },1000)
+        // this.$waterfall.resize()
+      },
 
-            }
+    },
+    mounted(){
+      var self = this;
+      this.data=[
+        
+        {
+          img:'https://image.watsons.com.cn//upload/8a316140.png?w=377&h=451&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'最近浴室新宠，日系神仙好物了解一下～',
+          user:'www',
+          like:'953'
         },
-        computed:{
-            itemWidth(){
-                console.log('(138*0.5*(document.documentElement.clientWidth/375))',(138*0.5*(1180/375)));
-                // (138*0.5*(document.documentElement.clientWidth/375))
-                return 274
-                // return (138*0.5*(1180/375)) // #rem布局 计算宽度
-            },
-            gutterWidth(){
-                // console.log('document.documentElement.clientWidth---->',document.documentElement.clientWidth);
-                console.log('(9*0.5*(document.documentElement.clientWidth/375))',(9*0.5*(document.documentElement.clientWidth/375)));
-                return (9*0.5*(1180/375))	//#rem布局 计算x轴方向margin(y轴方向的margin自定义在css中即可)
-            }
+        {
+          img:'https://image.watsons.com.cn//upload/083767f0.JPG?w=828&h=620&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'150元搞定全套护肤品，这些护肤好物必须交出来！',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'952'
         },
-        methods:{
-            getData(eva,index){
-                console.log('getData')
-                let arr = eva.imgsArr;
-                if(arr.length<100){
-                    console.log('111111111111',this.evaList.evaTabs[index].imgsArr,arr);
-                    this.evaList.evaTabs[index].imgsArr = this.evaList.evaTabs[index].imgsArr.concat(arr);
-                }
-                console.log(this.evaList.evaTabs[index].imgsArr.length,index)
-                // let test ={
-                //         img:test1,
-                //         test:'测试测试',
-                //         name:'测试测试',
-                //         id:'测试测试',
-                //         state:1,
-                //     };
-                // for (let i = 0; i<4;i++){
-                //     this.evaList.evaTabs[index].imgsArr.push(test)
-                // }
-            },
-            goDetails(val){
-                this.$router.push({
-                    name: 'evaluateDetails',
-                    query: {
-                        id: val.id
-                    }
-                })
-            },
+        {
+          img:'https://image.watsons.com.cn//upload/02a4f38d.jpg?w=1067&h=1067&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
         },
-        // filters:{
-        //     /**
-        //      * 解析活动列表tab
-        //      * @param eva
-        //      */
-        //     parseEvaluateTabs(eva){
-        //         // let num=act.pageTotal>99?'99+':act.pageTotal;
-        //         // return act.evaTab+(typeof act.titleNum !== 'undefined' ?'('+num+')':'');
-        //         return eva.evaTab
-        //     },
-        // }
+        {
+          img:'https://image.watsons.com.cn//upload/589585c1.jpeg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/d862d932.jpg?w=1080&h=1440&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/eb4fb58f.jpg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/99253111.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/415f984f.jpeg?w=828&h=1104&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/5c3e51e4.jpg?w=720&h=960&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/92761043.JPG?w=1000&h=999&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'最近浴室新宠，日系神仙好物了解一下～',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/da61c0f5.jpg?w=959&h=958&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/fcd68df4.jpg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/bef41e67.JPG?w=712&h=534&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/25ab20fe.JPG?w=1000&h=1200&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://ci.xiaohongshu.com/eb971d00-05ab-5b2a-ba03-52d8f544c42b?imageView2/2/w/400/q/50/format/jpg',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/4a3c1788.jpg?w=823&h=1000&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'夏天用这款姨妈巾，让你体验真正的清爽',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/0a89e6b7.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/99253111.jpg?w=1080&h=1920&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/13afe9a7.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/98c7c4c3.jpg?w=1210&h=1210&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/54c5d7b4.jpg?w=828&h=991&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/71d19462.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/642cb83c.jpeg?w=1080&h=1080&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/31e42833.jpg?w=750&h=750&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/92761043.JPG?w=1000&h=999&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/60cc9b8e.jpg?w=991&h=744&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试1',
+          user:'迷人的小妖精迷人的小妖精123',
+          like:'953'
+        },{
+          img:'https://image.watsons.com.cn//upload/b709ed72.jpg?w=552&h=414&x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/137b50b0.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'952'
+        },
+        {
+          img:'https://image.watsons.com.cn//upload/137b50b0.jpg?x-oss-process=image/resize,w_1080',
+          avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+          title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
+          user:'迷人的小妖精迷人的小妖精',
+          like:'953'
+        },
+        
+        
+      ]
+      this.getGitHub()
+      // this.data = []
     }
+  }
 </script>

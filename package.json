@@ -14,7 +14,8 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vue": "^2.2.6",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-waterfall": "^1.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -48,7 +49,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.1.2",
     "vue-template-compiler": "^2.2.6",
-    "vue-waterfall2": "^1.8.18",
+    "vue-waterfall2": "^1.8.20",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
