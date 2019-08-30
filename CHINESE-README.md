@@ -16,6 +16,7 @@
 ## Demo
 [Common Demo](http://47.105.188.15:3001/)  
 [Lazyload Demo](http://47.105.188.15:3001/#/list)  
+[Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
 
