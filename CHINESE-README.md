@@ -129,7 +129,7 @@ loadDistance | 300 | Number | 触发上拉加载更多的距离
 ## <waterfall> Events
 Name | Data |   Desc
 -------- | --- | -------- 
-loadmore | null | 滚动到底部触发[loadmore事件在父容器发生滚动时会失效]
+loadmore | null | 滚动到底部触发
 scroll | obj | 获取滚动时的event对象
   
 ## $waterfall API
