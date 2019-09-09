@@ -18,5 +18,25 @@
 	      if(t.setAttribute('style','width:1vw'), !t.style.width) r(),window.addEventListener('resize', r)
 	  })(document.documentElement, document.createElement('div'), 750);
     </script>
+
+    <script>
+      setTimeout(_ => console.log(4))
+
+new Promise(resolve => {
+  resolve()
+  console.log(1)
+}).then(_ => {
+  console.log(3)
+  Promise.resolve().then(_ => {
+    console.log('before timeout')
+  }).then(_ => {
+    Promise.resolve().then(_ => {
+      console.log('also before timeout')
+    })
+  })
+})
+
+console.log(2)
+    </script>
   </body>
 </html>

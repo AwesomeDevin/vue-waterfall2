@@ -116,13 +116,13 @@
 <template>
   <div class="container-water-fall">
     <!-- <h1 style="position: fixed;left: 0;top: 100px;font-style: 15px;color:blue;z-index: 1000;">{{loadstatus}}</h1> -->
-    <div class="btn-group"><button style="width:250px;"  class="blue-light"><router-link to="HelloWorld">Common Demo (普通Demo)</router-link></button> <button @click="switchCol(5)">5column(列)</button> <button @click="switchCol(8)">8column(列)</button> <button @click="switchCol(10)">10column(列)</button> <button @click="reset">reset(重置)</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md" target="_blank" >GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b>
+    <div class="btn-group"><button style="width:250px;"  class="blue-light"><router-link to="/">To Common Demo (前往普通Demo)</router-link></button> <button @click="switchCol(5)">5column(列)</button> <button @click="switchCol(8)">8column(列)</button> <button @click="switchCol(10)">10column(列)</button> <button @click="reset">reset(重置)</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md" target="_blank" >GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b>
     
     <div class="githubdata" @click="toGitHub"><button  class="blue-light"><img src="../assets/star.png"  /> Star <span>{{gitHubData.stargazers_count}}</span></button><button  class="blue-light"><img src="../assets/fork.png"  /> Fork <span>{{gitHubData.forks_count}}</span></button></div>  </div>
     <waterfall :col='col'    :data="data"  @loadmore="loadmore"   >
       <template >
         <div class="cell-item" v-for="(item,index) in data" :key="index"  >
-          <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+          <img v-if="item.img" :lazyDistance="10" :lazy-src="item.img" alt="加载错误"  />
           <div class="item-body">
               <div class="item-desc">{{item.title}}</div>
               <div class="item-footer">
@@ -160,7 +160,7 @@ import loading from './loading'
     data(){
       return{
         data:[],
-        col:8,
+        col:5,
         loading:false,
         gitHubData:{},
         originData:[{
