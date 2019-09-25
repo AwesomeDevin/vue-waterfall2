@@ -75,7 +75,7 @@ Notes:
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue(Scoped is not used for this component style)
+##### app.vue
 ```javascript
 <template>
   <div class="container-water-fall">
