@@ -72,7 +72,7 @@ this.$waterfall.forceUpdate()   //forceUpdate
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue(此组件 style不使用 scoped)
+##### app.vue
 ```javascript
 <template>
   <div class="container-water-fall">
