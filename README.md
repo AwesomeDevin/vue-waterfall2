@@ -59,7 +59,7 @@ For images that need to be loaded lazily, the 'lazy-src' attribute needs to be u
 Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | - | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Scroll to trigger and get the infomation of scroll
+scroll | info | Scroll to trigger and get the infomation of scroll
 finish | - | finish render
   
 ## $waterfall API
