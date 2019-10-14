@@ -1,0 +1,66 @@
+{
+  "_args": [
+    [
+      "vue-waterfall2@1.9.1",
+      "D:\\projects\\act\\proj\\2018\\1112_findv2"
+    ]
+  ],
+  "_from": "vue-waterfall2@1.9.1",
+  "_id": "vue-waterfall2@1.9.1",
+  "_inBundle": false,
+  "_integrity": "sha512-fMJq9LJwb6/0AciO7IqQNZb+fEkzpkyzOhugT+POndGAEGWpallLw6yDc0ZfKJ/AmStD+gPyvSLv8UY4KBnfEg==",
+  "_location": "/vue-waterfall2",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "vue-waterfall2@^1.9.1",
+    "name": "vue-waterfall2",
+    "escapedName": "vue-waterfall2",
+    "rawSpec": "^1.9.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.9.1"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/vue-waterfall2/download/vue-waterfall2-1.9.1.tgz",
+  "_shasum": "0793f2abead08383d15e072880017858cbdf3223",
+  "_spec": "vue-waterfall2@^1.9.1",
+  "_where": "E:\\projects\\work\\vue-waterfall",
+  "author": {
+    "name": "daivonup@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Rise-Devin/vue-waterfall2/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "deprecated": false,
+  "description": "vue plugin for waterfall",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "vue": "^2.5.2"
+  },
+  "homepage": "https://github.com/Rise-Devin/vue-waterfall2#readme",
+  "keywords": [
+    "waterfall",
+    "vue"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vue-waterfall2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rise-Devin/vue-waterfall2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.9.1",
+  "__npminstall_done": "Mon Oct 14 2019 20:59:33 GMT+0800 (GMT+08:00)"
+}
