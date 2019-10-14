@@ -31,6 +31,40 @@ npm run dev
  npm i vue-waterfall2@latest --save
 ```
 
+## <waterfall> 属性
+Name | Default | Type | Desc
+-------- | -------- | -------- | --------
+height | 100% | String | 容器高度
+col | 2  | Number |  列数
+width | - | Number | 宽度
+gutterWidth | 10 | Number | 间隔的宽度
+data | [] | Array | 数据
+isTransition | true | Boolean | 加载图片是否使用过渡动画
+lazyDistance | 300 | Number | 触发图片懒加载的距离 
+loadDistance | 300 | Number | 触发上拉加载更多的距离
+  
+## 懒加载
+对于需要使用懒加载的图片，需要使用`lazy-src`属性
+```html
+<waterfall :col='col'   :data="data"     >
+  <template>
+     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
+  </template>
+</waterfall>
+```
+
+## <waterfall> Events
+Name | Data |   Desc
+-------- | --- | -------- 
+loadmore | - | 滚动到底部触发
+scroll | obj | 获取滚动时的event对象
+finish | - | 完成元素渲染
+  
+## $waterfall API
+```
+this.$waterfall.forceUpdate()   //forceUpdate
+```
+
 ## Usage
 注意:
  1.  `gutterWidth`需要与`width`一起使用才会生效，否则会进行自适应宽度(使用rem布局时，需先计算出自适应后的宽度再传值)</font>
@@ -40,7 +74,7 @@ npm run dev
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue(此组件 style不使用 scoped)
+##### app.vue
 ```javascript
 <template>
   <div class="container-water-fall">
@@ -104,35 +138,4 @@ import Vue from 'vue'
 	      }
 	    }
 	}
-```
-## <waterfall> 属性
-Name | Default | Type | Desc
--------- | -------- | -------- | --------
-col | 2  | Number |  列数
-width | null | Number | 宽度
-gutterWidth | 10 | Number | 间隔的宽度
-data | [] | Array | 数据
-isTransition | true | Boolean | 加载图片是否使用过渡动画
-lazyDistance | 300 | Number | 触发图片懒加载的距离 
-loadDistance | 300 | Number | 触发上拉加载更多的距离
-  
-## 懒加载
-对于需要使用懒加载的图片，需要使用`lazy-src`属性
-```html
-<waterfall :col='col'   :data="data"     >
-  <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
-  </template>
-</waterfall>
-```
-
-## <waterfall> Events
-Name | Data |   Desc
--------- | --- | -------- 
-loadmore | null | 滚动到底部触发
-scroll | obj | 获取滚动时的event对象
-  
-## $waterfall API
-```
-this.$waterfall.forceUpdate()   //forceUpdate
 ```

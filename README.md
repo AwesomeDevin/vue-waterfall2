@@ -34,6 +34,39 @@ npm run dev
  npm i vue-waterfall2@latest --save
 ```
 
+## <waterfall> Props
+Name | Default | Type | Desc
+-------- | -------- | -------- | --------
+col | 2  | Number |  the number of column
+width | null | Number | the value of width 
+gutterWidth | 10 | Number | the value of margin
+data | [] | Array | data
+isTransition | true | Boolean | load image with transition
+lazyDistance | 300 | Number | the distance of image lazy loading
+loadDistance | 300 | Number | the distance of loadmore
+  
+## Lazy Load
+For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
+```html
+<waterfall :col='col'   :data="data"     >
+  <template>
+     <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
+  </template>
+</waterfall>
+```
+
+## <waterfall> Events
+Name | Data |   Desc
+-------- | --- | -------- 
+loadmore | - | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
+scroll | obj | Scroll to trigger and get the infomation of scroll
+finish | - | finish render
+  
+## $waterfall API
+```
+this.$waterfall.forceUpdate()   //forceUpdate
+```
+
 ## Usage
 Notes:
   1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
@@ -43,7 +76,7 @@ Notes:
 import waterfall from 'vue-waterfall2'
 Vue.use(waterfall)
 ```
-##### app.vue(Scoped is not used for this component style)
+##### app.vue
 ```javascript
 <template>
   <div class="container-water-fall">
@@ -106,35 +139,4 @@ import Vue from 'vue'
 	      }
 	    }
 	}
-```
-## <waterfall> Props
-Name | Default | Type | Desc
--------- | -------- | -------- | --------
-col | 2  | Number |  the number of column
-width | null | Number | the value of width 
-gutterWidth | 10 | Number | the value of margin
-data | [] | Array | data
-isTransition | true | Boolean | load image with transition
-lazyDistance | 300 | Number | the distance of image lazy loading
-loadDistance | 300 | Number | the distance of loadmore
-  
-## Lazy Load
-For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
-```html
-<waterfall :col='col'   :data="data"     >
-  <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
-  </template>
-</waterfall>
-```
-
-## <waterfall> Events
-Name | Data |   Desc
--------- | --- | -------- 
-loadmore | null | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | obj | Scroll to trigger and get the infomation of scroll
-  
-## $waterfall API
-```
-this.$waterfall.forceUpdate()   //forceUpdate
 ```
