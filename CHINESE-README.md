@@ -57,7 +57,7 @@ loadDistance | 300 | Number | 触发上拉加载更多的距离
 Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | - | 滚动到底部触发
-scroll | obj | 获取滚动时的event对象
+scroll | info | 获取滚动时的event对象
 finish | - | 完成元素渲染
   
 ## $waterfall API
