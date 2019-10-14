@@ -34,8 +34,9 @@ npm run dev
 ## <waterfall> 属性
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
+height | 100% | String | 容器高度
 col | 2  | Number |  列数
-width | null | Number | 宽度
+width | - | Number | 宽度
 gutterWidth | 10 | Number | 间隔的宽度
 data | [] | Array | 数据
 isTransition | true | Boolean | 加载图片是否使用过渡动画
