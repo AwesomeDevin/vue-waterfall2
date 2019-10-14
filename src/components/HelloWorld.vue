@@ -37,7 +37,7 @@
     
     .cell-item{
             width: 100%;
-            // margin-bottom: 18px;
+            margin-bottom: 10px;
             background: #ffffff;
             border: 2px solid #F0F0F0;
             border-radius: 12px 12px 12px 12px;
@@ -119,7 +119,7 @@
     <div class="btn-group"><button style="width:250px;"  class="blue-light"><router-link to="/lazy">To Lazy Demo (前往懒加载Demo)</router-link></button> <button @click="loadmore">LoadMore</button><button @click="switchCol(5)">5column(列)</button> <button @click="switchCol(8)">8column(列)</button> <button @click="switchCol(10)">10column(列)</button> <button @click="reset">reset(重置)</button> <a style="color:red;" href="https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md" target="_blank" >GITHUB</a> <b style="color:blue">滚动至底部可触发loadmore</b>
     
     <div class="githubdata" @click="toGitHub"><button  class="blue-light"><img src="../assets/star.png"  /> Star <span>{{gitHubData.stargazers_count}}</span></button><button  class="blue-light"><img src="../assets/fork.png"  /> Fork <span>{{gitHubData.forks_count}}</span></button></div>  </div>
-    <waterfall :col='col'    :data="data"  @loadmore="loadmore" @scroll="scroll"   >
+    <waterfall :col='col'   :data="data"  @loadmore="loadmore" @scroll="scroll" @finish="finish"  >
       <template >
         <div class="cell-item" v-for="(item,index) in data" :key="index"  >
           <img v-if="item.img" :src="item.img" alt="加载错误"  />
@@ -160,39 +160,39 @@ import loading from './loading'
     data(){
       return{
         data:[],
-        col:2,
+        col:5,
         loading:false,
         gitHubData:{},
         originData:[{
-          img:'https://image.watsons.com.cn//upload/8a316140.png?w=377&h=451&x-oss-process=image/resize,w_1080',
+          img:'https://img13.360buyimg.com/mobilecms/s140x140_jfs/t1/82337/35/12286/110292/5d9c2403Ea23a00ce/c3722cdd731bf964.jpg.webp',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'最近浴室新宠，日系神仙好物了解一下～',
           user:'www',
           like:'953'
         },
         {
-          img:'https://image.watsons.com.cn//upload/083767f0.JPG?w=828&h=620&x-oss-process=image/resize,w_1080',
+          img:'http://img1.imgtn.bdimg.com/it/u=3153915673,263987064&fm=26&gp=0.jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'150元搞定全套护肤品，这些护肤好物必须交出来！',
           user:'迷人的小妖精迷人的小妖精',
           like:'952'
         },
         {
-          img:'https://image.watsons.com.cn//upload/02a4f38d.jpg?w=1067&h=1067&x-oss-process=image/resize,w_1080',
+          img:'https://img14.360buyimg.com/pop/s590x470_jfs/t1/79097/37/11077/39353/5d8ad63dEf4db3726/a078845a0cbf09c1.jpg.webp',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
           like:'953'
         },
         {
-          img:'https://image.watsons.com.cn//upload/589585c1.jpeg?x-oss-process=image/resize,w_1080',
+          img:'http://img3.imgtn.bdimg.com/it/u=587588302,561685727&fm=26&gp=0.jpg',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
           like:'953'
         },
         {
-          img:'https://image.watsons.com.cn//upload/d862d932.jpg?w=1080&h=1440&x-oss-process=image/resize,w_1080',
+          img:'https://img10.360buyimg.com/img/jfs/t1/56840/19/12953/216991/5d9bfc90Ea8897588/8f0aa267554fb972.png.webp',
           avatar:'https://img.xiaohongshu.com/avatar/5b7d198a7e6e15000155f7c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
           title:'贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试贵妇级好用的水乳有哪些呢？千万不要去乱尝试',
           user:'迷人的小妖精迷人的小妖精',
@@ -372,6 +372,9 @@ import loading from './loading'
       }
     },
     methods:{
+      finish(){
+        console.error('finish')
+      },
       toGitHub(){
         window.open("https://github.com/Rise-Devin/vue-waterfall2/blob/master/README.md",'_blank')
       },
@@ -412,7 +415,7 @@ import loading from './loading'
     },
     mounted(){
       var self = this;
-      this.data=this.originData.concat(this.originData,this.originData)
+      this.data=this.originData
       this.getGitHub()
       // this.data = []
     }
