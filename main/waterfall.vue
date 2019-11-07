@@ -8,6 +8,9 @@
 		position: absolute;
 		top: 100%;
 		left: 100%;
+		width: 0;
+		height: 0;
+		overflow: hidden;
 	}
 	.vue-waterfall .vue-waterfall-column{
 		float: left;
@@ -107,7 +110,6 @@ import bus from './bus'
 				})
 			},
 			data(newVal,oldVal){
-
 				this.$nextTick(()=>{
 					clearTimeout(this.timer)
 					this.timer = setTimeout(()=>{
@@ -119,13 +121,10 @@ import bus from './bus'
 						{
 							this.loadedIndex = 0
 						}
-						// console.log(newVal.length,oldVal.length,newVal.length,this.loadedIndex)
 						if(newVal.length>oldVal.length || newVal.length>this.loadedIndex)
 						{
-
 							if(newVal.length === oldVal.length)
 							{
-								// console.log(this.loadedIndex)
 								this.resize(this.loadedIndex>0?this.loadedIndex:null)
 								return
 							}
@@ -171,7 +170,6 @@ import bus from './bus'
 				for(var i=0;i<imgs.length;i++)
 				{
 					var lazySrc = imgs[i].getAttribute('lazy-src')
-					// console.log(lazySrc)
 					if(!imgs[i].getAttribute('src')&&lazySrc)
 			 		{
 						 var newImg = new Image()
@@ -212,9 +210,7 @@ import bus from './bus'
 				if(this.columns.length>0)
 				{
 					let min = this.columns[0]
-					// await new Promise(async (resolve,reject)=>{
 						for(var i=1;i<this.columns.length;i++){
-							// console.log('---')
 							if(await self.getHeight(min)>await self.getHeight(self.columns[i])){
 								min = self.columns[i]
 							}
@@ -254,30 +250,22 @@ import bus from './bus'
 					elements = this.$slots.default.splice(index)
 				}
 
-				// console.log('resize',elements.length)
 				for(var j=0;j<elements.length;j++){
-					// (async function(j){
-						// console.log(j)
 						if(elements[j].elm&&self.checkImg(elements[j].elm))
 						{
-							// console.log(elements[j].elm)
 							var imgs = elements[j].elm.getElementsByTagName('img')
 							var newImg = new Image()
 							newImg.src = imgs[0].src
-							// self.lazyLoad(imgs)
-
 							if(newImg.complete)
 							{
-								// self.computedPx(imgs[0],newImg)
 								await self.append(elements[j].elm)	
-					         	self.lazyLoad(imgs)
+					      self.lazyLoad(imgs)
 							}
 							else{
 								await new Promise( (resolve,reject)=>{
 									newImg.onload = async function(){
 										await self.append(elements[j].elm)
 										self.lazyLoad(imgs)
-										//  console.log('loaded')
 										resolve()
 									}
 									newImg.onerror= async function(){
@@ -286,16 +274,13 @@ import bus from './bus'
 										resolve()
 									}
 								})
-								// console.log(j)
 							}
 							
 						}
 						else{
 							await self.append(elements[j].elm)
-							// console.log('append')
 						}
 						self.loadedIndex++
-					// })(i)
 				}
 				this.isresizing = false
 				self.$emit('finish')
@@ -305,9 +290,7 @@ import bus from './bus'
 
 				img.style.width = imgApi.width/this.columnWidth
 			},
-			lazyLoad(imgs){  // 
-				// console.log(123)
-				// console.log('lazy-load')
+			lazyLoad(imgs){  
 				if(!imgs)
 				{
 					if(!this.root)
@@ -325,20 +308,6 @@ import bus from './bus'
 				}
 				for(var index=0;index<imgs.length; index++)
 				{
-					// if(imgs[index].className.match('animation')&&imgs[index].getAttribute('src'))
-					// {
-					// 	continue
-					// }
-					// if(!imgs[index].getAttribute('src')&&imgs[index].getBoundingClientRect().top<this.clientHeight+this.trueLazyDistance)
-					// {
-					// 	imgs[index].src = imgs[index].getAttribute('lazy-src')
-					// 	imgs[index].className = imgs[index].className + ' animation'
-					// 	// imgs[index].removeAttribute('lazy-src')
-					// }
-					// else if(imgs[index].getAttribute('src')&&!imgs[index].className.match('animation')){
-					// 	imgs[index].className = imgs[index].className + ' animation'
-					// }
-
 					if(imgs[index].className.match('animation')&&imgs[index].getAttribute('src'))
 					{
 						continue
@@ -379,47 +348,6 @@ import bus from './bus'
 				this.resize(0,elements)
 			},
 			async getHeight(dom){
-				// var flag = false
-				//  var imgs = dom.querySelectorAll('img')
-				// var imgHeight = 0
-			 // 	for(var i=0;i<imgs.length;i++)
-			 // 	{
-			 // 		var lazySrc = imgs[i].getAttribute('lazy-src')
-			 // 		if(!imgs[i].getAttribute('src')&&lazySrc)
-			 // 		{
-				// 		 flag = true
-				// 		 var newImg = new Image()
-				// 		 newImg.src = lazySrc
-				// 		 if(newImg.complete)
-				// 		 {
-				// 		 	var trueWidth = imgs[i].offsetWidth || this.columnWidth
-				// 			var imgColumnHeight = newImg.height*trueWidth/newImg.width
-				// 			imgHeight += newImg.height
-				// 			if(imgs[i].offsetWidth)
-				// 			{
-				// 				imgs[i].style.height = imgColumnHeight+'px'
-				// 			}
-				// 		 }
-				// 		 else{
-				// 			 await new Promise((resolve,reject)=>{
-				// 				 newImg.onload =  function(){
-				// 				 	var trueWidth = imgs[i].offsetWidth || this.columnWidth
-				// 				 	var imgColumnHeight = newImg.height*trueWidth/newImg.width
-				// 					imgHeight += newImg.height
-				// 					if(imgs[i].offsetWidth)
-				// 					{
-				// 						imgs[i].style.height = imgColumnHeight+'px'
-				// 					}
-				// 					resolve()
-				// 				}
-				// 				newImg.onerror=  function(){
-				// 					imgHeight += 100
-				// 					resolve()
-				// 				}
-				// 			 })
-				// 		 }
-			 // 		}
-			 // 	}
 			 	return dom.offsetHeight
 			},
 			emitLoadMore(){
@@ -432,7 +360,6 @@ import bus from './bus'
 				const scrollHeight = this.root.scrollHeight
 				var diff = scrollHeight - scrollTop - self.clientHeight
 				self.$emit('scroll',{scrollHeight:scrollHeight,scrollTop:scrollTop,clientHeight:self.clientHeight,diff:diff,time:Date.now()})
-				console.log(diff,scrollHeight,scrollTop,self.clientHeight)
 				if(diff <self.max&&self.loadmore&&scrollHeight>self.clientHeight){
 					self.lastScrollTop =  scrollTop
 					self.loadmore = false
