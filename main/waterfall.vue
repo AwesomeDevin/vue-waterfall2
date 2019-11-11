@@ -166,7 +166,11 @@ import bus from './bus'
 			},
 			async setDomImageHeight(dom)
 			{
-				var imgs = dom.querySelectorAll('img')
+				if(!dom.getElementByTagName)
+				{
+					return
+				}
+				var imgs = dom.getElementByTagName('img')
 				for(var i=0;i<imgs.length;i++)
 				{
 					var lazySrc = imgs[i].getAttribute('lazy-src')
@@ -326,10 +330,7 @@ import bus from './bus'
 						imgs[index].className = imgs[index].className + ' animation'
 						imgs[index].removeAttribute('lazy-src')
 					}
-					
-					
 				}
-				
 			},
 			clearColumn(){
 				this.columns.forEach((item)=>{
