@@ -51,10 +51,10 @@ import bus from './bus'
 				default:2
 			},
 			width:Number,
-			// height:{
-			// 	default:'100vh',
-			// 	type:String
-			// },
+			height:{
+				type:String
+				// default:'100vh',    取消height默认值
+			},
 			data:{
 				type:Array,
 				default:[]
@@ -357,8 +357,8 @@ import bus from './bus'
 					return
 				}
 				var self = this
-				const scrollTop =  this.root.scrollTop 
-				const scrollHeight = this.root.scrollHeight
+				const scrollTop =  this.height?this.root.scrollTop : document.documentElement.scrollTop  || document.body.scrollTop
+				const scrollHeight = this.height?this.root.scrollHeight : document.documentElement.offsetHeight
 				var diff = scrollHeight - scrollTop - self.clientHeight
 				self.$emit('scroll',{scrollHeight:scrollHeight,scrollTop:scrollTop,clientHeight:self.clientHeight,diff:diff,time:Date.now()})
 				if(diff <self.max&&self.loadmore&&scrollHeight>self.clientHeight){
@@ -378,22 +378,34 @@ import bus from './bus'
 		destroyed() {
 			this.root && (this.root.onscroll = null)
 			this.root && (this.root.onresize = null)
+			window.onscroll = null
+			window.onresize = null
 		},
 		beforeCreate(){
 			bus.$on('forceUpdate',()=>{this.resize()})
 			bus.$on('mix',()=>{this.mix()})
 		},
 		mounted(){
-			console.log(this.height)
 			this.$nextTick(()=>{
 				this.init()
 				var self = this;
-				this.root.onscroll=function(e){
-					self.emitLoadMore()
+				if(this.height){
+					this.root.onscroll=function(e){
+						self.emitLoadMore()
+					}
+					this.root.addEventListener('touchmove',function(){
+						self.emitLoadMore()
+					})
 				}
-				this.root.addEventListener('touchmove',function(){
-					self.emitLoadMore()
-				})
+				else{
+					window.onscroll=function(e){
+						self.emitLoadMore()
+					}
+					document.addEventListener('touchmove',function(){
+						self.emitLoadMore()
+					})
+				}
+				
 			})
 			
 		}
