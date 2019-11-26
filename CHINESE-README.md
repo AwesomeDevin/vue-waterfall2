@@ -34,7 +34,7 @@ npm run dev
 ## <waterfall> 属性
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
-height | 100% | String | 容器高度
+height | - | String | 容器高度(height为空监听的是window的滚动事件，不为空则监听容器滚动)
 col | 2  | Number |  列数
 width | - | Number | 宽度
 gutterWidth | 10 | Number | 间隔的宽度
