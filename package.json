@@ -16,6 +16,7 @@
     "less-loader": "^5.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.1",
+    "vue-waterfall2": "^1.9.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

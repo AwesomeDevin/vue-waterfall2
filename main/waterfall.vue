@@ -51,10 +51,10 @@ import bus from './bus'
 				default:2
 			},
 			width:Number,
-			height:{
-				default:'100vh',
-				type:String
-			},
+			// height:{
+			// 	default:'100vh',
+			// 	type:String
+			// },
 			data:{
 				type:Array,
 				default:[]
@@ -384,6 +384,7 @@ import bus from './bus'
 			bus.$on('mix',()=>{this.mix()})
 		},
 		mounted(){
+			console.log(this.height)
 			this.$nextTick(()=>{
 				this.init()
 				var self = this;
