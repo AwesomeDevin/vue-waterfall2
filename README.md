@@ -3,9 +3,10 @@
 
 #### [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 # vue-waterfall2 
- 1. auto adaption for width and height
+ 1. Auto adaption for width and height
  2. High degree of customization
- 3. support lazy load(attribute with `lazy-src`)
+ 3. Support lazy load(attribute with `lazy-src`)
+ 4. Apply to PC/mobile
 
 ![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
@@ -37,8 +38,9 @@ npm run dev
 ## <waterfall> Props
 Name | Default | Type | Desc
 -------- | -------- | -------- | --------
+height | - | String | Container height (null for window scrolling event, not null for container scrolling)
 col | 2  | Number |  the number of column
-width | null | Number | the value of width 
+width | - | Number | the value of width 
 gutterWidth | 10 | Number | the value of margin
 data | [] | Array | data
 isTransition | true | Boolean | load image with transition
