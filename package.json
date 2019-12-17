@@ -60,7 +60,7 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "keywords": "vue vue-waterfall vue-waterfall2 waterfall",
+  "keywords": ["vue","vue-waterfall","vue-waterfall2","waterfall"],
   "browserslist": [
     "> 1%",
     "last 2 versions",
