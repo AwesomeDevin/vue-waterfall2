@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 import waterfall from 'vue-waterfall2'
 // import waterfall from '../lib'
 
-Vue.use(waterfall)
+// Vue.use(waterfall)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
