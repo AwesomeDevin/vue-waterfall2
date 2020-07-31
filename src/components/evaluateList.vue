@@ -198,17 +198,12 @@ import json from './data.json'
       },
 
       loadmore(num){
-        // Vue.set(this.data[index],'liked',true)
-        // const obj = {c:123,d:456}
-        // const {c:a,d:b} = obj
         console.log('loadmore')
         this.loading = true
         setTimeout(()=>{
           this.data = this.data.concat(this.originData,this.originData)
           this.loading = false
-          // console.log(this.data.length)
         },1000)
-        // this.$waterfall.resize()
       },
 
     },
@@ -216,7 +211,6 @@ import json from './data.json'
       var self = this;
       this.data = this.originData
       this.getGitHub()
-      // this.data = []
     }
   }
 </script>
