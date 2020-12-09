@@ -152,8 +152,17 @@ import bus from './bus'
 						this.columnWidth = this.width
 					}
 					else{
-						odiv.style.width = 100/parseInt(col) +'%'
-						this.columnWidth = 100/parseInt(col)/100 * document.documentElement.clientWidth
+
+						if(i != 0)
+						{
+							odiv.style.marginLeft = this.gutterWidth + 'px'
+						}
+
+						odiv.style.width = 'calc((100 - ' + this.gutterWidth * (col - 1) + 'px' + ')/' + col + ')'
+						this.columnWidth = odiv.style.width * document.documentElement.clientWidth
+
+						// odiv.style.width = 100/parseInt(col) +'%'
+						// this.columnWidth = 100/parseInt(col)/100 * document.documentElement.clientWidth
 					}
 					if(!this.root)
 					{
