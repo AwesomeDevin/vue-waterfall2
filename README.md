@@ -36,16 +36,16 @@ npm run dev
 ```
 
 ## <waterfall> Props
-Name | Default | Type | Desc
--------- | -------- | -------- | --------
-height | - | String | Container height (null for window scrolling event, not null for container scrolling)
-col | 2  | Number |  the number of column
-width | - | Number | the value of width 
-gutterWidth | 10 | Number | the value of margin
-data | [] | Array | data
-isTransition | true | Boolean | load image with transition
-lazyDistance | 300 | Number | the distance of image lazy loading
-loadDistance | 300 | Number | the distance of loadmore
+Name | Default | Type | Desc | Necessary
+-------- | -------- | -------- | -------- | ------
+height | - | String | Container height (null for window scrolling event, not null for container scrolling) | false
+col | 2  | Number |  the number of column | false
+width | - | Number | the value of width | false
+gutterWidth | 10 | Number | the value of margin | false
+data | [] | Array | data | true
+isTransition | true | Boolean | load image with transition | false
+lazyDistance | 300 | Number | the distance of image lazy loading | false
+loadDistance | 300 | Number | the distance of loadmore | false
   
 ## Lazy Load
 For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
