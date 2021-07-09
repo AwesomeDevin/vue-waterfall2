@@ -32,16 +32,16 @@ npm run dev
 ```
 
 ## <waterfall> 属性
-Name | Default | Type | Desc
--------- | -------- | -------- | --------
-height | - | String | 容器高度(height为空监听的是window的滚动事件，不为空则监听容器滚动)
-col | 2  | Number |  列数
-width | - | Number | 宽度
-gutterWidth | 10 | Number | 间隔的宽度
-data | [] | Array | 数据
-isTransition | true | Boolean | 加载图片是否使用过渡动画
-lazyDistance | 300 | Number | 触发图片懒加载的距离 
-loadDistance | 300 | Number | 触发上拉加载更多的距离
+Name | Default | Type | Desc | Necessary
+-------- | -------- | -------- | -------- | -------
+height | - | String | 容器高度(height为空监听的是window的滚动事件，不为空则监听容器滚动) | false
+col | 2  | Number |  列数 | false
+width | - | Number | 宽度 | false
+gutterWidth | 10 | Number | 间隔的宽度 | false
+data | [] | Array | 数据 | true
+isTransition | true | Boolean | 加载图片是否使用过渡动画 | false
+lazyDistance | 300 | Number | 触发图片懒加载的距离  | false
+loadDistance | 300 | Number | 触发上拉加载更多的距离 | false
   
 ## 懒加载
 对于需要使用懒加载的图片，需要使用`lazy-src`属性
