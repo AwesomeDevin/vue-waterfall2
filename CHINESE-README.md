@@ -15,7 +15,7 @@
 
 ## Demo
 [Common Demo](http://175.24.232.69:8080/#/)  
-[Lazyload Demo](http://175.24.232.69:8080/#/list)  
+[Lazyload Demo](http://175.24.232.69:8080/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
