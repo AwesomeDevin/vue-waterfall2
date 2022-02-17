@@ -16,8 +16,8 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 
 ## Demo
-[Common Demo](http://175.24.232.69:8080/#/)  
-[Lazyload Demo](http://175.24.232.69:8080/#/lazy)  
+[Common Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/)  
+[Lazyload Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
