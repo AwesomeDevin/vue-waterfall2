@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-import waterfall from 'vue-waterfall2'
-// import waterfall from '../lib'
+// import waterfall from 'vue-waterfall2'
+import waterfall from '../lib'
 
 Vue.use(waterfall)
 /* eslint-disable no-new */
