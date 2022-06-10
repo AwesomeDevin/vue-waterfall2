@@ -31,13 +31,73 @@
 			opacity: 1;
 		}
 	}
+
+  .vue-waterfall .footer-loading{
+    text-align: center;
+    padding: 14px 0;
+    float: left;
+    width: 100%;
+  }
+  .vue-waterfall .footer-loading span{
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: #C8C9CC;
+      animation: footer-loading 1.04s ease infinite;
+      -webkit-animation: footer-loading 1.04s ease infinite;
+  }
+  .vue-waterfall .footer-loading span:last-child{
+      margin-right: 0px;
+  }
+  @keyframes footer-loading{
+      0%{
+          opacity: 1;
+          -webkit-transform: scale(1.3);
+      }
+      100%{
+          opacity: 0.2;
+          -webkit-transform: scale(.3);
+      }
+  }
+  .vue-waterfall .footer-loading span:nth-child(1){
+      animation-delay:0.13s;
+      -webkit-animation-delay:0.13s;
+  }
+.vue-waterfall .footer-loading span:nth-child(2){
+      animation-delay:0.26s;
+      -webkit-animation-delay:0.26s;
+  }
+.vue-waterfall .footer-loading span:nth-child(3){
+      animation-delay:0.39s;
+      -webkit-animation-delay:0.39s;
+  }
+.vue-waterfall .footer-loading span:nth-child(4){
+      animation-delay:0.52s;
+      -webkit-animation-delay:0.52s;
+  }
+.vue-waterfall .footer-loading span:nth-child(5){
+      animation-delay:0.65s;
+      -webkit-animation-delay:0.65s;
+  }
+
 </style>
 <template>
 	<div class="vue-waterfall" :style="{height:height}" ref="vueWaterfall" id="vueWaterfall" :class="isTransition&&'is-transition'" >
 		<div class="slot-box">
-			<slot ></slot>	
+			<slot ></slot>
 		</div>
-	</div>
+    <div v-show="isLoading" ref="footerLoading" class="footer-loading">
+      <slot name="footerLoading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </slot>
+	  </div>
+  </div>
 </template>
 
 <script>
@@ -55,6 +115,7 @@ import bus from './bus'
 				type:String
 				// default:'100vh',    取消height默认值
 			},
+      isLoading:true,
 			data:{
 				type:Array,
 				default:[]
@@ -160,6 +221,8 @@ import bus from './bus'
 					this.root&&this.root.appendChild(odiv)
 					this.columns.push(odiv)
 				}
+        var loadingRef = this.$refs.footerLoading
+        this.root&&this.root.appendChild(loadingRef)
 				this.resize()
 			},
 			async __setDomImageHeight(dom)
@@ -188,7 +251,6 @@ import bus from './bus'
 						 else{
 							 await new Promise((resolve,reject)=>{
 								 newImg.onload =  function(){
-									 
 								 	var trueWidth = imgs[i].offsetWidth || this.columnWidth
 								 	var imgColumnHeight = newImg.height*trueWidth/newImg.width
 									if(imgs[i].offsetWidth)
@@ -203,7 +265,7 @@ import bus from './bus'
 							 })
 						 }
 			 		}
-				}			 	
+				}
 			},
 			async append(dom){   //append dom element
 				var self = this
@@ -263,7 +325,7 @@ import bus from './bus'
 						newImg.src = imgs[0].getAttribute('src') || imgs[0].getAttribute('lazy-src')
 						if(newImg.complete)
 						{
-							await self.append(elements[j].elm)	
+							await self.append(elements[j].elm)
 							self.lazyLoad(imgs)
 						}
 						else{
@@ -280,7 +342,7 @@ import bus from './bus'
 								}
 							})
 						}
-						
+
 					}
 					else{
 						await self.append(elements[j].elm)
@@ -289,13 +351,13 @@ import bus from './bus'
 				}
 				this.isresizing = false
 				self.$emit('finish')
-				
+
 			},
 			computedPx(img,imgApi){
 
 				img.style.width = imgApi.width/this.columnWidth
 			},
-			lazyLoad(imgs){  
+			lazyLoad(imgs){
 				if(!imgs)
 				{
 					if(!this.root)
@@ -405,7 +467,7 @@ import bus from './bus'
 
 			},
 		},
-		
+
 		destroyed() {
 			this.root && (this.root.onscroll = null)
 			this.root && (this.root.onresize = null)
@@ -415,9 +477,9 @@ import bus from './bus'
 		beforeCreate(){
 			bus.$on('forceUpdate',()=>{this.resize()})
 			bus.$on('mix',()=>{this.mix()})
-			
+
 		},
-		
+
 		mounted(){
 			this.__listenRouterChange()
 			this.$nextTick(()=>{
