@@ -16,7 +16,7 @@
     "less-loader": "^5.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.1",
-    "vue-waterfall2": "^1.10.1"
+    "vue-waterfall2": "^1.10.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -59,7 +59,12 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "keywords": ["vue","vue-waterfall","vue-waterfall2","waterfall"],
+  "keywords": [
+    "vue",
+    "vue-waterfall",
+    "vue-waterfall2",
+    "waterfall"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
