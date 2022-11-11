@@ -151,7 +151,16 @@
       :height="'100vh'"
     >
       <template>
-        <div class="cell-item" v-for="(item, index) in data" :key="index">
+        <div
+          class="cell-item"
+          v-for="(item, index) in data"
+          :key="index"
+          @click="
+            () => {
+              toDelete(index);
+            }
+          "
+        >
           <img v-if="item.img" :src="item.img" alt="加载错误" />
           <div class="item-body">
             <div class="item-desc">{{ item.title }}</div>
@@ -204,13 +213,18 @@ export default {
   },
   computed: {
     itemWidth() {
-      return 133 * 0.5 * (document.documentElement.clientWidth / 375);
+      return 139 * 0.5 * (document.documentElement.clientWidth / 375);
     },
     gutterWidth() {
       return 10 * 0.5 * (document.documentElement.clientWidth / 375);
     },
   },
   methods: {
+    toDelete(index) {
+      console.log("this.data", this.data.length);
+      this.data.splice(index, 1);
+      console.log("this.data", this.data.length);
+    },
     finish() {
       console.error("finish");
     },

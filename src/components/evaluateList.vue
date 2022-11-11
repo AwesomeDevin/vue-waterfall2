@@ -58,6 +58,7 @@
     border-radius: 12px 12px 12px 12px;
     overflow: hidden;
     box-sizing: border-box;
+    margin-bottom: 20px;
     img {
       width: 100%;
       height: auto;
@@ -160,6 +161,7 @@
         :data="data"
         @loadmore="loadmore"
         :lazyDistance="50"
+        :gutterWidth="gutterWidth"
       >
         <template>
           <div class="cell-item" v-for="(item, index) in data" :key="index">

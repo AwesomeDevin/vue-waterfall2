@@ -125,18 +125,20 @@ export default {
             return;
           }
           if (newVal.length < this.loadedIndex) {
-            this.loadedIndex = 0;
+            this.loadedIndex = newVal.length;
           }
-          if (
-            newVal.length > oldVal.length ||
-            newVal.length > this.loadedIndex
-          ) {
-            if (newVal.length === oldVal.length) {
-              this.resize(this.loadedIndex > 0 ? this.loadedIndex : null);
-              return;
-            }
-            this.resize(oldVal.length > 0 ? oldVal.length : null);
-          }
+          this.resize(this.loadedIndex > 0 ? this.loadedIndex : null);
+          // discard code
+          // if (
+          //   newVal.length > oldVal.length ||
+          //   newVal.length > this.loadedIndex
+          // ) {
+          //   // if (newVal.length === oldVal.length) {
+          //   //   this.resize(this.loadedIndex > 0 ? this.loadedIndex : null);
+          //   //   return;
+          //   // }
+          //   // this.resize(oldVal.length > 0 ? oldVal.length : null);
+          // }
         }, 300);
       });
     },
@@ -156,6 +158,15 @@ export default {
             odiv.style.marginLeft = this.gutterWidth + "px";
           }
           this.columnWidth = this.width;
+        } else if (this.gutterWidth && !this.width) {
+          const width = Math.floor(
+            (this.root.offsetWidth - (col - 1) * this.gutterWidth) / col
+          );
+          if (i != 0) {
+            odiv.style.marginLeft = this.gutterWidth + "px";
+          }
+          odiv.style.width = width + "px";
+          this.columnWidth = width;
         } else {
           odiv.style.width = 100 / parseInt(col) + "%";
           this.columnWidth =
@@ -176,7 +187,6 @@ export default {
       var imgs = dom.getElementsByTagName("img");
       for (var i = 0; i < imgs.length; i++) {
         var lazySrc = imgs[i].getAttribute("lazy-src");
-        console.log("lazySrc", lazySrc);
         if (!imgs[i].getAttribute("src") && lazySrc) {
           var newImg = new Image();
           newImg.src = lazySrc;
@@ -186,7 +196,6 @@ export default {
             if (trueWidth) {
               imgs[i].style.height = imgColumnHeight + "px";
             }
-            console.log("imgs[i]", imgs[i], imgs[i].style);
           } else {
             await new Promise((resolve, reject) => {
               newImg.onload = function () {
@@ -327,11 +336,6 @@ export default {
           imgs[index].className = imgs[index].className + " animation";
           imgs[index].removeAttribute("lazy-src");
         }
-        console.log(
-          imgs[index].getBoundingClientRect().top,
-          this.viewHeight,
-          this.trueLazyDistance
-        );
       }
     },
     clearColumn() {

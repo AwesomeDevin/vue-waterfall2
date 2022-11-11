@@ -3,10 +3,11 @@
 
 #### [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
 # vue-waterfall2 
- 1. Auto adaption for width and height
+ 1. auto adaption for width and height
  2. High degree of customization
- 3. Support lazy load(attribute with `lazy-src`)
- 4. Apply to PC/mobile
+ 3. Swipe to the bottom to trigger on pc/android, pull up to trigger on ios
+ 4. Support lazy load(attribute with `lazy-src`)
+ 5. Easy to use, for PC/ios/android
 
 ![The demo on mobile device](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
@@ -16,8 +17,8 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 
 ## Demo
-[Common Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/)  
-[Lazyload Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/lazy)  
+[Common Demo](http://47.105.188.15:3001/)  
+[Lazyload Demo](http://47.105.188.15:3001/#/list)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
@@ -36,16 +37,16 @@ npm run dev
 ```
 
 ## <waterfall> Props
-Name | Default | Type | Desc | Necessary
--------- | -------- | -------- | -------- | ------
-height | - | String | Container height (null for window scrolling event, not null for container scrolling) | false
-col | 2  | Number |  the number of column | false
-width | - | Number | the value of width | false
-gutterWidth | 10 | Number | the value of margin | false
-data | [] | Array | data | true
-isTransition | true | Boolean | load image with transition | false
-lazyDistance | 300 | Number | the distance of image lazy loading | false
-loadDistance | 300 | Number | the distance of loadmore | false
+Name | Default | Type | Desc
+-------- | -------- | -------- | --------
+height | null | Number | height of container
+col | 2  | Number |  The number of column
+width | null | Number | The width of each column
+gutterWidth | 10 | Number | The value of margin
+data | [] | Array | data
+isTransition | true | Boolean | load image with transition
+lazyDistance | 300 | Number | The distance of image lazy loading
+loadDistance | 300 | Number | The distance of loadmore
   
 ## Lazy Load
 For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
@@ -61,7 +62,7 @@ For images that need to be loaded lazily, the 'lazy-src' attribute needs to be u
 Name | Data |   Desc
 -------- | --- | -------- 
 loadmore | - | Scroll to the bottom to trigger on PC /  pull up to trigger on Mobile  
-scroll | info | Scroll to trigger and get the infomation of scroll
+scroll | obj | Scroll to trigger and get the infomation of scroll
 finish | - | finish render
   
 ## $waterfall API
@@ -71,7 +72,7 @@ this.$waterfall.forceUpdate()   //forceUpdate
 
 ## Usage
 Notes:
-  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  1. when using `rem` to layout, calculate the width after adaptation before passing the value.
   2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS `scoped` and try it
 ##### main.js
 ```javascript
@@ -108,7 +109,7 @@ Vue.use(waterfall)
 
 /*
   notes:
-  1. attribute `gutterWidth` needs to be used together with `width` to be effective, otherwise it will be adaptive width (when using `rem` to layout, calculate the width after adaptation before passing the value).
+  1. when using `rem` to layout, calculate the width after adaptation before passing the value.
   2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS 'scoped' and try it
 */
 

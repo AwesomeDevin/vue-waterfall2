@@ -6785,10 +6785,10 @@ vue-template-es2015-compiler@^1.6.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-waterfall2@^1.10.4:
-  version "1.10.4"
-  resolved "https://registry.npmjs.org/vue-waterfall2/-/vue-waterfall2-1.10.4.tgz#04fe8d948157f11728239d5b01074bc81ec166fa"
-  integrity sha512-Hh2sGAJm69AlLD2q2MJJTeF0c4AFMdOJMrQW1BzEL5aI1zNmG6G3e0QCPnAfaAYgPKM7qIRGsV3+Si6RjbOKzg==
+vue-waterfall2@^1.10.5:
+  version "1.10.5"
+  resolved "http://registry.m.jd.com/vue-waterfall2/download/vue-waterfall2-1.10.5.tgz#e3f927430ce32c56b66f9687ed2263ef0d7a998d"
+  integrity sha1-4/knQwzjLFa2b5aH7SJj7w16mY0=
   dependencies:
     babel-runtime "^6.26.0"
     regenerator-runtime "^0.13.1"
