@@ -18,7 +18,7 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 ## Demo
 [Common Demo](https://awesomedevin.github.io/vue-waterfall2/#/)  
-[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/list)  
+[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
