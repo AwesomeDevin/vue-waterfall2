@@ -408,7 +408,16 @@ import bus from './bus'
 				
 			})
 			
-		}
+		},
+    activated() {
+      var self = this
+      window.onscroll=function(e){
+        self.__emitLoadMore()
+      }
+    },
+    deactivated() {
+      window.onscroll = null
+    }
 	}
 
 </script>
