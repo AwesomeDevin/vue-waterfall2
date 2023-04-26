@@ -373,13 +373,17 @@ import bus from './bus'
 				self.lazyTimeout = setTimeout(function(){
 					self.lazyLoad()
 				},14)
-			}
+			},
+      handleScroll() {
+        this.__emitLoadMore()
+      },
 		},
 		destroyed() {
 			this.root && (this.root.onscroll = null)
 			this.root && (this.root.onresize = null)
-			window.onscroll = null
 			window.onresize = null
+      document.removeEventListener('scroll',this.handleScroll)
+      document.removeEventListener('touchmove',this.handleScroll)
 		},
 		beforeCreate(){
 			bus.$on('forceUpdate',()=>{this.resize()})
@@ -398,25 +402,20 @@ import bus from './bus'
 					})
 				}
 				else{
-					window.onscroll=function(e){
-						self.emitLoadMore()
-					}
-					document.addEventListener('touchmove',function(){
-						self.emitLoadMore()
-					})
+          document.addEventListener('scroll', this.handleScroll)
+          document.addEventListener('touchmove',this.handleScroll)
 				}
 				
 			})
 			
 		},
     activated() {
-      var self = this
-      window.onscroll=function(e){
-        self.__emitLoadMore()
-      }
+      document.addEventListener('scroll', this.handleScroll)
+      document.addEventListener('touchmove',this.handleScroll)
     },
     deactivated() {
-      window.onscroll = null
+      document.removeEventListener('scroll',this.handleScroll)
+      document.removeEventListener('touchmove',this.handleScroll)
     }
 	}
 
