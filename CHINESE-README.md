@@ -140,5 +140,5 @@ import Vue from 'vue'
 	}
 ```
 
-## 如果你有任何研发问题，可以加入此群进行技术交流.
+## 如果你有任何研发问题，可以加入此群进行技术交流 📖.
 <img src="https://github.com/AwesomeDevin/AwesomeDevin/assets/22369504/d02c922a-1b3c-49ea-99de-d4891ff525d9" width="250" />
