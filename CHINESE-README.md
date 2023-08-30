@@ -14,8 +14,8 @@
 ![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 ## Demo
-[Common Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/)  
-[Lazyload Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/lazy)   
+[Common Demo](https://awesomedevin.github.io/vue-waterfall2/#/)  
+[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
