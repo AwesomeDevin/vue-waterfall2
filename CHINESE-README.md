@@ -140,5 +140,6 @@ import Vue from 'vue'
 	}
 ```
 
-## 如果你有任何研发问题，可以加入此群进行技术交流 📖.
-<img src="https://github.com/AwesomeDevin/AwesomeDevin/assets/22369504/d02c922a-1b3c-49ea-99de-d4891ff525d9" width="250" />
+## 如果你有任何研发问题，也可以加我好友，拉你入群进行技术交流 📖.
+
+<img src="https://github.com/AwesomeDevin/vue-waterfall2/assets/22369504/ad7bd0b4-e55a-4b22-aac8-3287ad07f746" width="250" />
