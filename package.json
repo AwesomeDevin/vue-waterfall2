@@ -1,7 +1,7 @@
 {
   "name": "vue-waterfall2",
   "version": "1.0.0",
-  "description": "waterfall  adaptive plugin for vue  and support lazy load , very easy!  ",
+  "description": "waterfall adaptive plugin for vue and support lazy load , very easy!  ",
   "author": "Devin <awesomedevin.deng@gmail.com>",
   "private": true,
   "scripts": {
@@ -11,10 +11,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@vitejs/plugin-vue2": "^2.2.0",
     "axios": "^0.19.0",
-    "less": "^3.9.0",
+    "less": "^4.1.3",
+    "postcss-less": "^6.0.0",
     "less-loader": "^5.0.0",
-    "vue": "^2.6.10",
+    "vite": "^4.5.0",
+    "vue": "^2.7.0",
     "vue-router": "^3.0.1",
     "vue-waterfall2": "^1.10.5"
   },
@@ -49,7 +52,7 @@
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.1.2",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.7.0",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",

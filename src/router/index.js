@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "@/components/HelloWorld";
-import Lazy from "@/components/evaluateList";
+import HelloWorld from "@/components/HelloWorld.vue";
+import Lazy from "@/components/evaluateList.vue";
 
 Vue.use(Router);
 

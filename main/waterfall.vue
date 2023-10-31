@@ -41,7 +41,7 @@
 </template>
 
 <script>
-global.regeneratorRuntime = require("babel-runtime/regenerator");
+
 import bus from './bus'
 
 	export default{
