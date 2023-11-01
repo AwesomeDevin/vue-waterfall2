@@ -3,7 +3,7 @@ lockfileVersion: '6.0'
 dependencies:
   '@vitejs/plugin-vue2':
     specifier: ^2.2.0
-    version: 2.2.0(vite@4.5.0)(vue@2.7.15)
+    version: 2.2.0(vite@4.5.0)(vue@3.2.13)
   axios:
     specifier: ^0.19.0
     version: 0.19.2
@@ -20,16 +20,19 @@ dependencies:
     specifier: ^4.5.0
     version: 4.5.0(less@4.1.3)
   vue:
-    specifier: ^2.7.0
-    version: 2.7.15
+    specifier: ^3.2.13
+    version: 3.2.13
   vue-router:
-    specifier: ^3.0.1
-    version: 3.6.5(vue@2.7.15)
+    specifier: ^4.2.5
+    version: 4.2.5(vue@3.2.13)
   vue-waterfall2:
     specifier: ^1.10.5
     version: 1.10.5
 
 devDependencies:
+  '@vitejs/plugin-vue':
+    specifier: ^4.1.0
+    version: 4.1.0(vite@4.5.0)(vue@3.2.13)
   autoprefixer:
     specifier: ^7.1.2
     version: 7.2.6
@@ -141,12 +144,10 @@ packages:
   /@babel/helper-string-parser@7.22.5:
     resolution: {integrity: sha1-Uz82RXolgUzx32SIUjrVR9eEqZ8=, tarball: http://registry.m.jd.com/@babel/helper-string-parser/download/@babel/helper-string-parser-7.22.5.tgz}
     engines: {node: '>=6.9.0'}
-    dev: false
 
   /@babel/helper-validator-identifier@7.22.20:
     resolution: {integrity: sha1-xK4ALGHSh55yRYHZZmVYPbwdwOA=, tarball: http://registry.m.jd.com/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.22.20.tgz}
     engines: {node: '>=6.9.0'}
-    dev: false
 
   /@babel/parser@7.23.0:
     resolution: {integrity: sha1-2pUOYiQgv5bKDQ8pCc3drDrNhxk=, tarball: http://registry.m.jd.com/@babel/parser/download/@babel/parser-7.23.0.tgz}
@@ -154,7 +155,6 @@ packages:
     hasBin: true
     dependencies:
       '@babel/types': 7.23.0
-    dev: false
 
   /@babel/types@7.23.0:
     resolution: {integrity: sha1-jB8CDJ3w5zfk4kfAYZ9YxoRYqus=, tarball: http://registry.m.jd.com/@babel/types/download/@babel/types-7.23.0.tgz}
@@ -163,167 +163,144 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
-    dev: false
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha1-mEtPnI0Dd0Q8wt/O8mbQIkRZNiI=, tarball: http://registry.m.jd.com/@esbuild/android-arm64/download/@esbuild/android-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-arm@0.18.20:
     resolution: {integrity: sha1-/tsmW8OlichMwR+BCATyNJR8NoI=, tarball: http://registry.m.jd.com/@esbuild/android-arm/download/@esbuild/android-arm-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-x64@0.18.20:
     resolution: {integrity: sha1-Nc9BnEz8i6voiT0pbNmQ6en3VvI=, tarball: http://registry.m.jd.com/@esbuild/android-x64/download/@esbuild/android-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-arm64@0.18.20:
     resolution: {integrity: sha1-CBcsvsz5X7w4M5mn85z73a6w18E=, tarball: http://registry.m.jd.com/@esbuild/darwin-arm64/download/@esbuild/darwin-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-x64@0.18.20:
     resolution: {integrity: sha1-1w1XkNi/R1VWtn0Pi3xb3/BT2F0=, tarball: http://registry.m.jd.com/@esbuild/darwin-x64/download/@esbuild/darwin-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-arm64@0.18.20:
     resolution: {integrity: sha1-mHVc0ScH+T8hDiSU1qS1G5aXf1Q=, tarball: http://registry.m.jd.com/@esbuild/freebsd-arm64/download/@esbuild/freebsd-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-x64@0.18.20:
     resolution: {integrity: sha1-wesr/wORX4fCnOzkwaf6H0I7Bm4=, tarball: http://registry.m.jd.com/@esbuild/freebsd-x64/download/@esbuild/freebsd-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm64@0.18.20:
     resolution: {integrity: sha1-utQji9j0/CW1oCEoDHcKtfw6AqA=, tarball: http://registry.m.jd.com/@esbuild/linux-arm64/download/@esbuild/linux-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm@0.18.20:
     resolution: {integrity: sha1-PmF8YfM1CKJxUO5BdUPIq1rMc7A=, tarball: http://registry.m.jd.com/@esbuild/linux-arm/download/@esbuild/linux-arm-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ia32@0.18.20:
     resolution: {integrity: sha1-aZORzMupruYBm3+YkuuZIZ8VcKc=, tarball: http://registry.m.jd.com/@esbuild/linux-ia32/download/@esbuild/linux-ia32-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-loong64@0.18.20:
     resolution: {integrity: sha1-5vzLeqwXjdL/uYYEZayJ1/I7l30=, tarball: http://registry.m.jd.com/@esbuild/linux-loong64/download/@esbuild/linux-loong64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-mips64el@0.18.20:
     resolution: {integrity: sha1-7v86k33pwjEN4wYiqVetG9kYMjE=, tarball: http://registry.m.jd.com/@esbuild/linux-mips64el/download/@esbuild/linux-mips64el-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ppc64@0.18.20:
     resolution: {integrity: sha1-L3FWveILAVJ5k+aIFDWtebqVmfs=, tarball: http://registry.m.jd.com/@esbuild/linux-ppc64/download/@esbuild/linux-ppc64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-riscv64@0.18.20:
     resolution: {integrity: sha1-Zig4nyEBI9i0dDBFr4yqfU3fx6Y=, tarball: http://registry.m.jd.com/@esbuild/linux-riscv64/download/@esbuild/linux-riscv64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-s390x@0.18.20:
     resolution: {integrity: sha1-JV6B+yibEBAmExhYq5n7pj3PAHE=, tarball: http://registry.m.jd.com/@esbuild/linux-s390x/download/@esbuild/linux-s390x-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-x64@0.18.20:
     resolution: {integrity: sha1-x2kLNBevMYqbb5bfMDGohlF20zg=, tarball: http://registry.m.jd.com/@esbuild/linux-x64/download/@esbuild/linux-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/netbsd-x64@0.18.20:
     resolution: {integrity: sha1-MOjNij3e1jl14t8kOMoQlgHr4NE=, tarball: http://registry.m.jd.com/@esbuild/netbsd-x64/download/@esbuild/netbsd-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/openbsd-x64@0.18.20:
     resolution: {integrity: sha1-eBKvMbIFBVh0yAguqc+asNpiF64=, tarball: http://registry.m.jd.com/@esbuild/openbsd-x64/download/@esbuild/openbsd-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/sunos-x64@0.18.20:
     resolution: {integrity: sha1-1cJ1w7TnPJsOzTjRymLAIPiHq50=, tarball: http://registry.m.jd.com/@esbuild/sunos-x64/download/@esbuild/sunos-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-arm64@0.18.20:
     resolution: {integrity: sha1-c7x/Wp+Kd4BfNX+rl/KQ0OSCCsk=, tarball: http://registry.m.jd.com/@esbuild/win32-arm64/download/@esbuild/win32-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-ia32@0.18.20:
     resolution: {integrity: sha1-7JPL8O8QhcwS5x4NZh0gVp/0IQI=, tarball: http://registry.m.jd.com/@esbuild/win32-ia32/download/@esbuild/win32-ia32-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-x64@0.18.20:
     resolution: {integrity: sha1-eGxfQfBDsHr7GvN2g9fDNmiFj20=, tarball: http://registry.m.jd.com/@esbuild/win32-x64/download/@esbuild/win32-x64-0.18.20.tgz}
     engines: {node: '>=12'}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@types/q@1.5.7:
     resolution: {integrity: sha1-X+jPkVVr+zENF/LitCY6fBLCwso=, tarball: http://registry.m.jd.com/@types/q/download/@types/q-1.5.7.tgz}
     dev: true
 
-  /@vitejs/plugin-vue2@2.2.0(vite@4.5.0)(vue@2.7.15):
+  /@vitejs/plugin-vue2@2.2.0(vite@4.5.0)(vue@3.2.13):
     resolution: {integrity: sha1-dFMgcZfWrCtwI87ccTOxQsYEw1Y=, tarball: http://registry.m.jd.com/@vitejs/plugin-vue2/download/@vitejs/plugin-vue2-2.2.0.tgz}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
@@ -331,16 +308,96 @@ packages:
       vue: ^2.7.0-0
     dependencies:
       vite: 4.5.0(less@4.1.3)
-      vue: 2.7.15
+      vue: 3.2.13
     dev: false
 
-  /@vue/compiler-sfc@2.7.15:
-    resolution: {integrity: sha1-YhNfsvaVWfxyP9nFa46LCseGSgs=, tarball: http://registry.m.jd.com/@vue/compiler-sfc/download/@vue/compiler-sfc-2.7.15.tgz}
+  /@vitejs/plugin-vue@4.1.0(vite@4.5.0)(vue@3.2.13):
+    resolution: {integrity: sha1-tqnYPNkVdffuFVk/ZEQ5f2h1EHM=, tarball: http://registry.m.jd.com/@vitejs/plugin-vue/download/@vitejs/plugin-vue-4.1.0.tgz}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 4.5.0(less@4.1.3)
+      vue: 3.2.13
+    dev: true
+
+  /@vue/compiler-core@3.2.13:
+    resolution: {integrity: sha1-kBJoCIuYpTxDvg8Cv6Djo4mta/Q=, tarball: http://registry.m.jd.com/@vue/compiler-core/download/@vue/compiler-core-3.2.13.tgz}
     dependencies:
       '@babel/parser': 7.23.0
+      '@vue/shared': 3.2.13
+      estree-walker: 2.0.2
+      source-map: 0.6.1
+
+  /@vue/compiler-dom@3.2.13:
+    resolution: {integrity: sha1-AomCSU+52XgH1SdbQjVXMmhvjtc=, tarball: http://registry.m.jd.com/@vue/compiler-dom/download/@vue/compiler-dom-3.2.13.tgz}
+    dependencies:
+      '@vue/compiler-core': 3.2.13
+      '@vue/shared': 3.2.13
+
+  /@vue/compiler-sfc@3.2.13:
+    resolution: {integrity: sha1-o4R1BIqtnJbPBN/mNRKbQX4PkpU=, tarball: http://registry.m.jd.com/@vue/compiler-sfc/download/@vue/compiler-sfc-3.2.13.tgz}
+    dependencies:
+      '@babel/parser': 7.23.0
+      '@vue/compiler-core': 3.2.13
+      '@vue/compiler-dom': 3.2.13
+      '@vue/compiler-ssr': 3.2.13
+      '@vue/ref-transform': 3.2.13
+      '@vue/shared': 3.2.13
+      estree-walker: 2.0.2
+      magic-string: 0.25.9
       postcss: 8.4.31
       source-map: 0.6.1
+
+  /@vue/compiler-ssr@3.2.13:
+    resolution: {integrity: sha1-mENGcuC0iMKv+ksFcHMda+XNoYc=, tarball: http://registry.m.jd.com/@vue/compiler-ssr/download/@vue/compiler-ssr-3.2.13.tgz}
+    dependencies:
+      '@vue/compiler-dom': 3.2.13
+      '@vue/shared': 3.2.13
+
+  /@vue/devtools-api@6.5.1:
+    resolution: {integrity: sha1-f3HzHkCXPu7mW5pkOCsTWT/b1pc=, tarball: http://registry.m.jd.com/@vue/devtools-api/download/@vue/devtools-api-6.5.1.tgz}
     dev: false
+
+  /@vue/reactivity@3.2.13:
+    resolution: {integrity: sha1-0mmwmqr+8GqRvz65je/UGiw9r1Q=, tarball: http://registry.m.jd.com/@vue/reactivity/download/@vue/reactivity-3.2.13.tgz}
+    dependencies:
+      '@vue/shared': 3.2.13
+
+  /@vue/ref-transform@3.2.13:
+    resolution: {integrity: sha1-at/OUNOIzANoPZ0rpY86O95RZvQ=, tarball: http://registry.m.jd.com/@vue/ref-transform/download/@vue/ref-transform-3.2.13.tgz}
+    dependencies:
+      '@babel/parser': 7.23.0
+      '@vue/compiler-core': 3.2.13
+      '@vue/shared': 3.2.13
+      estree-walker: 2.0.2
+      magic-string: 0.25.9
+
+  /@vue/runtime-core@3.2.13:
+    resolution: {integrity: sha1-i2L5JkLlavcdDTWp8AZdr2+es/s=, tarball: http://registry.m.jd.com/@vue/runtime-core/download/@vue/runtime-core-3.2.13.tgz}
+    dependencies:
+      '@vue/reactivity': 3.2.13
+      '@vue/shared': 3.2.13
+
+  /@vue/runtime-dom@3.2.13:
+    resolution: {integrity: sha1-I49RenV2Vxn4NzQJzuhTd1xjb5I=, tarball: http://registry.m.jd.com/@vue/runtime-dom/download/@vue/runtime-dom-3.2.13.tgz}
+    dependencies:
+      '@vue/runtime-core': 3.2.13
+      '@vue/shared': 3.2.13
+      csstype: 2.6.21
+
+  /@vue/server-renderer@3.2.13(vue@3.2.13):
+    resolution: {integrity: sha1-sQpWS+Z+7Gch+Qs2w8gXwZ5gZLQ=, tarball: http://registry.m.jd.com/@vue/server-renderer/download/@vue/server-renderer-3.2.13.tgz}
+    peerDependencies:
+      vue: 3.2.13
+    dependencies:
+      '@vue/compiler-ssr': 3.2.13
+      '@vue/shared': 3.2.13
+      vue: 3.2.13
+
+  /@vue/shared@3.2.13:
+    resolution: {integrity: sha1-yDDvlm168SWY4OqGKlVpXqWJzUc=, tarball: http://registry.m.jd.com/@vue/shared/download/@vue/shared-3.2.13.tgz}
 
   /accepts@1.3.8:
     resolution: {integrity: sha1-C/C+EltnAUrcsLCSHmLbe//hay4=, tarball: http://registry.m.jd.com/accepts/download/accepts-1.3.8.tgz}
@@ -2171,7 +2228,6 @@ packages:
     resolution: {integrity: sha1-CSRU6pWEp7etVXMGKyqH9ZAPxIA=, tarball: http://registry.m.jd.com/copy-anything/download/copy-anything-2.0.6.tgz}
     dependencies:
       is-what: 3.14.1
-    dev: false
 
   /copy-concurrently@1.0.5:
     resolution: {integrity: sha1-kilzmMrjSTf8r9bsgTnBgFHwteA=, tarball: http://registry.m.jd.com/copy-concurrently/download/copy-concurrently-1.0.5.tgz}
@@ -2495,9 +2551,8 @@ packages:
       css-tree: 1.1.3
     dev: true
 
-  /csstype@3.1.2:
-    resolution: {integrity: sha1-HUv51XLxHBQDHwQ24cELwfVx9Qs=, tarball: http://registry.m.jd.com/csstype/download/csstype-3.1.2.tgz}
-    dev: false
+  /csstype@2.6.21:
+    resolution: {integrity: sha1-LvuFt8xVyAAXxmpa18vZMf2jqQ4=, tarball: http://registry.m.jd.com/csstype/download/csstype-2.6.21.tgz}
 
   /cuint@0.2.2:
     resolution: {integrity: sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs=, tarball: http://registry.m.jd.com/cuint/download/cuint-0.2.2.tgz}
@@ -3012,7 +3067,6 @@ packages:
       '@esbuild/win32-arm64': 0.18.20
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
-    dev: false
 
   /escalade@3.1.1:
     resolution: {integrity: sha1-2M/ccACWXFoBdLSoLqpcBVJ0LkA=, tarball: http://registry.m.jd.com/escalade/download/escalade-3.1.1.tgz}
@@ -3062,6 +3116,9 @@ packages:
   /estraverse@5.3.0:
     resolution: {integrity: sha1-LupSkHAvJquP5TcDcP+GyWXSESM=, tarball: http://registry.m.jd.com/estraverse/download/estraverse-5.3.0.tgz}
     engines: {node: '>=4.0'}
+
+  /estree-walker@2.0.2:
+    resolution: {integrity: sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=, tarball: http://registry.m.jd.com/estree-walker/download/estree-walker-2.0.2.tgz}
 
   /esutils@2.0.3:
     resolution: {integrity: sha1-dNLrTeC42hKTcRkQ1Qd1ubcQ72Q=, tarball: http://registry.m.jd.com/esutils/download/esutils-2.0.3.tgz}
@@ -3843,7 +3900,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       safer-buffer: 2.1.2
-    dev: false
     optional: true
 
   /icss-replace-symbols@1.1.0:
@@ -3872,7 +3928,6 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
-    dev: false
     optional: true
 
   /import-cwd@2.1.0:
@@ -4253,7 +4308,6 @@ packages:
 
   /is-what@3.14.1:
     resolution: {integrity: sha1-4SIvRt3ahd6tD9HJ3xMXYOd3VcE=, tarball: http://registry.m.jd.com/is-what/download/is-what-3.14.1.tgz}
-    dev: false
 
   /is-windows@1.0.2:
     resolution: {integrity: sha1-0YUOuXkezRjmGCzhKjDzlmNLsZ0=, tarball: http://registry.m.jd.com/is-windows/download/is-windows-1.0.2.tgz}
@@ -4419,7 +4473,6 @@ packages:
       source-map: 0.6.1
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /load-json-file@1.1.0:
     resolution: {integrity: sha1-lWkFcI1YtLq0wiYbBPWfMcmTdMA=, tarball: http://registry.m.jd.com/load-json-file/download/load-json-file-1.1.0.tgz}
@@ -4525,6 +4578,11 @@ packages:
       pseudomap: 1.0.2
       yallist: 2.1.2
 
+  /magic-string@0.25.9:
+    resolution: {integrity: sha1-3n+fr5HvihyR0CwuUxTIJ3283Rw=, tarball: http://registry.m.jd.com/magic-string/download/magic-string-0.25.9.tgz}
+    dependencies:
+      sourcemap-codec: 1.4.8
+
   /make-dir@1.3.0:
     resolution: {integrity: sha1-ecEDO4BRW9bSTsmTPoYMp17ifww=, tarball: http://registry.m.jd.com/make-dir/download/make-dir-1.3.0.tgz}
     engines: {node: '>=4'}
@@ -4539,7 +4597,6 @@ packages:
     dependencies:
       pify: 4.0.1
       semver: 5.7.2
-    dev: false
     optional: true
 
   /map-cache@0.2.2:
@@ -4778,7 +4835,6 @@ packages:
     resolution: {integrity: sha1-RDOAyFbW6fmCQmfZYLQjatWD6kw=, tarball: http://registry.m.jd.com/nanoid/download/nanoid-3.3.6.tgz}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: false
 
   /nanomatch@1.2.13(supports-color@4.5.0):
     resolution: {integrity: sha1-uHqKpPwN6P5r6IiVs4mD/yZb0Rk=, tarball: http://registry.m.jd.com/nanomatch/download/nanomatch-1.2.13.tgz}
@@ -4829,7 +4885,6 @@ packages:
       sax: 1.2.4
     transitivePeerDependencies:
       - supports-color
-    dev: false
     optional: true
 
   /negotiator@0.6.3:
@@ -5187,7 +5242,6 @@ packages:
   /parse-node-version@1.0.1:
     resolution: {integrity: sha1-4rXb7eAOf6m8NjYH9TMn6LBzGJs=, tarball: http://registry.m.jd.com/parse-node-version/download/parse-node-version-1.0.1.tgz}
     engines: {node: '>= 0.10'}
-    dev: false
 
   /parseurl@1.3.3:
     resolution: {integrity: sha1-naGee+6NEt/wUT7Vt2lXeTvC6NQ=, tarball: http://registry.m.jd.com/parseurl/download/parseurl-1.3.3.tgz}
@@ -5290,7 +5344,6 @@ packages:
   /pify@4.0.1:
     resolution: {integrity: sha1-SyzSXFDVmHNcUCkiJP2MbfQeMjE=, tarball: http://registry.m.jd.com/pify/download/pify-4.0.1.tgz}
     engines: {node: '>=6'}
-    dev: false
 
   /pinkie-promise@2.0.1:
     resolution: {integrity: sha1-ITXW36ejWMBprJsXh3YogihFD/o=, tarball: http://registry.m.jd.com/pinkie-promise/download/pinkie-promise-2.0.1.tgz}
@@ -5926,7 +5979,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
 
   /prepend-http@1.0.4:
     resolution: {integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=, tarball: http://registry.m.jd.com/prepend-http/download/prepend-http-1.0.4.tgz}
@@ -6362,7 +6414,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /run-queue@1.0.3:
     resolution: {integrity: sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=, tarball: http://registry.m.jd.com/run-queue/download/run-queue-1.0.3.tgz}
@@ -6658,7 +6709,6 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha1-rbw2HZxi3zgBJefxYfccgm8eSQw=, tarball: http://registry.m.jd.com/source-map-js/download/source-map-js-1.0.2.tgz}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /source-map-resolve@0.5.3:
     resolution: {integrity: sha1-GQhmvs51U+H48mei7oLGBrVQmho=, tarball: http://registry.m.jd.com/source-map-resolve/download/source-map-resolve-0.5.3.tgz}
@@ -6687,6 +6737,10 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, tarball: http://registry.m.jd.com/source-map/download/source-map-0.6.1.tgz}
     engines: {node: '>=0.10.0'}
+
+  /sourcemap-codec@1.4.8:
+    resolution: {integrity: sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=, tarball: http://registry.m.jd.com/sourcemap-codec/download/sourcemap-codec-1.4.8.tgz}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
 
   /spdx-correct@3.2.0:
     resolution: {integrity: sha1-T1qwZo8AWeNPnADc4zF4ShLeTpw=, tarball: http://registry.m.jd.com/spdx-correct/download/spdx-correct-3.2.0.tgz}
@@ -7004,7 +7058,6 @@ packages:
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=, tarball: http://registry.m.jd.com/to-fast-properties/download/to-fast-properties-2.0.0.tgz}
     engines: {node: '>=4'}
-    dev: false
 
   /to-object-path@0.3.0:
     resolution: {integrity: sha1-KXWIt7Dn4KwI4E5nL4XB9JmeF68=, tarball: http://registry.m.jd.com/to-object-path/download/to-object-path-0.3.0.tgz}
@@ -7060,7 +7113,6 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha1-cDrClCXns3zW/UVukkBNRtHz5K4=, tarball: http://registry.m.jd.com/tslib/download/tslib-2.6.2.tgz}
-    dev: false
 
   /tty-browserify@0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=, tarball: http://registry.m.jd.com/tty-browserify/download/tty-browserify-0.0.0.tgz}
@@ -7379,7 +7431,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vm-browserify@1.1.2:
     resolution: {integrity: sha1-eGQcSIuObKkadfUR56OzKobl3aA=, tarball: http://registry.m.jd.com/vm-browserify/download/vm-browserify-1.1.2.tgz}
@@ -7471,12 +7522,13 @@ packages:
       - whiskers
     dev: true
 
-  /vue-router@3.6.5(vue@2.7.15):
-    resolution: {integrity: sha1-lYR9Urmn4/E2HLYFyOZEHyAq+tg=, tarball: http://registry.m.jd.com/vue-router/download/vue-router-3.6.5.tgz}
+  /vue-router@4.2.5(vue@3.2.13):
+    resolution: {integrity: sha1-uePgjxvZ6jY/3RcwMmILxQzw6Yo=, tarball: http://registry.m.jd.com/vue-router/download/vue-router-4.2.5.tgz}
     peerDependencies:
-      vue: ^2
+      vue: ^3.2.0
     dependencies:
-      vue: 2.7.15
+      '@vue/devtools-api': 6.5.1
+      vue: 3.2.13
     dev: false
 
   /vue-style-loader@3.1.2:
@@ -7504,12 +7556,14 @@ packages:
       regenerator-runtime: 0.13.11
     dev: false
 
-  /vue@2.7.15:
-    resolution: {integrity: sha1-lM005unyLNLTWgIUP5alvqwcH1Q=, tarball: http://registry.m.jd.com/vue/download/vue-2.7.15.tgz}
+  /vue@3.2.13:
+    resolution: {integrity: sha1-nRqU/GLcKa4ho90NjuJBmOQhZx4=, tarball: http://registry.m.jd.com/vue/download/vue-3.2.13.tgz}
     dependencies:
-      '@vue/compiler-sfc': 2.7.15
-      csstype: 3.1.2
-    dev: false
+      '@vue/compiler-dom': 3.2.13
+      '@vue/compiler-sfc': 3.2.13
+      '@vue/runtime-dom': 3.2.13
+      '@vue/server-renderer': 3.2.13(vue@3.2.13)
+      '@vue/shared': 3.2.13
 
   /watchpack-chokidar2@2.0.1(supports-color@4.5.0):
     resolution: {integrity: sha1-OFAAcu5uzmbzdpk2lQ6hdxvhyVc=, tarball: http://registry.m.jd.com/watchpack-chokidar2/download/watchpack-chokidar2-2.0.1.tgz}

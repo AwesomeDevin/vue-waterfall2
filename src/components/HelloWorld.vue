@@ -150,7 +150,6 @@
       @finish="finish"
       :height="'100vh'"
     >
-      <template>
         <div
           class="cell-item"
           v-for="(item, index) in data"
@@ -178,7 +177,6 @@
             </div>
           </div>
         </div>
-      </template>
     </waterfall>
     <loading :show="loading" />
   </div>
