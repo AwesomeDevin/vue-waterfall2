@@ -72,8 +72,11 @@ this.$waterfall.forceUpdate()   //forceUpdate
  2.  使用了`waterfall`的父组件,如果样式存在问题，可去掉css `scoped`尝试一下
 ##### main.js
 ```javascript
+import { createApp } from "vue";
 import waterfall from 'vue-waterfall2'
-Vue.use(waterfall)
+
+const app = createApp(App)
+app.use(waterfall)
 ```
 ##### app.vue
 ```javascript
