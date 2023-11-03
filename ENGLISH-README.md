@@ -2,6 +2,9 @@
 
 
 #### [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
+
+# Note: vue-waterfall2@2.x is adapt for vue3, if your app is vue2, please use vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
+
 # vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
@@ -17,8 +20,8 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 
 ## Demo
-[Common Demo](http://47.105.188.15:3001/)  
-[Lazyload Demo](http://47.105.188.15:3001/#/list)  
+[Common Demo](https://awesomedevin.github.io/vue-waterfall2/#/)  
+[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
@@ -76,8 +79,11 @@ Notes:
   2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS `scoped` and try it
 ##### main.js
 ```javascript
+import { createApp } from "vue";
 import waterfall from 'vue-waterfall2'
-Vue.use(waterfall)
+
+const app = createApp(App)
+app.use(waterfall)
 ```
 ##### app.vue
 ```javascript

@@ -2,20 +2,19 @@ import bus from './bus';
 import Waterfall from './waterfall.vue';
 
 
-
 var Index = {
-	install: function install(Vue) {
+	install: function install(app) {
 		if (this.installed) {
 			return;
 		}
 		this.installed = true;
-		Vue.component('waterfall', Waterfall);
-		Vue.prototype.$waterfall = {
+		app.component('waterfall', Waterfall);
+		app.$waterfall = {
 			forceUpdate: function forceUpdate() {
-				bus.$emit('forceUpdate');
+				bus.emit('forceUpdate');
 			},
 			mix: function mix() {
-				bus.$emit('mix');
+				bus.emit('mix');
 			}
 		};
 	}

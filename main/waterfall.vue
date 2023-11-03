@@ -4,7 +4,7 @@
 		overflow-y: auto;
 		position: relative;
 	}
-	.vue-waterfall .slot-box{
+	.vue-waterfall .vue-waterfall-slot-box{
 		position: absolute;
 		top: 100%;
 		left: 100%;
@@ -34,7 +34,7 @@
 </style>
 <template>
 	<div class="vue-waterfall" :style="{height:height}" ref="vueWaterfall" id="vueWaterfall" :class="isTransition&&'is-transition'" >
-		<div class="slot-box">
+		<div class="vue-waterfall-slot-box" ref="vueWaterfallSlotBox">
 			<slot ></slot>	
 		</div>
 	</div>
@@ -42,6 +42,7 @@
 
 <script>
 
+import { isVNode } from 'vue'
 import bus from './bus'
 
 	export default{
@@ -239,41 +240,42 @@ import bus from './bus'
 			async resize(index,elements){     //resize and render
 				this.isresizing = true
 				var self = this
-				if(!this.$slots.default){
+				
+				if(!this.$refs.vueWaterfallSlotBox?.children?.length){
 					this.isresizing = false
 					return
 				}
 				if(!index&&index!=0&&!elements)
 				{
-					elements = this.$slots.default
+					elements = this.$refs.vueWaterfallSlotBox.cloneNode(true).children
 					this.loadedIndex = 0
 					this.clear()
 				}
 				else if(!elements){
 					this.loadedIndex = index
-					elements = this.$slots.default.splice(index)
+					elements = Array.from(this.$refs.vueWaterfallSlotBox.cloneNode(true).children).splice(index)
 				}
 
 				for(var j=0;j<elements.length;j++){
-						if(elements[j].elm&&self.checkImg(elements[j].elm))
+						if(elements[j]&&self.checkImg(elements[j]))
 						{
-							var imgs = elements[j].elm.getElementsByTagName('img')
+							var imgs = elements[j].getElementsByTagName('img')
 							var newImg = new Image()
 							newImg.src = imgs[0].src
 							if(newImg.complete)
 							{
-								await self.append(elements[j].elm)	
+								await self.append(elements[j])	
 					      self.lazyLoad(imgs)
 							}
 							else{
 								await new Promise( (resolve,reject)=>{
 									newImg.onload = async function(){
-										await self.append(elements[j].elm)
+										await self.append(elements[j])
 										self.lazyLoad(imgs)
 										resolve()
 									}
 									newImg.onerror= async function(){
-										await self.append(elements[j].elm)
+										await self.append(elements[j])
 										self.lazyLoad(imgs)
 										resolve()
 									}
@@ -282,7 +284,7 @@ import bus from './bus'
 							
 						}
 						else{
-							await self.append(elements[j].elm)
+							await self.append(elements[j])
 						}
 						self.loadedIndex++
 				}
@@ -344,7 +346,7 @@ import bus from './bus'
 				})
 			},
 			mix(){
-				var elements = this.$slots.default
+				var elements = this.$refs.vueWaterfallSlotBox.cloneNode(true).children
 				elements.sort(()=>{return Math.random()-0.5})
 				this.resize(0,elements)
 			},
@@ -365,6 +367,7 @@ import bus from './bus'
 					self.lastScrollTop =  scrollTop
 					self.loadmore = false
 					self.$emit('loadmore')
+					console.log('loadmore')
 				}
 				else if(diff>=self.max){
 					self.loadmore = true
@@ -375,15 +378,15 @@ import bus from './bus'
 				},14)
 			}
 		},
-		destroyed() {
+		unmounted() {
 			this.root && (this.root.onscroll = null)
 			this.root && (this.root.onresize = null)
 			window.onscroll = null
 			window.onresize = null
 		},
 		beforeCreate(){
-			bus.$on('forceUpdate',()=>{this.resize()})
-			bus.$on('mix',()=>{this.mix()})
+			bus.on('forceUpdate',()=>{this.resize()})
+			bus.on('mix',()=>{this.mix()})
 		},
 		mounted(){
 			this.$nextTick(()=>{

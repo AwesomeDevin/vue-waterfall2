@@ -163,7 +163,6 @@
         :lazyDistance="50"
         :gutterWidth="gutterWidth"
       >
-        <template>
           <div class="cell-item" v-for="(item, index) in data" :key="index">
             <img v-if="item.img" :lazy-src="item.img" alt="加载错误" />
             <div class="item-body">
@@ -182,7 +181,6 @@
               </div>
             </div>
           </div>
-        </template>
       </waterfall>
     </div>
     <loading :show="loading" />
