@@ -7,6 +7,7 @@
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.使用极为简便, 适用于PC/ios/android
 
+# Note: vue-waterfall2@2.x 适用于 vue3, 如果你的应用是 vue2，请使用 vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
 
 有问题欢迎提issues、suggestions;Thank you for your Star !   
 [welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
