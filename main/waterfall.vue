@@ -375,15 +375,30 @@ import bus from './bus'
 				},14)
 			},
       handleScroll() {
-        this.__emitLoadMore()
+        this.emitLoadMore()
       },
+      initScrollEvents(){
+				if(this.height){
+					this.root.addEventListener('scroll',this.handleScroll)
+					this.root.addEventListener('touchmove',this.handleScroll)
+				}
+				else{
+          document.addEventListener('scroll', this.handleScroll)
+          document.addEventListener('touchmove',this.handleScroll)
+				}
+      },
+      destoryScrollEvents(){
+        this.root && (this.root.removeEventListener('scroll', this.handleScroll))
+        this.root && (this.root.removeEventListener('touchmove', this.handleScroll))
+        
+        this.root && (this.root.onresize = null)
+			  window.onresize = null
+        document.removeEventListener('scroll',this.handleScroll)
+        document.removeEventListener('touchmove',this.handleScroll)
+      }
 		},
 		destroyed() {
-			this.root && (this.root.onscroll = null)
-			this.root && (this.root.onresize = null)
-			window.onresize = null
-      document.removeEventListener('scroll',this.handleScroll)
-      document.removeEventListener('touchmove',this.handleScroll)
+			this.destoryScrollEvents()
 		},
 		beforeCreate(){
 			bus.$on('forceUpdate',()=>{this.resize()})
@@ -392,30 +407,14 @@ import bus from './bus'
 		mounted(){
 			this.$nextTick(()=>{
 				this.init()
-				var self = this;
-				if(this.height){
-					this.root.onscroll=function(e){
-						self.emitLoadMore()
-					}
-					this.root.addEventListener('touchmove',function(){
-						self.emitLoadMore()
-					})
-				}
-				else{
-          document.addEventListener('scroll', this.handleScroll)
-          document.addEventListener('touchmove',this.handleScroll)
-				}
-				
+				this.initScrollEvents()
 			})
-			
 		},
     activated() {
-      document.addEventListener('scroll', this.handleScroll)
-      document.addEventListener('touchmove',this.handleScroll)
+      this.initScrollEvents()
     },
     deactivated() {
-      document.removeEventListener('scroll',this.handleScroll)
-      document.removeEventListener('touchmove',this.handleScroll)
+      this.destoryScrollEvents()
     }
 	}
 
