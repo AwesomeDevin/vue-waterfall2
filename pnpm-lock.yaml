@@ -8,10 +8,10 @@ dependencies:
 devDependencies:
   '@vitejs/plugin-vue':
     specifier: ^4.1.0
-    version: 4.1.0(vite@4.5.0)(vue@3.3.4)
+    version: 4.1.0(vite@4.5.0)
   '@vitejs/plugin-vue2':
     specifier: ^2.2.0
-    version: 2.2.0(vite@4.5.0)(vue@3.3.4)
+    version: 2.2.0(vite@4.5.0)
   autoprefixer:
     specifier: ^7.1.2
     version: 7.2.6
@@ -122,7 +122,7 @@ devDependencies:
     version: 13.7.3(babel-core@6.26.3)(css-loader@0.28.11)(vue-template-compiler@2.7.15)(webpack@3.12.0)
   vue-router:
     specifier: ^4.2.5
-    version: 4.2.5(vue@3.3.4)
+    version: 4.2.5
   vue-style-loader:
     specifier: ^3.1.2
     version: 3.1.2
@@ -130,8 +130,8 @@ devDependencies:
     specifier: ^2.7.0
     version: 2.7.15
   vue-waterfall2:
-    specifier: ^2.0.0
-    version: 2.0.0(vue@3.3.4)
+    specifier: ^1.10.6
+    version: 1.10.6
   webpack:
     specifier: ^3.6.0
     version: 3.12.0
@@ -370,6 +370,7 @@ packages:
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+    dev: false
 
   /@microsoft/api-extractor-model@7.28.2:
     resolution: {integrity: sha1-kcZt2CDMxw4MFj4Gs5LYNj8bkmk=, tarball: http://registry.m.jd.com/@microsoft/api-extractor-model/download/@microsoft/api-extractor-model-7.28.2.tgz}
@@ -473,7 +474,7 @@ packages:
     resolution: {integrity: sha1-X+jPkVVr+zENF/LitCY6fBLCwso=, tarball: http://registry.m.jd.com/@types/q/download/@types/q-1.5.7.tgz}
     dev: true
 
-  /@vitejs/plugin-vue2@2.2.0(vite@4.5.0)(vue@3.3.4):
+  /@vitejs/plugin-vue2@2.2.0(vite@4.5.0):
     resolution: {integrity: sha1-dFMgcZfWrCtwI87ccTOxQsYEw1Y=, tarball: http://registry.m.jd.com/@vitejs/plugin-vue2/download/@vitejs/plugin-vue2-2.2.0.tgz}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
@@ -481,10 +482,9 @@ packages:
       vue: ^2.7.0-0
     dependencies:
       vite: 4.5.0(less@4.1.3)
-      vue: 3.3.4
     dev: true
 
-  /@vitejs/plugin-vue@4.1.0(vite@4.5.0)(vue@3.3.4):
+  /@vitejs/plugin-vue@4.1.0(vite@4.5.0):
     resolution: {integrity: sha1-tqnYPNkVdffuFVk/ZEQ5f2h1EHM=, tarball: http://registry.m.jd.com/@vitejs/plugin-vue/download/@vitejs/plugin-vue-4.1.0.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -492,7 +492,6 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.5.0(less@4.1.3)
-      vue: 3.3.4
     dev: true
 
   /@volar/language-core@1.10.10:
@@ -521,6 +520,7 @@ packages:
       '@vue/shared': 3.3.4
       estree-walker: r2.cnpmjs.org/estree-walker@2.0.2
       source-map-js: 1.0.2
+    dev: false
 
   /@vue/compiler-core@3.3.7:
     resolution: {integrity: sha512-pACdY6YnTNVLXsB86YD8OF9ihwpolzhhtdLVHhBL6do/ykr6kKXNYABRtNMGrsQXpEXXyAdwvWWkuTbs4MFtPQ==}
@@ -536,6 +536,7 @@ packages:
     dependencies:
       '@vue/compiler-core': 3.3.4
       '@vue/shared': 3.3.4
+    dev: false
 
   /@vue/compiler-dom@3.3.7:
     resolution: {integrity: sha512-0LwkyJjnUPssXv/d1vNJ0PKfBlDoQs7n81CbO6Q0zdL7H1EzqYRrTVXDqdBVqro0aJjo/FOa1qBAPVI4PGSHBw==}
@@ -557,12 +558,14 @@ packages:
       magic-string: 0.30.5
       postcss: 8.4.31
       source-map-js: 1.0.2
+    dev: false
 
   /@vue/compiler-ssr@3.3.4:
     resolution: {integrity: sha512-m0v6oKpup2nMSehwA6Uuu+j+wEwcy7QmwMkVNVfrV9P2qE5KshC6RwOCq8fjGS/Eak/uNb8AaWekfiXxbBB6gQ==}
     dependencies:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
+    dev: false
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha1-f3HzHkCXPu7mW5pkOCsTWT/b1pc=, tarball: http://registry.m.jd.com/@vue/devtools-api/download/@vue/devtools-api-6.5.1.tgz}
@@ -595,17 +598,20 @@ packages:
       '@vue/shared': 3.3.4
       estree-walker: r2.cnpmjs.org/estree-walker@2.0.2
       magic-string: 0.30.5
+    dev: false
 
   /@vue/reactivity@3.3.4:
     resolution: {integrity: sha512-kLTDLwd0B1jG08NBF3R5rqULtv/f8x3rOFByTDz4J53ttIQEDmALqKqXY0J+XQeN0aV2FBxY8nJDf88yvOPAqQ==}
     dependencies:
       '@vue/shared': 3.3.4
+    dev: false
 
   /@vue/runtime-core@3.3.4:
     resolution: {integrity: sha512-R+bqxMN6pWO7zGI4OMlmvePOdP2c93GsHFM/siJI7O2nxFRzj55pLwkpCedEY+bTMgp5miZ8CxfIZo3S+gFqvA==}
     dependencies:
       '@vue/reactivity': 3.3.4
       '@vue/shared': 3.3.4
+    dev: false
 
   /@vue/runtime-dom@3.3.4:
     resolution: {integrity: sha512-Aj5bTJ3u5sFsUckRghsNjVTtxZQ1OyMWCr5dZRAPijF/0Vy4xEoRCwLyHXcj4D0UFbJ4lbx3gPTgg06K/GnPnQ==}
@@ -613,6 +619,7 @@ packages:
       '@vue/runtime-core': 3.3.4
       '@vue/shared': 3.3.4
       csstype: 3.1.2
+    dev: false
 
   /@vue/server-renderer@3.3.4(vue@3.3.4):
     resolution: {integrity: sha512-Q6jDDzR23ViIb67v+vM1Dqntu+HUexQcsWKhhQa4ARVzxOY2HbC7QRW/ggkDBd5BU+uM1sV6XOAP0b216o34JQ==}
@@ -622,9 +629,11 @@ packages:
       '@vue/compiler-ssr': 3.3.4
       '@vue/shared': 3.3.4
       vue: 3.3.4
+    dev: false
 
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
+    dev: false
 
   /@vue/shared@3.3.7:
     resolution: {integrity: sha512-N/tbkINRUDExgcPTBvxNkvHGu504k8lzlNQRITVnm6YjOjwa4r0nnbd4Jb01sNpur5hAllyRJzSK5PvB9PPwRg==}
@@ -2045,7 +2054,7 @@ packages:
       readdirp: 2.2.1(supports-color@4.5.0)
       upath: 1.2.0
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@1.2.13
+      fsevents: 1.2.13
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2067,7 +2076,7 @@ packages:
       readdirp: 2.2.1(supports-color@5.5.0)
       upath: 1.2.0
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@1.2.13
+      fsevents: 1.2.13
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2722,7 +2731,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       mdn-data: 2.0.4
-      source-map: r2.cnpmjs.org/source-map@0.6.1
+      source-map: 0.6.1
     dev: true
 
   /css-tree@1.1.3:
@@ -2730,7 +2739,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       mdn-data: 2.0.14
-      source-map: r2.cnpmjs.org/source-map@0.6.1
+      source-map: 0.6.1
     dev: true
 
   /css-what@3.4.2:
@@ -2860,7 +2869,7 @@ packages:
     hasBin: true
     dependencies:
       clap: 1.2.3
-      source-map: r2.cnpmjs.org/source-map@0.5.7
+      source-map: 0.5.7
     dev: true
 
   /csso@4.2.0:
@@ -2872,6 +2881,7 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: false
 
   /cuint@0.2.2:
     resolution: {integrity: sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs=, tarball: http://registry.m.jd.com/cuint/download/cuint-0.2.2.tgz}
@@ -3240,8 +3250,9 @@ packages:
     dev: true
 
   /errno@0.1.8:
-    resolution: {integrity: sha1-i7Ppx9Rjvkl2/4iPdrSAnrwugR8=, tarball: http://registry.m.jd.com/errno/download/errno-0.1.8.tgz}
+    resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
     hasBin: true
+    requiresBuild: true
     dependencies:
       prr: 1.0.1
     dev: true
@@ -3869,6 +3880,18 @@ packages:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=, tarball: http://registry.m.jd.com/fs.realpath/download/fs.realpath-1.0.0.tgz}
     dev: true
 
+  /fsevents@1.2.13:
+    resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
+    engines: {node: '>= 4.0'}
+    os: [darwin]
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    requiresBuild: true
+    dependencies:
+      bindings: 1.5.0
+      nan: 2.18.0
+    dev: true
+    optional: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -3999,7 +4022,7 @@ packages:
     dev: true
 
   /graceful-fs@4.2.11:
-    resolution: {integrity: sha1-QYPk6L8Iu24Fu7L30uDI9xLKQOM=, tarball: http://registry.m.jd.com/graceful-fs/download/graceful-fs-4.2.11.tgz}
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
 
   /growly@1.3.0:
@@ -4315,6 +4338,14 @@ packages:
   /ignore@3.3.10:
     resolution: {integrity: sha1-Cpf7h2mG6AgcYxFg+PnziRV/AEM=, tarball: http://registry.m.jd.com/ignore/download/ignore-3.3.10.tgz}
     dev: true
+
+  /image-size@0.5.5:
+    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /import-cwd@2.1.0:
     resolution: {integrity: sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk=, tarball: http://registry.m.jd.com/import-cwd/download/import-cwd-2.1.0.tgz}
@@ -4908,13 +4939,13 @@ packages:
       parse-node-version: 1.0.1
       tslib: 2.6.2
     optionalDependencies:
-      errno: r2.cnpmjs.org/errno@0.1.8
+      errno: 0.1.8
       graceful-fs: 4.2.11
-      image-size: r2.cnpmjs.org/image-size@0.5.5
-      make-dir: r2.cnpmjs.org/make-dir@2.1.0
-      mime: r2.cnpmjs.org/mime@1.6.0
+      image-size: 0.5.5
+      make-dir: 2.1.0
+      mime: 1.6.0
       needle: 3.2.0
-      source-map: r2.cnpmjs.org/source-map@0.6.1
+      source-map: 0.6.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5050,6 +5081,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
 
   /make-dir@1.3.0:
     resolution: {integrity: sha1-ecEDO4BRW9bSTsmTPoYMp17ifww=, tarball: http://registry.m.jd.com/make-dir/download/make-dir-1.3.0.tgz}
@@ -5057,6 +5089,16 @@ packages:
     dependencies:
       pify: 3.0.0
     dev: true
+
+  /make-dir@2.1.0:
+    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      pify: 4.0.1
+      semver: 5.7.2
+    dev: true
+    optional: true
 
   /map-cache@0.2.2:
     resolution: {integrity: sha1-wyq9C9ZSXZsFFkW7TyasXcmKDb8=, tarball: http://registry.m.jd.com/map-cache/download/map-cache-0.2.2.tgz}
@@ -6797,6 +6839,10 @@ packages:
     resolution: {integrity: sha1-vgWtf5v30i4Fb5cmzuUBf78Z4uk=, tarball: http://registry.m.jd.com/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz}
     dev: true
 
+  /regenerator-runtime@0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+    dev: true
+
   /regenerator-transform@0.10.1:
     resolution: {integrity: sha1-HkmWg3Ix2ot/PPQRTXG1aRoGgN0=, tarball: http://registry.m.jd.com/regenerator-transform/download/regenerator-transform-0.10.1.tgz}
     dependencies:
@@ -7829,7 +7875,7 @@ packages:
       source-map: 0.5.7
       yargs: 3.10.0
     optionalDependencies:
-      uglify-to-browserify: r2.cnpmjs.org/uglify-to-browserify@1.0.2
+      uglify-to-browserify: 1.0.2
     dev: true
 
   /uglify-js@3.4.10:
@@ -7840,6 +7886,12 @@ packages:
       commander: 2.19.0
       source-map: 0.6.1
     dev: true
+
+  /uglify-to-browserify@1.0.2:
+    resolution: {integrity: sha512-vb2s1lYx2xBtUgy+ta+b2J/GLVUR+wmpINwHePmPRhOsIVCG2wDzKJ0n14GslH1BifsqVzSOwQhRaCAsZ/nI4Q==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /uglifyjs-webpack-plugin@0.4.6(webpack@3.12.0):
     resolution: {integrity: sha1-uVH0q7a9YX5m9j64kUmOORdj4wk=, tarball: http://registry.m.jd.com/uglifyjs-webpack-plugin/download/uglifyjs-webpack-plugin-0.4.6.tgz}
@@ -8212,13 +8264,12 @@ packages:
       - whiskers
     dev: true
 
-  /vue-router@4.2.5(vue@3.3.4):
+  /vue-router@4.2.5:
     resolution: {integrity: sha1-uePgjxvZ6jY/3RcwMmILxQzw6Yo=, tarball: http://registry.m.jd.com/vue-router/download/vue-router-4.2.5.tgz}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.5.1
-      vue: 3.3.4
     dev: true
 
   /vue-style-loader@3.1.2:
@@ -8251,13 +8302,11 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /vue-waterfall2@2.0.0(vue@3.3.4):
-    resolution: {integrity: sha512-a8Mu+fr2okO+49kj/uvln0SP0GInExdkyLS1E6TUuICMGNhIy98IO9UNy+VNVP9dnkpW2tG9L8ZWyA7Xf3zjng==}
-    engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
-    peerDependencies:
-      vue: ^3.2.13
+  /vue-waterfall2@1.10.6:
+    resolution: {integrity: sha512-roL8gYdFkWcpqeUqci8+RPj4rCDMrdmiSaZ2V7MZSy1vkYmfLpBPxHn1OshWPefBYGyilasnBqdQPUeL3ddrbw==}
     dependencies:
-      vue: 3.3.4
+      babel-runtime: 6.26.0
+      regenerator-runtime: 0.13.11
     dev: true
 
   /vue@3.3.4:
@@ -8268,6 +8317,17 @@ packages:
       '@vue/runtime-dom': 3.3.4
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
+    dev: false
+
+  /watchpack-chokidar2@2.0.1(supports-color@4.5.0):
+    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==}
+    requiresBuild: true
+    dependencies:
+      chokidar: 2.1.8(supports-color@4.5.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+    optional: true
 
   /watchpack@1.7.5(supports-color@4.5.0):
     resolution: {integrity: sha1-EmfmxV4Lm1vkTCAjrtVDeiwmxFM=, tarball: http://registry.m.jd.com/watchpack/download/watchpack-1.7.5.tgz}
@@ -8276,7 +8336,7 @@ packages:
       neo-async: 2.6.2
     optionalDependencies:
       chokidar: 3.5.3
-      watchpack-chokidar2: r2.cnpmjs.org/watchpack-chokidar2@2.0.1(supports-color@4.5.0)
+      watchpack-chokidar2: 2.0.1(supports-color@4.5.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8609,70 +8669,13 @@ packages:
       commander: 9.5.0
     dev: true
 
-  r2.cnpmjs.org/errno@0.1.8:
-    resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/errno/-/errno-0.1.8.tgz}
-    name: errno
-    version: 0.1.8
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      prr: 1.0.1
-    dev: true
-    optional: true
-
   r2.cnpmjs.org/estree-walker@2.0.2:
-    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/estree-walker/-/estree-walker-2.0.2.tgz}
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==, registry: https://registry.npmjs.org/, tarball: https://r2.cnpmjs.org/estree-walker/-/estree-walker-2.0.2.tgz}
     name: estree-walker
     version: 2.0.2
 
-  r2.cnpmjs.org/fsevents@1.2.13:
-    resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/fsevents/-/fsevents-1.2.13.tgz}
-    name: fsevents
-    version: 1.2.13
-    engines: {node: '>= 4.0'}
-    os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
-    requiresBuild: true
-    dependencies:
-      bindings: 1.5.0
-      nan: 2.18.0
-    dev: true
-    optional: true
-
-  r2.cnpmjs.org/image-size@0.5.5:
-    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/image-size/-/image-size-0.5.5.tgz}
-    name: image-size
-    version: 0.5.5
-    engines: {node: '>=0.10.0'}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  r2.cnpmjs.org/make-dir@2.1.0:
-    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/make-dir/-/make-dir-2.1.0.tgz}
-    name: make-dir
-    version: 2.1.0
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      pify: 4.0.1
-      semver: 5.7.2
-    dev: true
-    optional: true
-
-  r2.cnpmjs.org/mime@1.6.0:
-    resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/mime/-/mime-1.6.0.tgz}
-    name: mime
-    version: 1.6.0
-    engines: {node: '>=4'}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-    optional: true
-
   r2.cnpmjs.org/postcss@7.0.39:
-    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/postcss/-/postcss-7.0.39.tgz}
+    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==, registry: https://registry.npmjs.org/, tarball: https://r2.cnpmjs.org/postcss/-/postcss-7.0.39.tgz}
     name: postcss
     version: 7.0.39
     engines: {node: '>=6.0.0'}
@@ -8681,43 +8684,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  r2.cnpmjs.org/source-map@0.5.7:
-    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/source-map/-/source-map-0.5.7.tgz}
-    name: source-map
-    version: 0.5.7
-    engines: {node: '>=0.10.0'}
-    dev: true
-
-  r2.cnpmjs.org/source-map@0.6.1:
-    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/source-map/-/source-map-0.6.1.tgz}
-    name: source-map
-    version: 0.6.1
-    engines: {node: '>=0.10.0'}
-    dev: true
-
   r2.cnpmjs.org/to-fast-properties@2.0.0:
-    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz}
+    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==, registry: https://registry.npmjs.org/, tarball: https://r2.cnpmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz}
     name: to-fast-properties
     version: 2.0.0
     engines: {node: '>=4'}
-
-  r2.cnpmjs.org/uglify-to-browserify@1.0.2:
-    resolution: {integrity: sha512-vb2s1lYx2xBtUgy+ta+b2J/GLVUR+wmpINwHePmPRhOsIVCG2wDzKJ0n14GslH1BifsqVzSOwQhRaCAsZ/nI4Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz}
-    name: uglify-to-browserify
-    version: 1.0.2
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  r2.cnpmjs.org/watchpack-chokidar2@2.0.1(supports-color@4.5.0):
-    resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/watchpack-chokidar2/-/watchpack-chokidar2-2.0.1.tgz}
-    id: r2.cnpmjs.org/watchpack-chokidar2/2.0.1
-    name: watchpack-chokidar2
-    version: 2.0.1
-    requiresBuild: true
-    dependencies:
-      chokidar: 2.1.8(supports-color@4.5.0)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-    optional: true
