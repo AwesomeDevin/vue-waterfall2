@@ -6,10 +6,9 @@
   "private": false,
   "scripts": {
     "dev": "vite",
-    "start:vue3": "cross-env TARGET=VUE3 npm run dev",
-    "start": "cross-env TARGET=VUE2 npm run dev",
-    "build:vue3": "cross-env TARGET=VUE3 vite build",
-    "build": "cross-env TARGET=VUE2 vite build"
+    "pro": "vite build",
+    "start": "cross-env TARGET=VUE3 npm run dev",
+    "build": "cross-env TARGET=VUE3 npm run pro"
   },
   "files": [
     "dist"
@@ -17,12 +16,10 @@
 
   "sideEffects": false,
   "license": "MIT",
-  "peerDependencies": {
-    "vue": "^3.2.13"
-  },
+
   "devDependencies": {
+    "vue": "^3.2.13",
     "@vitejs/plugin-vue": "^4.1.0",
-    "@vitejs/plugin-vue2": "^2.2.0",
     "autoprefixer": "^7.1.2",
     "axios": "^0.19.0",
     "babel-core": "^6.22.1",
@@ -59,7 +56,9 @@
     "vite-plugin-css-injected-by-js": "^3.3.0",
     "vite-plugin-dts": "^3.6.3",
     "vue-loader": "^13.3.0",
+    "vue-router": "^4.2.5",
     "vue-style-loader": "^3.1.2",
+    "vue-template-compiler": "^2.7.0",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
@@ -83,5 +82,7 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+  }
 }

@@ -1,0 +1,4 @@
+packages:
+  - 'vue2/**'
+  - 'vue3/**'
+

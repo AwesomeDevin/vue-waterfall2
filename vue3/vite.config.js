@@ -14,7 +14,7 @@ export default ({ mode }) => {
     plugins: [ process.env.TARGET === 'VUE3' ? vue() : vue2(), cssInjectedByJsPlugin()],
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src'),
+        '@': resolve(__dirname, '../src'),
       },
     },
 
@@ -61,7 +61,7 @@ export default ({ mode }) => {
       rollupOptions: {
         external: ['vue'],
 
-        input: __dirname + '/index.html'
+        input: resolve(__dirname, '../index.html')
       },
     },
   });

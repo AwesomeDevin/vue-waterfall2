@@ -42,7 +42,6 @@
 
 <script>
 
-import { isVNode } from 'vue'
 import bus from './bus'
 
 	export default{
