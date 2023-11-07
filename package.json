@@ -1,6 +1,6 @@
 {
   "name": "vue-waterfall2",
-  "version": "1.10.7-beta.1",
+  "version": "1.10.7",
   "description": "waterfall adaptive plugin for vue and support lazy load , very easy!  ",
   "author": "Devin <awesomedevin.deng@gmail.com>",
   "private": false,
