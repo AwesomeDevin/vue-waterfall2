@@ -46,9 +46,7 @@ loadDistance | 300 | Number | 触发上拉加载更多的距离 | false
 对于需要使用懒加载的图片，需要使用`lazy-src`属性
 ```html
 <waterfall :col='col'   :data="data"     >
-  <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
-  </template>
+  <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
 </waterfall>
 ```
 
@@ -83,22 +81,20 @@ app.use(waterfall)
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
 
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
-      <template >
-        <div class="cell-item" v-for="(item,index) in data">
-          <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
-          <div class="item-body">
-              <div class="item-desc">{{item.title}}</div>
-              <div class="item-footer">
-                  <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
-                  <div class="name">{{item.user}}</div>
-                  <div class="like" :class="item.liked?'active':''" >
-                      <i ></i>
-                      <div class="like-total">{{item.liked}}</div>  
-                  </div>
-              </div>
-          </div>
+      <div class="cell-item" v-for="(item,index) in data">
+        <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
+        <div class="item-body">
+            <div class="item-desc">{{item.title}}</div>
+            <div class="item-footer">
+                <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
+                <div class="name">{{item.user}}</div>
+                <div class="like" :class="item.liked?'active':''" >
+                    <i ></i>
+                    <div class="like-total">{{item.liked}}</div>  
+                </div>
+            </div>
         </div>
-      </template>
+      </div>
     </waterfall>
     
   </div>

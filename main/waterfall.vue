@@ -366,8 +366,9 @@ import bus from './bus'
 				if(diff <self.max&&self.loadmore&&scrollHeight>self.clientHeight){
 					self.lastScrollTop =  scrollTop
 					self.loadmore = false
+					console.log('loadmore1')
+
 					self.$emit('loadmore')
-					console.log('loadmore')
 				}
 				else if(diff>=self.max){
 					self.loadmore = true

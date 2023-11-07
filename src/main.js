@@ -4,8 +4,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import waterfall from "vue-waterfall2";
-// import waterfall from "../main";
+// import waterfall from "vue-waterfall2";
+import waterfall from "../main";
 // use(waterfall);
 
 const app = createApp(App)

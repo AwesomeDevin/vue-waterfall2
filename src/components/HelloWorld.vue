@@ -149,6 +149,7 @@
       @scroll="scroll"
       @finish="finish"
       :height="'100vh'"
+      :loadDistance="0"
     >
         <div
           class="cell-item"
@@ -255,6 +256,7 @@ export default {
     },
 
     loadmore(num) {
+      console.log('loadmore2')
       this.loading = true;
       setTimeout(() => {
         this.data = this.data.concat(this.originData, this.originData);

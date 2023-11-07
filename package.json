@@ -17,9 +17,10 @@
   "sideEffects": false,
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.2.13"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
+    "vue-waterfall2": "^2.0.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "autoprefixer": "^7.1.2",
