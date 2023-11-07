@@ -54,6 +54,7 @@ export default ({ mode }) => {
       },
       rollupOptions: {
         external: ['vue'],
+        preserveModules: true
       },
     },
   });

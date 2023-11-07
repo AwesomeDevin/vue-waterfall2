@@ -259,7 +259,7 @@ export default {
   },
   mounted() {
     var self = this;
-    this.data = this.originData.slice(0, 20);
+    this.data = this.originData
     this.getGitHub();
   },
 };
