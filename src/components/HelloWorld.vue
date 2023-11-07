@@ -266,7 +266,6 @@ export default {
     var self = this;
     this.data = this.originData;
     this.getGitHub();
-    // this.data = []
   },
 };
 </script>

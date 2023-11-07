@@ -350,6 +350,7 @@ export default {
     },
     mix() {
       var elements = this.$slots.default;
+			console.log('elements',elements)
       elements.sort(() => {
         return Math.random() - 0.5;
       });
