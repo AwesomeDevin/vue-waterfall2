@@ -5,8 +5,8 @@ import App from "./App.vue";
 import router from "./router";
 import Router from 'vue-router'
 
-// import waterfall from "vue-waterfall2";
-import waterfall from "../main";
+import waterfall from "vue-waterfall2";
+// import waterfall from "../main";
 // use(waterfall);
 
 Vue.use(Router)

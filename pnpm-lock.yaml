@@ -130,8 +130,8 @@ devDependencies:
     specifier: ^2.7.0
     version: 2.7.15
   vue-waterfall2:
-    specifier: ^1.10.6
-    version: 1.10.6
+    specifier: 1.10.7-beta.1
+    version: 1.10.7-beta.1(vue@2.7.0)
   webpack:
     specifier: ^3.6.0
     version: 3.12.0
@@ -6748,10 +6748,6 @@ packages:
     resolution: {integrity: sha1-vgWtf5v30i4Fb5cmzuUBf78Z4uk=, tarball: http://registry.m.jd.com/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz}
     dev: true
 
-  /regenerator-runtime@0.13.11:
-    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-    dev: true
-
   /regenerator-transform@0.10.1:
     resolution: {integrity: sha1-HkmWg3Ix2ot/PPQRTXG1aRoGgN0=, tarball: http://registry.m.jd.com/regenerator-transform/download/regenerator-transform-0.10.1.tgz}
     dependencies:
@@ -8214,11 +8210,13 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /vue-waterfall2@1.10.6:
-    resolution: {integrity: sha512-roL8gYdFkWcpqeUqci8+RPj4rCDMrdmiSaZ2V7MZSy1vkYmfLpBPxHn1OshWPefBYGyilasnBqdQPUeL3ddrbw==}
+  /vue-waterfall2@1.10.7-beta.1(vue@2.7.0):
+    resolution: {integrity: sha512-gCoS2NmkIJZYRmUbq2xukxlY1fLSVS9WKSI0yP7sdgxbSnoBxiiwwAYBFTKdiWHyRChX+hoUb782QCADdPV99w==}
+    engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
+    peerDependencies:
+      vue: ^2.7.0
     dependencies:
-      babel-runtime: 6.26.0
-      regenerator-runtime: 0.13.11
+      vue: 2.7.0
     dev: true
 
   /vue@2.7.0:
