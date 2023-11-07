@@ -1,14 +1,25 @@
-'use strict';
+class EventEmit{
+  constructor(){
+    this.events = {}
+  }
+  on(eventName, callback){
+    if(!this.events[eventName]){
+      this.events[eventName] = []
+    }
+    this.events[eventName].push(callback)
+  }
+  emit(eventName, ...args){
+    if(this.events[eventName]){
+      this.events[eventName].forEach(cb => {
+        cb(...args)
+      })
+    }
+  }
+  off(eventName, callback){
+    if(this.events[eventName]){
+      this.events[eventName] = this.events[eventName].filter(cb => cb !== callback)
+    }
+  }
+}
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _vue = require('vue');
-
-var _vue2 = _interopRequireDefault(_vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Bus = new _vue2.default();
-exports.default = Bus;
+export default new EventEmit()

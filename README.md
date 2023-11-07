@@ -2,6 +2,9 @@
 
 
 #### [中文版文档](https://github.com/AwesomeDevin/vue-waterfall2/blob/master/CHINESE-README.md)
+
+# Note: vue-waterfall2@2.x is adapt for vue3, if your app is vue2, please use vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
+
 # vue-waterfall2 
  1. auto adaption for width and height
  2. High degree of customization
@@ -17,6 +20,8 @@ If you have some questions,welcome to describe issues、suggestions;Thank you fo
 
 
 ## Demo
+[Common Demo](https://awesomedevin.github.io/vue-waterfall2/#/)  
+[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
@@ -50,9 +55,7 @@ loadDistance | 300 | Number | The distance of loadmore
 For images that need to be loaded lazily, the 'lazy-src' attribute needs to be used
 ```html
 <waterfall :col='col'   :data="data"     >
-  <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
-  </template>
+  <img v-if="item.img" :lazy-src="item.img" alt="load error"  />
 </waterfall>
 ```
 
@@ -74,8 +77,11 @@ Notes:
   2. Use the parent component of 'waterfall' if there is a problem with the style, remove CSS `scoped` and try it
 ##### main.js
 ```javascript
+import { createApp } from "vue";
 import waterfall from 'vue-waterfall2'
-Vue.use(waterfall)
+
+const app = createApp(App)
+app.use(waterfall)
 ```
 ##### app.vue
 ```javascript
@@ -84,21 +90,19 @@ Vue.use(waterfall)
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
 
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
-      <template >
-        <div class="cell-item" v-for="(item,index) in data">
-          <div class="item-body">
-              <div class="item-desc">{{item.title}}</div>
-              <div class="item-footer">
-                  <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
-                  <div class="name">{{item.user}}</div>
-                  <div class="like" :class="item.liked?'active':''" >
-                      <i ></i>
-                      <div class="like-total">{{item.liked}}</div>  
-                  </div>
-              </div>
-          </div>
+      <div class="cell-item" v-for="(item,index) in data">
+        <div class="item-body">
+            <div class="item-desc">{{item.title}}</div>
+            <div class="item-footer">
+                <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
+                <div class="name">{{item.user}}</div>
+                <div class="like" :class="item.liked?'active':''" >
+                    <i ></i>
+                    <div class="like-total">{{item.liked}}</div>  
+                </div>
+            </div>
         </div>
-      </template>
+      </div>
     </waterfall>
     
   </div>

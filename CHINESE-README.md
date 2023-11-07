@@ -1,4 +1,4 @@
-
+# Note: vue-waterfall2@2.x 适用于 vue3, 如果你的应用是 vue2，请使用 vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
 
 ## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
@@ -7,15 +7,14 @@
 * 4.提供Event:loadmore (pc/android端滑动到底部触发，ios端需要上拉触发) 
 * 5.使用极为简便, 适用于PC/ios/android
 
-
 有问题欢迎提issues、suggestions;Thank you for your Star !   
 [welcome to my blog(JS/前端工程化/Python/算法)  ！！！](https://github.com/AwesomeDevin/blog)
 
 ![移动端效果](https://raw.githubusercontent.com/AwesomeDevin/vue-waterfall2/master/src/assets/gifhome_240x514_17s.gif)
 
 ## Demo
-[Common Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/)  
-[Lazyload Demo](http://175.24.232.69:8080/vue-waterfall/index.html#/lazy)   
+[Common Demo](https://awesomedevin.github.io/vue-waterfall2/#/)  
+[Lazyload Demo](https://awesomedevin.github.io/vue-waterfall2/#/lazy)  
 [Code Demo](https://codesandbox.io/embed/vue-template-99ps6)
 
 
@@ -47,9 +46,7 @@ loadDistance | 300 | Number | 触发上拉加载更多的距离 | false
 对于需要使用懒加载的图片，需要使用`lazy-src`属性
 ```html
 <waterfall :col='col'   :data="data"     >
-  <template>
-     <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
-  </template>
+  <img v-if="item.img" :lazy-src="item.img" alt="加载错误"  />
 </waterfall>
 ```
 
@@ -71,8 +68,11 @@ this.$waterfall.forceUpdate()   //forceUpdate
  2.  使用了`waterfall`的父组件,如果样式存在问题，可去掉css `scoped`尝试一下
 ##### main.js
 ```javascript
+import { createApp } from "vue";
 import waterfall from 'vue-waterfall2'
-Vue.use(waterfall)
+
+const app = createApp(App)
+app.use(waterfall)
 ```
 ##### app.vue
 ```javascript
@@ -81,22 +81,20 @@ Vue.use(waterfall)
     <div><button  @click="loadmore">loadmore</button> <button @click="mix">mix</button> <button @click="switchCol('5')">5列</button> <button @click="switchCol('8')">8列</button> <button @click="switchCol('10')">10列</button> </div>
 
     <waterfall :col='col' :width="itemWidth" :gutterWidth="gutterWidth"  :data="data"  @loadmore="loadmore"  @scroll="scroll"  >
-      <template >
-        <div class="cell-item" v-for="(item,index) in data">
-          <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
-          <div class="item-body">
-              <div class="item-desc">{{item.title}}</div>
-              <div class="item-footer">
-                  <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
-                  <div class="name">{{item.user}}</div>
-                  <div class="like" :class="item.liked?'active':''" >
-                      <i ></i>
-                      <div class="like-total">{{item.liked}}</div>  
-                  </div>
-              </div>
-          </div>
+      <div class="cell-item" v-for="(item,index) in data">
+        <img v-if="item.img" :src="item.img" alt="加载错误"  /> 
+        <div class="item-body">
+            <div class="item-desc">{{item.title}}</div>
+            <div class="item-footer">
+                <div class="avatar" :style="{backgroundImage : `url(${item.avatar})` }"></div>
+                <div class="name">{{item.user}}</div>
+                <div class="like" :class="item.liked?'active':''" >
+                    <i ></i>
+                    <div class="like-total">{{item.liked}}</div>  
+                </div>
+            </div>
         </div>
-      </template>
+      </div>
     </waterfall>
     
   </div>
@@ -139,3 +137,7 @@ import Vue from 'vue'
 	    }
 	}
 ```
+
+## 如果你有任何研发问题，也可以加我好友，拉你入群进行技术交流 📖.
+
+<img src="https://github.com/AwesomeDevin/vue-waterfall2/assets/22369504/ad7bd0b4-e55a-4b22-aac8-3287ad07f746" width="250" />

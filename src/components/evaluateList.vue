@@ -163,7 +163,6 @@
         :lazyDistance="50"
         :gutterWidth="gutterWidth"
       >
-        <template>
           <div class="cell-item" v-for="(item, index) in data" :key="index">
             <img v-if="item.img" :lazy-src="item.img" alt="加载错误" />
             <div class="item-body">
@@ -182,7 +181,6 @@
               </div>
             </div>
           </div>
-        </template>
       </waterfall>
     </div>
     <loading :show="loading" />
@@ -196,7 +194,7 @@
   2.使用了waterfall的组件不允许使用scoped,否则样式会有问题
 */
 // import Vue from 'vue'
-import loading from "./loading";
+import loading from "./loading.vue";
 import json from "./data.json";
 
 // import  routerLink  from 'vue-router'
