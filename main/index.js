@@ -9,7 +9,7 @@ var Index = {
 		}
 		this.installed = true;
 		app.component('waterfall', Waterfall);
-		app.$waterfall = {
+		app.prototype.$waterfall = {
 			forceUpdate: function forceUpdate() {
 				bus.emit('forceUpdate');
 			},

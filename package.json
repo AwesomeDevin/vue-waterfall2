@@ -17,10 +17,9 @@
   "sideEffects": false,
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^2.7.0"
   },
   "devDependencies": {
-    "vue-waterfall2": "^2.0.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "autoprefixer": "^7.1.2",
@@ -59,9 +58,10 @@
     "vite-plugin-css-injected-by-js": "^3.3.0",
     "vite-plugin-dts": "^3.6.3",
     "vue-loader": "^13.3.0",
-    "vue-router": "^4.2.5",
+    "vue-router": "^3.1.0",
     "vue-style-loader": "^3.1.2",
     "vue-template-compiler": "^2.7.0",
+    "vue-waterfall2": "^1.10.6",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
@@ -83,5 +83,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "vue": "2.7.0"
+  }
 }

@@ -1,10 +1,9 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import Router from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Lazy from "@/components/evaluateList.vue";
 
 
-export default createRouter({
-  history: createWebHashHistory(),
+export default new Router({
   routes: [
     {
       path: "/",

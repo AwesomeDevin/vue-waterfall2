@@ -148,7 +148,6 @@
       @loadmore="loadmore"
       @scroll="scroll"
       @finish="finish"
-      :height="'100vh'"
     >
         <div
           class="cell-item"
