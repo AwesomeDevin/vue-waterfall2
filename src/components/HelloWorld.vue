@@ -149,7 +149,6 @@
       @scroll="scroll"
       @finish="finish"
       :height="'100vh'"
-      :loadDistance="0"
     >
         <div
           class="cell-item"

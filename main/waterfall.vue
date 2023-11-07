@@ -42,7 +42,6 @@
 
 <script>
 
-import { isVNode } from 'vue'
 import bus from './bus'
 
 	export default{
@@ -363,11 +362,10 @@ import bus from './bus'
 				const scrollHeight = this.height?this.root.scrollHeight : document.documentElement.offsetHeight
 				var diff = scrollHeight - scrollTop - self.clientHeight
 				self.$emit('scroll',{scrollHeight:scrollHeight,scrollTop:scrollTop,clientHeight:self.clientHeight,diff:diff,time:Date.now()})
-				if(diff <self.max&&self.loadmore&&scrollHeight>self.clientHeight){
+
+				if(diff <= self.max&&self.loadmore&&scrollHeight>self.clientHeight){
 					self.lastScrollTop =  scrollTop
 					self.loadmore = false
-					console.log('loadmore1')
-
 					self.$emit('loadmore')
 				}
 				else if(diff>=self.max){
