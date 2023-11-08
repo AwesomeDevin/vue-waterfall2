@@ -145,3 +145,11 @@ import Vue from 'vue'
 	    }
 	}
 ```
+
+## Stargazers 
+[![Stargazers repo roster for @AwesomeDevin/vue-waterfall2](http://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=AwesomeDevin&repo=vue-waterfall2)](https://github.com/AwesomeDevin/vue-waterfall2/stargazers)
+
+
+
+## Forkers 
+[![Forkers repo roster for @AwesomeDevin/vue-waterfall2](http://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=AwesomeDevin&repo=vue-waterfall2)](https://github.com/AwesomeDevin/vue-waterfall2/network/members)
