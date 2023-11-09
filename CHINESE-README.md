@@ -1,4 +1,4 @@
-# Note: vue-waterfall2@2.x 适用于 vue3, 如果你的应用是 vue2，请使用 vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
+# 备注: vue-waterfall2@2.x 适用于 vue3, 如果你的应用是 vue2，请使用 vue-waterfall2@1.10.x, [1.10.x document](https://github.com/AwesomeDevin/vue-waterfall2/tree/1.10.6)
 
 ## vue-waterfall2 
 * 1.不需知道元素宽高，可宽高自适应
