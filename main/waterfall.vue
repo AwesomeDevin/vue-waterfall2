@@ -261,35 +261,39 @@ export default {
         elements = Array.from(this.$refs.vueWaterfallSlotBox.cloneNode(true).children).splice(index);
       }
 
+
       for (var j = 0; j < elements.length; j++) {
         if (this.routeChanged) {
           console.warn("路由发生变化，<vue-waterfall>组件停止渲染");
           break;
         }
+        const appendTargetNode = elements[j].cloneNode(true)
+
         if (elements[j] && self.checkImg(elements[j])) {
-          var imgs = elements[j].getElementsByTagName("img");
+          
+          var imgs = appendTargetNode.getElementsByTagName("img");
           var newImg = new Image();
           newImg.src =
             imgs[0].getAttribute("src") || imgs[0].getAttribute("lazy-src");
           if (newImg.complete) {
-            await self.append(elements[j]);
+            await self.append(appendTargetNode);
             self.lazyLoad(imgs);
           } else {
             await new Promise((resolve, reject) => {
               newImg.onload = async function () {
-                await self.append(elements[j]);
+                await self.append(appendTargetNode);
                 self.lazyLoad(imgs);
                 resolve();
               };
               newImg.onerror = async function (e) {
-                await self.append(elements[j]);
+                await self.append(appendTargetNode);
                 self.lazyLoad(imgs);
                 resolve();
               };
             });
           }
         } else {
-          await self.append(elements[j]);
+          await self.append(appendTargetNode);
         }
         self.loadedIndex++;
       }
