@@ -243,7 +243,6 @@ export default {
       }
     },
     async resize(index, elements) {
-      console.log('resize')
       //resize and render
       this.isresizing = true;
       this.routeChanged = false; // 重置routeChanged
