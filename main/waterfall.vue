@@ -243,6 +243,7 @@ export default {
       }
     },
     async resize(index, elements) {
+      console.log('resize')
       //resize and render
       this.isresizing = true;
       this.routeChanged = false; // 重置routeChanged
@@ -253,23 +254,22 @@ export default {
         return;
       }
       if (!index && index != 0 && !elements) {
-        elements = this.$refs.vueWaterfallSlotBox.cloneNode(true).children;
+        elements = Array.from(this.$refs.vueWaterfallSlotBox.children);
         this.loadedIndex = 0;
         this.clear();
       } else if (!elements) {
         this.loadedIndex = index;
-        elements = Array.from(this.$refs.vueWaterfallSlotBox.cloneNode(true).children).splice(index);
+        elements = Array.from(this.$refs.vueWaterfallSlotBox.children).splice(index);
       }
 
-
-      for (var j = 0; j < elements.length; j++) {
+      while(elements.length){
         if (this.routeChanged) {
           console.warn("路由发生变化，<vue-waterfall>组件停止渲染");
           break;
         }
-        const appendTargetNode = elements[j].cloneNode(true)
+        const appendTargetNode = elements.shift()
 
-        if (elements[j] && self.checkImg(elements[j])) {
+        if (appendTargetNode && self.checkImg(appendTargetNode)) {
           
           var imgs = appendTargetNode.getElementsByTagName("img");
           var newImg = new Image();
@@ -297,6 +297,9 @@ export default {
         }
         self.loadedIndex++;
       }
+
+      
+   
       this.isresizing = false;
       self.$emit("finish");
     },
