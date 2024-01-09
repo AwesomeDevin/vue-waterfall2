@@ -1,6 +1,6 @@
 {
   "name": "vue-waterfall2",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "waterfall adaptive plugin for vue and support lazy load , very easy!  ",
   "author": "Devin <awesomedevin.deng@gmail.com>",
   "private": false,
@@ -61,7 +61,6 @@
     "vue-router": "^4.2.5",
     "vue-style-loader": "^3.1.2",
     "vue-template-compiler": "^2.7.0",
-    "vue-waterfall2": "^1.10.6",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
