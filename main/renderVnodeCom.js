@@ -8,12 +8,10 @@ export default function getDomFromVNode(vNodes) {
   return new Promise((resolve, reject) => {
     const Com = defineComponent(
       () => {
-
         nextTick(() => {
-          console.log('container.childNodes', Array.from(container.childNodes).filter(item => {
-            console.log(item)
+          resolve(Array.from(container.childNodes).filter(item => {
+            return item.nodeType !== 3 && item.data !== ''
           }))
-          resolve(container.childNodes)
         })
         return () => {
           return vNodes

@@ -262,10 +262,9 @@ export default {
         this.clear();
       } else if (!elements) {
         this.loadedIndex = index;
-        elements = await getDomFromVNode(vNodes).splice(index)
+        elements = (await getDomFromVNode(vNodes)).splice(index)
       }
 
-      console.log(elements,'elements')
 
 
       while(elements.length){
@@ -307,6 +306,7 @@ export default {
       
    
       this.isresizing = false;
+      self.loadmore = true
       self.$emit("finish");
     },
     computedPx(img, imgApi) {
@@ -397,9 +397,10 @@ export default {
         self.lastScrollTop = scrollTop;
         self.loadmore = false;
         self.$emit("loadmore");
-      } else if (diff >= self.max) {
-        self.loadmore = true;
-      }
+      } 
+      // else if (diff >= self.max) {
+      //   self.loadmore = true;
+      // }
       clearTimeout(self.lazyTimeout);
       self.lazyTimeout = setTimeout(function () {
         self.lazyLoad();
