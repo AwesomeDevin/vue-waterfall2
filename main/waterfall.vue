@@ -48,6 +48,7 @@
 
 <script>
 import bus from "./bus";
+import getDomFromVNode from './renderVnodeCom'
 
 export default {
   props: {
@@ -124,7 +125,7 @@ export default {
             return;
           }
           if (newVal.length < this.loadedIndex) {
-            this.loadedIndex = 0;
+            this.loadedIndex = newVal.length;
           }
           this.resize(this.loadedIndex > 0 ? this.loadedIndex : null);
           // discard code
@@ -178,6 +179,7 @@ export default {
         this.columns.push(odiv);
       }
       this.resize();
+      
     },
     async __setDomImageHeight(dom) {
       if (!dom.getElementsByTagName) {
@@ -248,18 +250,22 @@ export default {
       this.routeChanged = false; // 重置routeChanged
       var self = this;
 
-      if (!this.$refs.vueWaterfallSlotBox?.children?.length) {
+      const vNodes = this.$slots.default()[0].children
+
+      if (!vNodes?.length) {
         this.isresizing = false;
         return;
       }
       if (!index && index != 0 && !elements) {
-        elements = Array.from(this.$refs.vueWaterfallSlotBox.children);
+        elements =  await getDomFromVNode(vNodes)
         this.loadedIndex = 0;
         this.clear();
       } else if (!elements) {
         this.loadedIndex = index;
-        elements = Array.from(this.$refs.vueWaterfallSlotBox.children)
+        elements = await getDomFromVNode(vNodes).splice(index)
       }
+
+      console.log(elements,'elements')
 
 
       while(elements.length){
