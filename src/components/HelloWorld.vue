@@ -148,7 +148,6 @@
       @loadmore="loadmore"
       @scroll="scroll"
       @finish="finish"
-      :height="'100vh'"
     >
         <div
           class="cell-item"
@@ -219,9 +218,7 @@ export default {
   },
   methods: {
     toDelete(index) {
-      console.log("this.data", this.data.length);
       this.data.splice(index, 1);
-      console.log("this.data", this.data.length);
     },
     finish() {
       console.error("finish");
@@ -258,7 +255,7 @@ export default {
       console.log('loadmore2')
       this.loading = true;
       setTimeout(() => {
-        this.data = this.data.concat(this.originData, this.originData);
+        this.data = this.data.concat(this.originData);
         this.loading = false;
       }, 1000);
     },

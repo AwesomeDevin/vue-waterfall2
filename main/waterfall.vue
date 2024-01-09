@@ -124,7 +124,7 @@ export default {
             return;
           }
           if (newVal.length < this.loadedIndex) {
-            this.loadedIndex = newVal.length;
+            this.loadedIndex = 0;
           }
           this.resize(this.loadedIndex > 0 ? this.loadedIndex : null);
           // discard code
@@ -258,8 +258,9 @@ export default {
         this.clear();
       } else if (!elements) {
         this.loadedIndex = index;
-        elements = Array.from(this.$refs.vueWaterfallSlotBox.children).splice(index);
+        elements = Array.from(this.$refs.vueWaterfallSlotBox.children)
       }
+
 
       while(elements.length){
         if (this.routeChanged) {
